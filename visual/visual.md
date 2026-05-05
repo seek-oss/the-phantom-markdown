@@ -1,3 +1,3 @@
-<!-- Placeholder file to be replaced by Visual team -->
+*Placeholder file to be replaced by Visual team*
 
 # Visual design

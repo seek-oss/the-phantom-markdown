@@ -1,4 +1,4 @@
-<!-- Original created by Richard Simms. Thank you Rich! -->
+_Original created by Richard Simms. Thanks Rich!_
 
 # Accessibility Reference — WCAG AA for SEEK
 
@@ -8,12 +8,12 @@
 
 ### Colour Contrast
 
-| Element                             | Minimum Ratio | How to Check                 |
-| ----------------------------------- | ------------- | ---------------------------- |
-| Normal text (\<18px or \<14px bold) | 4.5:1         | Contrast checker tool        |
-| Large text (≥18px or ≥14px bold)    | 3:1           | Contrast checker tool        |
-| UI components & graphics            | 3:1           | Buttons, icons, form borders |
-| Focus indicators                    | 3:1           | Against adjacent colours     |
+| Element                          | Minimum Ratio | How to Check                 |
+| -------------------------------- | ------------- | ---------------------------- |
+| Normal text (18px or 14px bold)  | 4.5:1         | Contrast checker tool        |
+| Large text (≥18px or ≥14px bold) | 3:1           | Contrast checker tool        |
+| UI components & graphics         | 3:1           | Buttons, icons, form borders |
+| Focus indicators                 | 3:1           | Against adjacent colours     |
 
 **Tools**:
 
@@ -65,23 +65,20 @@
 - Prefer `focus-visible` over `focus` (keyboard only)
 
 **Code patterns to check**:
-\`\`\`jsx
+jsx
 // ✓ Good - focusable with visible focus
-<Button>Click me</Button>
+Click me
 
 // ✗ Bad - removed focus outline
-<button style={{ outline: 'none' }}>Click me</button>
+<button style={{ outline: 'none' }}>Click me
 
 // ✗ Bad - div pretending to be button
 
-<div onClick={handleClick}>Click me</div>
+Click me
 
 // ✓ Fixed - if div must be used
 
-<div role="button" tabIndex={0} onClick={handleClick} onKeyDown={handleKeyDown}>
-  Click me
-</div>
-\`\`\`
+Click me
 
 ---
 
@@ -96,25 +93,18 @@
 | Headings are hierarchical   | h1 → h2 → h3 (no skipping)           |
 
 **Common fixes**:
-\`\`\`jsx
+jsx
 // Icon-only button
-<Button aria-label="Close dialog">
-<CloseIcon />
-</Button>
 
 // Decorative image
-<img src="decoration.png" alt="" role="presentation" />
 
 // Informative image
-<img src="chart.png" alt="Sales increased 25% in Q3" />
 
 // Form input
-<TextField label="Email address" />
 
 // Dynamic status
 
-<div aria-live="polite">{statusMessage}</div>
-\`\`\`
+{statusMessage}
 
 ---
 
@@ -141,25 +131,24 @@
 
 ### Motion & Animation
 
-| Requirement                      | Implementation                   |
-| -------------------------------- | -------------------------------- |
-| Respect `prefers-reduced-motion` | Reduce or remove animations      |
-| No auto-playing content over 5s  | Provide pause control            |
-| No flashing content              | Nothing flashes \>3 times/second |
+| Requirement                      | Implementation                 |
+| -------------------------------- | ------------------------------ |
+| Respect `prefers-reduced-motion` | Reduce or remove animations    |
+| No auto-playing content over 5s  | Provide pause control          |
+| No flashing content              | Nothing flashes 3 times/second |
 
 **Code pattern**:
-\`\`\`css
+css
 /_ Respect user preference _/
 @media (prefers-reduced-motion: reduce) {
-_, _::before, \*::after {
+_, _::before, ::after {
 animation-duration: 0.01ms !important;
 animation-iteration-count: 1 !important;
 transition-duration: 0.01ms !important;
 }
 }
-\`\`\`
 
-\`\`\`jsx
+jsx
 // React hook pattern
 const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
 
@@ -167,7 +156,6 @@ const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
 animate={{ opacity: 1, y: 0 }}
 transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
 />
-\`\`\`
 
 ---
 
@@ -183,13 +171,12 @@ transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
 | Input purpose identified        | `autocomplete` attributes                 |
 
 **Error pattern**:
-\`\`\`jsx
+jsx
 <TextField
 label="Email"
 tone={hasError ? 'critical' : undefined}
 message={hasError ? 'Enter a valid email address' : undefined}
 />
-\`\`\`
 
 ---
 
