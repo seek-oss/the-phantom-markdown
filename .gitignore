@@ -22,3 +22,6 @@ Desktop.ini
 *.tmp
 *.bak
 *.log
+
+# Setup guides (human-readable versions)
+.docs/setup/*-guide.md
