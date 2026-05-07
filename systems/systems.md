@@ -1,18 +1,10 @@
 # Design System: Braid web — SEEK Jobs
 
-**About this file:** Follows the extended `DESIGN.md` format of [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md).
+**About this file:** Follows the extended `DESIGN.md` format of Google Stitch and [VoltAgent](https://github.com/VoltAgent/awesome-design-md).
 **Audience:** Designers, engineers and other partners using AI-powered design and coding tools to create SEEK UI.
 **Themes:** `seekJobs` (SEEK Jobs).
 **Platforms:** Currently web only (no Native or Email).
-
----
-
-## Instructions for AI tools
-
-- **Install the package** via `npm install braid-design-system` ([npm](https://www.npmjs.com/package/braid-design-system) · [source](https://github.com/seek-oss/braid-design-system/tree/master/packages/braid-design-system)). If your tool supports package installation, install this package and import components directly. Be sure to import `'braid-design-system/reset';` at the very top of the file. Always prefer Braid components and theme tokens over custom CSS — the system handles colour, typography, spacing, and accessibility out of the box.
-- **Import font** via `@import url('https://www.seek.com.au/static/shared-web/seeksans.css');`
-- **Layout patterns:** If your tool can read source files, see these ready-made Braid composition examples: [page layouts](https://raw.githubusercontent.com/seek-oss/braid-design-system/refs/heads/master/packages/braid-design-system/src/lib/playroom/templates/layouts.snippets.tsx) · [sections, cards, forms, tables](https://raw.githubusercontent.com/seek-oss/braid-design-system/refs/heads/master/packages/braid-design-system/src/lib/playroom/templates/sections.snippets.tsx)
-- **Browse the docs** at [Braid Design System](https://seek-oss.github.io/braid-design-system/) for interactive component examples and API reference.
+**Browse the docs** at [Braid Design System](https://seek-oss.github.io/braid-design-system/) for interactive component examples and API reference.
 
 ---
 
@@ -160,24 +152,24 @@ All icons are named exports from `braid-design-system`. Only the names below exi
 
 All icons share these props:
 
-| Prop                | Type                                                                                                                                  | Notes                                                                                             |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `size`              | `'large' \| 'standard' \| 'small' \| 'xsmall' \| 'fill'`                                                                              | Standalone only — do not set when icon is inside `Text` or `Heading` (inherits size from context) |
-| `tone`              | `'neutral' \| 'secondary' \| 'critical' \| 'caution' \| 'positive' \| 'info' \| 'promote' \| 'brandAccent' \| 'formAccent' \| 'link'` | Overrides inherited text tone                                                                     |
-| `alignY`            | `'uppercase' \| 'lowercase'`                                                                                                          | Inline only — adjusts vertical alignment when inside `Text` or `Heading`                          |
-| `title` + `titleId` | `string`                                                                                                                              | Accessible label — must provide both or neither                                                   |
-| `data`              | `DataAttributeMap`                                                                                                                    | e.g. `{ testid: 'my-icon' }`                                                                      |
+| Prop                | Type               | Notes                                           |
+| ------------------- | ------------------ | ----------------------------------------------- | ------------------------------------------------------------------------ | --------- | ---------- | ------------------------------------------------------------------------------------------------- | --------- | ------------- | ------------ | ------- | ----------------------------- |
+| `size`              | `'large'           | 'standard'                                      | 'small'                                                                  | 'xsmall'  | 'fill'`    | Standalone only — do not set when icon is inside `Text` or `Heading` (inherits size from context) |
+| `tone`              | `'neutral'         | 'secondary'                                     | 'critical'                                                               | 'caution' | 'positive' | 'info'                                                                                            | 'promote' | 'brandAccent' | 'formAccent' | 'link'` | Overrides inherited text tone |
+| `alignY`            | `'uppercase'       | 'lowercase'`                                    | Inline only — adjusts vertical alignment when inside `Text` or `Heading` |
+| `title` + `titleId` | `string`           | Accessible label — must provide both or neither |
+| `data`              | `DataAttributeMap` | e.g. `{ testid: 'my-icon' }`                    |
 
 ### Variant props (select icons only)
 
-| Icon                                                                                                             | Extra prop  | Type                                    | Default     |
-| ---------------------------------------------------------------------------------------------------------------- | ----------- | --------------------------------------- | ----------- |
-| `IconArrow`                                                                                                      | `direction` | `'up' \| 'down' \| 'left' \| 'right'`   | `'up'`      |
-| `IconChevron`                                                                                                    | `direction` | `'up' \| 'down' \| 'left' \| 'right'`   | `'down'`    |
-| `IconThumb`                                                                                                      | `direction` | `'up' \| 'down'`                        | `'up'`      |
-| `IconSentiment`                                                                                                  | `feeling`   | `'positive' \| 'negative' \| 'neutral'` | `'neutral'` |
-| `IconVisibility`                                                                                                 | `hidden`    | `boolean`                               | `false`     |
-| `IconBookmark`, `IconCareer`, `IconCompany`, `IconEnlarge`, `IconHeart`, `IconPeople`, `IconProfile`, `IconStar` | `active`    | `boolean`                               | `false`     |
+| Icon                                                                                                             | Extra prop  | Type        | Default    |
+| ---------------------------------------------------------------------------------------------------------------- | ----------- | ----------- | ---------- | ---------- | ----------- | -------- |
+| `IconArrow`                                                                                                      | `direction` | `'up'       | 'down'     | 'left'     | 'right'`    | `'up'`   |
+| `IconChevron`                                                                                                    | `direction` | `'up'       | 'down'     | 'left'     | 'right'`    | `'down'` |
+| `IconThumb`                                                                                                      | `direction` | `'up'       | 'down'`    | `'up'`     |
+| `IconSentiment`                                                                                                  | `feeling`   | `'positive' | 'negative' | 'neutral'` | `'neutral'` |
+| `IconVisibility`                                                                                                 | `hidden`    | `boolean`   | `false`    |
+| `IconBookmark`, `IconCareer`, `IconCompany`, `IconEnlarge`, `IconHeart`, `IconPeople`, `IconProfile`, `IconStar` | `active`    | `boolean`   | `false`    |
 
 ---
 
