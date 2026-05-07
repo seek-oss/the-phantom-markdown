@@ -12,13 +12,11 @@ You are helping a designer create a new Braid design system project from scratch
 
 Ask the user what they want to name their project if they haven't already specified. Use that name in place of `my-project-name` below.
 
-> **If prompted to choose a template (e.g. Vite or Webpack), select Webpack.**
-
-Run from the home directory:
+Run from the home directory, passing the `--template` flag to skip the interactive prompt:
 
 ```bash
 cd ~
-pnpm dlx @sku-lib/create my-project-name
+pnpm dlx @sku-lib/create my-project-name --template webpack
 ```
 
 This will scaffold the project and install dependencies automatically. Wait for it to finish before continuing.
