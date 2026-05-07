@@ -12,6 +12,8 @@ You are helping a designer create a new Braid design system project from scratch
 
 Ask the user what they want to name their project if they haven't already specified. Use that name in place of `my-project-name` below.
 
+> **If prompted to choose a template (e.g. Vite or Webpack), select Webpack.**
+
 Run from the home directory:
 
 ```bash
