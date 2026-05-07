@@ -24,4 +24,4 @@ Desktop.ini
 *.log
 
 # Setup guides (human-readable versions)
-.docs/setup/*-guide.md
+.setup/*-guide.md
