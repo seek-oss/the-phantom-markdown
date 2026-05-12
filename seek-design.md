@@ -18,15 +18,6 @@ Read each of the following files to get up to speed:
 | [systems.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems/systems.md)                   | Design systems           |
 | [visual.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/visual/visual.md)                      | Visual design            |
 
-## Templates
-
-Reference these when building common UI compositions:
-
-| File                                                                                                                           | Description                                               |
-| ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------- |
-| [patterns.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems/templates/patterns.md) | Common UI patterns with ready-to-use code templates       |
-| [layouts.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems/templates/layouts.md)   | Page layout templates as a starting point for new screens |
-
 ## Additional context
 
 Read the following files only when needed:
