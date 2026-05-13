@@ -8,9 +8,17 @@ You are helping a designer create a new Braid design system project from scratch
 
 ---
 
-## Step 1: Initialise the project with sku
+## Step 1: Name the project
 
-Ask the user what they want to name their project if they haven't already specified. Use that name in place of `my-project-name` below.
+Ask the user:
+
+> "What would you like to name your project?"
+
+Wait for their response before continuing. Use that name in place of `my-project-name` in all steps below.
+
+---
+
+## Step 2: Initialise the project with sku
 
 Run from the home directory, passing the `--template` flag to skip the interactive prompt:
 
@@ -37,7 +45,7 @@ If `package.json` is listed, continue. Otherwise stop and report the error.
 
 ---
 
-## Step 2: Install Braid design system
+## Step 3: Install Braid design system
 
 ```bash
 pnpm add braid-design-system
@@ -53,7 +61,7 @@ If the package appears in the output, continue. Otherwise stop and report the er
 
 ---
 
-## Step 3: Wire up BraidProvider
+## Step 4: Wire up BraidProvider
 
 Replace the contents of `src/App/App.tsx` with the following:
 
@@ -83,7 +91,7 @@ If the first line is `import 'braid-design-system/reset';`, continue. Otherwise 
 
 ---
 
-## Step 4: Start the local dev server
+## Step 5: Start the local dev server
 
 ```bash
 pnpm start
