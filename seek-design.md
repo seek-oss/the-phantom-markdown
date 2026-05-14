@@ -43,3 +43,9 @@ Read the following files only when needed:
 | ---- | ----------- |
 |      |             |
 |      |             |
+
+### Accessibility review
+
+| File | When to use |
+| ---- | ----------- |
+| [review.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/accessibility/review.md) | Run this file when you want to run an Accessibility review |

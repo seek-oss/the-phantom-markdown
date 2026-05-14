@@ -1,8 +1,17 @@
-_Original created by Richard Simms. Thanks Rich!_
 
 # Accessibility Reference — WCAG AA for SEEK
 
-**Target**: WCAG 2.1 Level AA compliance
+**Target:** [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Level AA.
+
+## Introduction
+
+This page is a **quick reference**: the checks we lean on most often, in plain language. Use it when you want a fast reminder or a starting point before you dive deeper.
+
+Accessibility at SEEK is a shared effort across **content**, **design**, and **development**. The sections below group topics into **Critical checks (must pass)** and **Important checks (should pass)** — from colour and targets through keyboard use, screen readers, semantics, motion, forms, content, and visual design.
+
+When you want **structured feedback** from an AI assistant during an accessibility review, use the **SEEK Accessibility Review** skill — it is defined in **[review.md](review.md)** so the assistant follows the workflow, prioritisation, SEEK and Braid rules, and finding format described there. If you are doing the review yourself without an assistant, read **[review.md](review.md)** for the same guidance end to end.
+
+For the **full checklist** (role tags `CONTENT`, `DESIGN`, and `DEVELOPMENT`, Braid notes for high-impact areas, richer tooling notes, and expanded guidance), use **[reference.md](reference.md)**. The same link to the full checklist appears again at the end of this page.
 
 ## Critical Checks (Must Pass)
 
@@ -237,3 +246,7 @@ message={hasError ? 'Enter a valid email address' : undefined}
 - Error recovery must be accessible
 - Success confirmations must be announced
 - Loading states must be communicated
+
+---
+
+**Full checklist:** [reference.md](reference.md)
