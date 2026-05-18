@@ -3,7 +3,7 @@
 ## Instructions for AI tools
 
 - **Import font** via `@import url('https://www.seek.com.au/static/shared-web/seeksans.css');`
-- **Layout patterns:** If your tool can read source files, see these ready-made Braid composition examples: [page layouts](https://raw.githubusercontent.com/seek-oss/braid-design-system/refs/heads/master/packages/braid-design-system/src/lib/playroom/templates/layouts.snippets.tsx) · [sections, cards, forms, tables](https://raw.githubusercontent.com/seek-oss/braid-design-system/refs/heads/master/packages/braid-design-system/src/lib/playroom/templates/sections.snippets.tsx)
+- **Templates and patterns:** For ready-made Braid composition examples, search your local `node_modules/braid-design-system` package for `*.snippets.tsx` files (e.g. under a `playroom/templates/` path).
 
 ---
 
@@ -46,6 +46,6 @@ Read the following files only when needed:
 
 ### Accessibility review
 
-| File | When to use |
-| ---- | ----------- |
+| File                                                                                                                   | When to use                                                |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | [review.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/accessibility/review.md) | Run this file when you want to run an Accessibility review |
