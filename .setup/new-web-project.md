@@ -29,28 +29,27 @@ Wait for their response before continuing. Use that name in place of `my-project
 
 **Skip this step** if you are running in a web-based tool — it handles project initialisation itself.
 
-Otherwise, run from the home directory, passing the `--template` flag to skip the interactive prompt:
+Otherwise, you will not be able to run these commands directly — the scaffold creates a new folder outside the current workspace, which requires terminal access. Ask the user to do this themselves.
 
-```bash
-cd ~
-pnpm dlx @sku-lib/create my-project-name --template=webpack
-```
+Prompt them with something like:
 
-This will scaffold the project and install dependencies automatically. Wait for it to finish before continuing.
+> "To get your project set up, I'll need you to run a couple of commands in your terminal. Open Terminal, then run these one at a time:
+>
+> ```
+> cd ~
+> pnpm dlx @sku-lib/create my-project-name --template=webpack
+> ```
+>
+> This will create your project and install its dependencies — it may take a minute or two. Once it's done, run:
+>
+> ```
+> cd ~/my-project-name
+> cursor .
+> ```
+>
+> That will open the project in Cursor. Just let me know when you're ready and I'll take it from there!"
 
-Then move into the project directory:
-
-```bash
-cd ~/my-project-name
-```
-
-Verify the scaffold succeeded by checking the directory exists and contains a `package.json`:
-
-```bash
-ls package.json
-```
-
-If `package.json` is listed, continue. Otherwise stop and report the error.
+Wait for the user to confirm before continuing.
 
 ---
 
