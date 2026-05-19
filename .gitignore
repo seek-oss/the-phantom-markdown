@@ -23,5 +23,3 @@ Desktop.ini
 *.bak
 *.log
 
-# Setup guides (human-readable versions)
-.setup/*-guide.md
