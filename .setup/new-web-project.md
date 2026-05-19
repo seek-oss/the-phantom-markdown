@@ -36,14 +36,14 @@ Prompt them with something like:
 > "To get your project set up, I'll need you to run a couple of commands in your terminal. Open Terminal, then run these one at a time:
 >
 > ```
-> cd ~
+> cd ~/Code
 > pnpm dlx @sku-lib/create my-project-name --template=webpack
 > ```
 >
 > This will create your project and install its dependencies — it may take a minute or two. Once it's done, run:
 >
 > ```
-> cd ~/my-project-name
+> cd ~/Code/my-project-name
 > cursor .
 > ```
 >
