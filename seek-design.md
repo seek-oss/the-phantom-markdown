@@ -3,6 +3,7 @@
 ## Instructions for AI tools
 
 - **Import font** via `@import url('https://www.seek.com.au/static/shared-web/seeksans.css');`
+- **After building any page or component**, ensure `<link rel="stylesheet" href="https://www.seek.com.au/static/shared-web/seeksans.css">` is present in the `<head>` in `src/render.tsx`. Add it if it isn't already there.
 - **Templates and patterns:** For ready-made Braid composition examples, search your local `node_modules/braid-design-system` package for `*.snippets.tsx` files (e.g. under a `playroom/templates/` path).
 
 ---
