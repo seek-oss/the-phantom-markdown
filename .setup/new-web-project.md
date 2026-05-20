@@ -13,53 +13,29 @@ Steps marked **(local only)** should be skipped in web-based tools.
 
 ---
 
-## Step 1: Name the project _(local only)_
-
-**Skip this step** if you are running in a web-based tool — it manages its own project structure and does not need a name up front.
-
-Otherwise, ask the user:
-
-> "What would you like to name your project?"
-
-Wait for their response before continuing. Use that name in place of `my-project-name` in all steps below.
-
----
-
-## Step 2: Initialise the project with sku _(local only)_
+## Step 1: Initialise the project with sku _(local only)_
 
 **Skip this step** if you are running in a web-based tool — it handles project initialisation itself.
 
-Otherwise, you will not be able to run these commands directly — the scaffold creates a new folder outside the current workspace, which requires terminal access. Ask the user to do this themselves.
+Otherwise, run the following command in the current project directory:
 
-Prompt them with something like:
+```bash
+pnpm dlx @sku-lib/create . --template=webpack
+```
 
-> "To get your project set up, I'll need you to run a couple of commands in your terminal. Open Terminal, then run these one at a time:
->
-> ```
-> cd ~/Code
-> ```
->
-> ```
-> pnpm dlx @sku-lib/create my-project-name --template=webpack
-> ```
->
-> This will create your project and install its dependencies — it may take a minute or two. Once it's done, run:
->
-> ```
-> cd ~/Code/my-project-name
-> ```
->
-> ```
-> cursor .
-> ```
->
-> That will open the project in Cursor. Just let me know when you're ready and I'll take it from there!"
+This will scaffold the project and install dependencies automatically. Wait for it to finish before continuing.
 
-Wait for the user to confirm before continuing.
+Verify the scaffold succeeded by checking that `package.json` exists:
+
+```bash
+ls package.json
+```
+
+If `package.json` is listed, continue. Otherwise stop and report the error.
 
 ---
 
-## Step 3: Install Braid design system
+## Step 2: Install Braid design system
 
 ```bash
 pnpm add braid-design-system
@@ -75,7 +51,7 @@ If the package appears in the output, continue. Otherwise stop and report the er
 
 ---
 
-## Step 4: Import the SeekSans font
+## Step 3: Import the SeekSans font
 
 Add the following `@import` to `src/styles/fonts.css` (create the file if it doesn't exist):
 
@@ -95,7 +71,7 @@ If the import appears in the output, continue. Otherwise stop and report the err
 
 ---
 
-## Step 5: Wire up BraidProvider
+## Step 4: Wire up BraidProvider
 
 Replace the contents of `src/App/App.tsx` with the following:
 
@@ -131,15 +107,15 @@ If the first line is `import 'braid-design-system/reset';`, continue. Otherwise 
 
 ---
 
-## Step 6: React Server Components (conditional)
+## Step 5: React Server Components (conditional)
 
 If the project uses a React Server Components environment (e.g. Next.js, v0), add `"use client"` as the very first line of any file that imports Braid components. Braid components require React Context to function and will not work in a server component without this directive.
 
-Skip this step if the project is a standard client-side app (e.g. scaffolded with sku in Step 2).
+Skip this step if the project is a standard client-side app (e.g. scaffolded with sku in Step 1).
 
 ---
 
-## Step 7: Read the SEEK design guidelines
+## Step 6: Read the SEEK design guidelines
 
 Fetch and read the file at the following URL:
 
@@ -151,7 +127,7 @@ Follow all guidelines from that file, including the accessibility, content, syst
 
 ---
 
-## Step 8: Start the local dev server _(local only)_
+## Step 7: Start the local dev server _(local only)_
 
 **Skip this step** if you are running in a web-based tool — it provides its own live preview.
 
