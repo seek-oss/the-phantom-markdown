@@ -37,6 +37,9 @@ Prompt them with something like:
 >
 > ```
 > cd ~/Code
+> ```
+>
+> ```
 > pnpm dlx @sku-lib/create my-project-name --template=webpack
 > ```
 >
@@ -44,6 +47,9 @@ Prompt them with something like:
 >
 > ```
 > cd ~/Code/my-project-name
+> ```
+>
+> ```
 > cursor .
 > ```
 >
