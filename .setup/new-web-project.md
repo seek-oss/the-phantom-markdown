@@ -25,13 +25,19 @@ pnpm dlx @sku-lib/create . --template=webpack
 
 This will scaffold the project and install dependencies automatically. Wait for it to finish before continuing.
 
-Verify the scaffold succeeded by checking that `package.json` exists:
+Verify the scaffold succeeded by checking that `sku` appears in `package.json` devDependencies:
 
 ```bash
-ls package.json
+grep '"sku"' package.json
 ```
 
-If `package.json` is listed, continue. Otherwise stop and report the error.
+If `sku` appears in the output, continue. Otherwise stop and report the error.
+
+Then run install explicitly to ensure all dependencies are fully set up — the scaffold's own install step may have been interrupted:
+
+```bash
+pnpm install
+```
 
 ---
 
@@ -73,7 +79,29 @@ If the import appears in the output, continue. Otherwise stop and report the err
 
 ## Step 4: Wire up BraidProvider
 
-Replace the contents of `src/App/App.tsx` with the following:
+The starter code differs slightly depending on the environment.
+
+**Local (sku):** The sku webpack template imports `App` as a named export. Use:
+
+```tsx
+import "braid-design-system/reset"; // Must be first
+
+import seekJobs from "braid-design-system/themes/seekJobs";
+import { BraidProvider, Stack, Heading, Text } from "braid-design-system";
+
+export function App() {
+  return (
+    <BraidProvider theme={seekJobs}>
+      <Stack space="large">
+        <Heading level="1">Welcome to Braid</Heading>
+        <Text>Your app is now using the Braid Design System!</Text>
+      </Stack>
+    </BraidProvider>
+  );
+}
+```
+
+**Web-based tools** (v0, Figma Make, Lovable, Next.js): Use a default export instead:
 
 ```tsx
 import "braid-design-system/reset"; // Must be first
@@ -97,7 +125,7 @@ export default function App() {
 >
 > Braid uses Vanilla Extract for styling internally. Avoid custom CSS or style overrides — use Braid component props and theme tokens instead.
 
-Confirm the file was written correctly:
+**Local only:** Confirm the file was written correctly:
 
 ```bash
 head -1 src/App/App.tsx
