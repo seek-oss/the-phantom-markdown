@@ -18,6 +18,9 @@ Desktop.ini
 *.swp
 *.swo
 
+# Setup (work in progress, not ready to publish)
+.setup/
+
 # Temporary files
 *.tmp
 *.bak
