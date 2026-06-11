@@ -1,5 +1,5 @@
 ---
-name: SEEK-braid-design
+name: braid-design
 description: >-
   SEEK Braid design language for seekJobs — shared foundations, web, native, and email
   platform guides, and accessibility references. Use when building or reviewing SEEK UI,
@@ -19,7 +19,7 @@ metadata:
     - seekJobs
     - seek-internal
 ---
-# Braid design (phantom markdown)
+# Braid design
 
 SEEK **Braid design context** for the SEEK Group: shared foundations plus platform-specific implementation. **Theme:** `seekJobs` (SEEK Jobs) unless the user specifies otherwise.
 
