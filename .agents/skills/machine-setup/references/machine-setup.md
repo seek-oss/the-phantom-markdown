@@ -1,6 +1,6 @@
-# Agent Instructions: Set up this machine for Braid prototyping
+# Agent instructions: machine setup for Braid prototyping (Part 1)
 
-You are helping set up a designer's machine to run, build and preview Braid projects locally. Work through each step below in order. After each step, verify it succeeded before continuing. If a step fails, stop and clearly explain what went wrong and what the user needs to do manually.
+You are helping set up a designer's machine to run, build and preview Braid projects locally. Work through each step below **in order**. After each step, verify it succeeded before continuing. If a step fails, stop and clearly explain what went wrong and what the user needs to do manually.
 
 > **Note:** Some steps (marked below) require the user to act — do not attempt to skip or simulate them.
 
@@ -135,7 +135,7 @@ alwaysApply: true
 
 # Design Guidelines
 
-Read these guidelines: https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/seek-design.md
+Read these guidelines: https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems.md
 EOF
 ```
 
@@ -163,4 +163,6 @@ cursor --install-extension eamodio.gitlens
 
 ## Done
 
-All steps are complete. Let the user know their machine is ready and they can move on to **Part 2: Setting up your project**.
+All Part 1 steps are complete. Tell the user their machine is ready for Part 2.
+
+Ask whether they want to set up a new Braid web project now. If yes, follow the **new-braid-web-project** skill (`../new-braid-web-project/SKILL.md` from `.agents/skills/machine-setup/SKILL.md`, or `SEEK-new-braid-web-project` when installed via AI Toolkit).
