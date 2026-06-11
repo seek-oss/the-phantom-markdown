@@ -20,25 +20,27 @@ metadata:
 ---
 # Braid design system
 
-SEEK **Braid** for the SEEK Group: shared design foundations, platform guides, accessibility, adoption, and live documentation pointers. **Theme:** `seekJobs` (SEEK Jobs) unless the user specifies otherwise.
+SEEK **Braid** for the SEEK Group: shared foundations, platform guides, accessibility, adoption, and live documentation pointers. **Theme:** `seekJobs` (SEEK Jobs) unless the user specifies otherwise.
 
-This skill replaces the AI Toolkit **SEEK-braid** placeholder — design rules live in **references/** below; volatile facts (ownership, APIs, runbooks) come from **Backstage** via `references/docs-and-urls.md`.
+Design rules live in `references/`; volatile facts (ownership, APIs, runbooks) come from **Backstage** — see `references/docs-and-urls.md`.
 
-**References** (read based on task — do not load everything by default):
+## What to read
 
-| File | When to read |
+| Task / context | Read (in order) |
 | --- | --- |
-| `references/systems.md` | Shared foundations: tones, typography, layout, components, cross-platform rules |
-| `references/web.md` | **Default platform** — React web, vanilla-extract, responsive behaviour |
-| `references/native.md` | iOS and Android (Braid Native) |
-| `references/email.md` | Transactional email (MJML, components, CNS delivery) |
-| `references/docs-and-urls.md` | Canonical URLs, Backstage MCP queries, live doc fallbacks |
-| `references/governance-and-adoption.md` | Audits, 80/20 rule, compliance signals |
-| `references/strategy-and-vision.md` | Adoption, OKRs, contribution model, "should we use Braid?" |
-| `references/accessibility/accessibility.md` | Quick WCAG AA reference |
-| `references/accessibility/reference.md` | Full WCAG checklist |
-| `references/accessibility/review.md` | Structured accessibility review workflow |
-| `references/accessibility/examples.md` | Review finding examples |
+| Web UI (**default**) | `references/systems.md` → `references/web.md` |
+| iOS or Android | `references/systems.md` → `references/native.md` |
+| Email / MJML / CNS | `references/systems.md` → `references/email.md` |
+| Accessibility review | `references/accessibility/review.md` → `examples.md` if needed |
+| Quick a11y check | `references/accessibility/accessibility.md` |
+| Full WCAG checklist | `references/accessibility/reference.md` |
+| Adoption / audit / compliance | `references/governance-and-adoption.md` |
+| Strategy / OKRs / investment case | `references/strategy-and-vision.md` |
+| Live docs, ownership, catalog | `references/docs-and-urls.md` |
+
+- **Default platform:** Web unless the user specifies otherwise.
+- **UI work:** shared foundations first (`systems.md`), then **one** platform file — do not load every platform guide.
+- **Within each file:** use section maps; load only the sections that match the task.
 
 ---
 
@@ -56,41 +58,13 @@ This skill replaces the AI Toolkit **SEEK-braid** placeholder — design rules l
 
 ## When NOT to use this skill
 
-- **Native mobile** — still use this skill's `references/native.md`, not web Braid components
+- **Native apps** — use `references/native.md`, not web `braid-design-system` components
 - **Non-React web** — Braid web is React-only
 - **Backend services** — no UI
 - **Third-party partner UIs** — partners may use Braid or accessible primitives like Radix UI / React Aria (per frontend experience guidelines)
 - **Deep Sku, Gantry, or deploy mechanics** — use Tools plugin **sku**, **gantry**, etc. (see Ecosystem below)
 - **Machine or project setup** — use `../machine-setup/` or `../new-braid-web-project/`
 - **Non-SEEK** UI
-
----
-
-## Platform routing
-
-**Default:** Unless the user specifies a platform, assume **Web**.
-
-| User context | Read |
-| --- | --- |
-| Web / React / Sku app | `references/systems.md` then `references/web.md` |
-| iOS or Android | `references/systems.md` then `references/native.md` |
-| Email / MJML / transactional / CNS | `references/systems.md` then `references/email.md` |
-| Accessibility review | `references/accessibility/review.md` (and `examples.md` as needed) |
-| Quick a11y check | `references/accessibility/accessibility.md` |
-| Adoption / audit / compliance | `references/governance-and-adoption.md` |
-| Strategy / OKRs / investment case | `references/strategy-and-vision.md` |
-| Live docs, ownership, catalog | `references/docs-and-urls.md` |
-
-Load **only sections** relevant to the task when files are long — use each file's section map.
-
----
-
-## Progressive loading
-
-1. Start with `references/systems.md` Overview and the section(s) that match the task.
-2. Load **one** platform guide if implementation detail is needed.
-3. Load accessibility references when the task is review or WCAG-related — not for every UI question.
-4. Load governance, strategy, or docs-and-urls only when the question is adoption, audit, or live documentation — not for routine component work.
 
 ---
 
