@@ -65,7 +65,7 @@ Work through `references/new-web-project.md` **step by step** from Step 0. After
 | 3 | Add `braid-design-system` |
 | 4 | Start dev server (`pnpm start`) |
 | 5 | Open project in Cursor (`cursor .`) |
-| 6 | Load design context via **braid-design** skill (`../braid-design/SKILL.md`) or public URLs |
+| 6 | Load design context via **braid** skill (`../braid/SKILL.md`) or public URLs |
 
 Full commands, verification, and user handoffs: `references/new-web-project.md`.
 
@@ -79,4 +79,4 @@ Remind the user that when they reopen the project they should run:
 pnpm install && pnpm start
 ```
 
-For ongoing UI work, use the **braid-design** skill (`../braid-design/SKILL.md`) or the public [systems.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems.md) and [web guide](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/web/web.md).
+For ongoing UI work, use the **braid** skill (`../braid/SKILL.md`) or the public [systems.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems.md) and [web guide](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/web/web.md).
