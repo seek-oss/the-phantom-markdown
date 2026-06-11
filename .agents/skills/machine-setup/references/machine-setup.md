@@ -165,4 +165,4 @@ cursor --install-extension eamodio.gitlens
 
 All Part 1 steps are complete. Tell the user their machine is ready for Part 2.
 
-Ask whether they want to set up a new Braid web project now. If yes, follow the **new-braid-web-project** skill (`../new-braid-web-project/SKILL.md` from `skills/machine-setup/SKILL.md`, or `SEEK-new-braid-web-project` when installed via AI Toolkit).
+Ask whether they want to set up a new Braid web project now. If yes, follow the **new-braid-web-project** skill (`../new-braid-web-project/SKILL.md` from `.agents/skills/machine-setup/SKILL.md`, or `SEEK-new-braid-web-project` when installed via AI Toolkit).
