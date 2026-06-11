@@ -6,6 +6,19 @@ Platform-specific guide for Braid on **Native Apps (iOS and Android)**. For shar
 
 **Themes included in this document:** `seekJobs` (SEEK Jobs).
 
+**Documentation and libraries:**
+
+- **iOS:** [Braid Native iOS docs](https://braid-native.skinfra.xyz/documentation/ios/documentation/braid) — modules `Braid` (UIKit), `BraidCore`, and `BraidSwiftUI` (DocC catalogs)
+- **Android:** [Braid Native Android docs](https://braid-android.skinfra.xyz/) — Material-based components with SEEK APAC themes
+- **Backstage:** `braid-ios` component (and Android catalog entity when available)
+
+**Ecosystem notes:**
+
+- Component sets differ from web — not all web components exist on native and vice versa
+- Styling follows platform conventions (UIKit / Compose), not vanilla-extract
+- **Vocab** integrates for translations on native (especially Android)
+- When the user is on iOS or Android, use **Braid Native** — not web `braid-design-system`
+
 ### Section map
 
 
@@ -135,7 +148,7 @@ Android line heights follow a consistent **1.5×** ratio.
 
 ## 4. Layout and space scale
 
-**Token path:** `Spacing.*`. iOS values are in **pt**; Android values are in **dp**.
+**Token path:** `Spacing.`*. iOS values are in **pt**; Android values are in **dp**.
 
 ### Layout components
 
@@ -188,7 +201,7 @@ All icons share these props:
 | ------------------------------------------- | ----------------------- | ------------------- | --------------------------------------------------------------------------------------- |
 | `asset`                                     | `BraidIconAsset.{name}` | `Icons.{name}`      | Required — see Available icons                                                          |
 | `size`                                      | `.standard`, `.small`   | `Standard`, `Small` | Standalone only — do not set when icon is inline with text (inherits size from context) |
-| `foregroundColor` / `tint`                  | `SemanticColor.Icon.*`  | `IconColor.*`       | Token-based colour only — overrides inherited text tone                                 |
+| `foregroundColor` / `tint`                  | `SemanticColor.Icon.`*  | `IconColor.*`       | Token-based colour only — overrides inherited text tone                                 |
 | `accessibilityLabel` / `contentDescription` | `String?`               | `String?`           | Accessible label — provide only when icon conveys meaning without adjacent text         |
 
 
@@ -319,4 +332,3 @@ Do not add haptic props to Braid Android components or call vibration APIs throu
 ### Source of truth
 
 Braid native source: [SEEK-Jobs/braid-ios](https://github.com/SEEK-Jobs/braid-ios) · [SEEK-Jobs/braid-android](https://github.com/SEEK-Jobs/braid-android). Verify props and APIs against installed Braid package types when building beyond the tables above.
-

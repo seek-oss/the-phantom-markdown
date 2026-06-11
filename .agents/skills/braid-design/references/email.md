@@ -10,17 +10,18 @@ Platform-specific guide for Braid on **Email**. For shared foundations, see [Bra
 ### Section map
 
 
-| §   | Topic                   |
-| --- | ----------------------- |
-| 1   | Visual theme & style    |
-| 2   | Colour                  |
-| 3   | Typography              |
-| 4   | Layout and space scale  |
-| 5   | Iconography             |
-| 6   | Components              |
-| 7   | Depth & elevation       |
-| 8   | Accessibility           |
-| 9   | Email clients & testing |
+| §   | Topic                      |
+| --- | -------------------------- |
+| 1   | Visual theme & style       |
+| 2   | Colour                     |
+| 3   | Typography                 |
+| 4   | Layout and space scale     |
+| 5   | Iconography                |
+| 6   | Components                 |
+| 7   | Depth & elevation          |
+| 8   | Accessibility              |
+| 9   | Email clients & testing    |
+| 10  | Delivery, CNS, and tooling |
 
 
 ---
@@ -40,7 +41,7 @@ Token and layout detail: §2–§9.
 
 ## 2. Colour
 
-Colour tokens are accessed via the **`useTokens()`** hook — not via `vars.*` as on web.
+Colour tokens are accessed via the `**useTokens()`** hook — not via `vars.*` as on web.
 
 ### Groupings
 
@@ -49,7 +50,7 @@ Colour tokens are organised by **group**. Each group defines where a token appli
 
 | Group                | Purpose               |
 | -------------------- | --------------------- |
-| `color.foreground.*` | Text and icon colours |
+| `color.foreground.`* | Text and icon colours |
 | `color.background.*` | Backgrounds and fills |
 | `border.color.*`     | Borders               |
 
@@ -117,7 +118,7 @@ Email supports two weights only — there is no `medium` weight.
 
 ## 4. Layout and space scale
 
-**Token access:** `useTokens().space.*` for raw values, or `useAtoms({ paddingX: 'small' })` for ergonomic padding and border props. Spacing values are in **px** — see the shared space scale in [§4 of the design system overview](systems.md#4-layout-and-space-scale).
+**Token access:** `useTokens().space.`* for raw values, or `useAtoms({ paddingX: 'small' })` for ergonomic padding and border props. Spacing values are in **px** — see the shared space scale in [§4 of the design system overview](systems.md#4-layout-and-space-scale).
 
 `gutter` is a semantic value for consistent component insets (Card, Button). `xxxxsmall` is not available on email.
 
@@ -135,7 +136,7 @@ Email uses **MJML table-based layout** — there is no `Stack`, `Columns`, `Box`
 
 
 - **Content width:** Set on the outer MJML shell (e.g. `MjmlBody` width in the template wrapper) — not via `PageBlock`. Theme tokens define `contentWidth` values (e.g. `small` 660px) for reference when configuring the shell.
-- **`PageBlock` gutters:** Applies horizontal inset using the `small` space token (`pageBlockGutter`) — not a `width` prop.
+- `**PageBlock` gutters:** Applies horizontal inset using the `small` space token (`pageBlockGutter`) — not a `width` prop.
 - Layout is primarily **single-column**. Use `Tiles` for multi-column — be cautious, as multi-column can break in some email clients.
 - Apply all spacing via `paddingBottom` props on components or `useAtoms()` — do not write inline CSS for spacing.
 
@@ -154,14 +155,14 @@ These are hosted as `.png` images on `seekcdn.com`. Do not invent other names.
 ### Icon props
 
 
-| Prop            | Type                                                              | Notes                                                          |
-| --------------- | ----------------------------------------------------------------- | -------------------------------------------------------------- |
-| `name`          | one of the 8 named icons above                                    | One of `name` or `url` is required — not both                  |
-| `url`           | `string`                                                          | Custom icon URL — use when the icon is not in the named set    |
-| `alt`           | `string?`                                                         | Accessible description — provide when the icon conveys meaning |
-| `size`          | `'xsmall'` · `'small'` · `'standard'` · `'large'` · `'fill'`      | Default `'standard'`. `'fill'` omits explicit width/height     |
-| `align`         | `'left'` · `'center'` · `'right'`                                 | Default `'center'`                                               |
-| `paddingBottom` | `Space`                                                           | Spacing below the icon                                         |
+| Prop            | Type                                                         | Notes                                                          |
+| --------------- | ------------------------------------------------------------ | -------------------------------------------------------------- |
+| `name`          | one of the 8 named icons above                               | One of `name` or `url` is required — not both                  |
+| `url`           | `string`                                                     | Custom icon URL — use when the icon is not in the named set    |
+| `alt`           | `string?`                                                    | Accessible description — provide when the icon conveys meaning |
+| `size`          | `'xsmall'` · `'small'` · `'standard'` · `'large'` · `'fill'` | Default `'standard'`. `'fill'` omits explicit width/height     |
+| `align`         | `'left'` · `'center'` · `'right'`                            | Default `'center'`                                             |
+| `paddingBottom` | `Space`                                                      | Spacing below the icon                                         |
 
 
 ### Inline icons
@@ -190,7 +191,7 @@ This table shows commonly used components and their key props. Do not invent pro
 | `Divider`   | `weight` · `paddingBottom`                                                                                                                           |
 | `Card`      | `children` — must be rendered inside `CardBlock`. Inter-card spacing comes from `CardBlock`, not `Card`                                              |
 | `CardBlock` | `paddingBottom` · `children` — wraps one or more `Card` components; controls spacing between cards                                                   |
-| `PageBlock` | `background` · `backgroundPadding` · `paddingBottom` · `children` — `background` and `backgroundPadding` must be used together or omitted        |
+| `PageBlock` | `background` · `backgroundPadding` · `paddingBottom` · `children` — `background` and `backgroundPadding` must be used together or omitted            |
 | `List`      | `type` · `size` · `tone` · `weight` · `space` · `paddingBottom` · `children` — `ListItem` spacing is controlled by `space`, not on `ListItem` itself |
 | `ListItem`  | `children` — must be rendered inside `List`                                                                                                          |
 | `Logo`      | `brand`(required) · `alt`(required) · `href` · `align` · `allowDeepLink` · `paddingBottom`                                                           |
@@ -253,7 +254,29 @@ yarn nx g workspace-plugin:new-email-template 'your-template-name' --domain={hir
 
 ---
 
+## 10. Delivery, CNS, and tooling
+
+The standard email stack at SEEK is [SEEK-Jobs/mjml-react-email-templates](https://github.com/SEEK-Jobs/mjml-react-email-templates) — an internal monorepo that renders React components to MJML (email-safe HTML). `@seek/braid-email-ui` (`packages/braid-email-ui`) is the design-system layer.
+
+**Ownership and support:** Resolve from Backstage — `get-catalog-entity({ name: "braid-email-ui", kind: "component", namespace: "default" })` (and `resource:seek-jobs/mjml-react-email-templates` for the monorepo). Day-to-day help: `#braid-email-support`. Published docs: [https://braid-email.skinfra.xyz/](https://braid-email.skinfra.xyz/)
+
+**How templates reach customers:**
+
+- Templates are React components that compile to MJML → HTML via an **nx** command
+- Each template is exported as a standalone function — consumers invoke it to get rendered HTML, then pass it to the **Customer Notification System (CNS)** as the `html` field
+- Templates are **registered with CNS** per environment using a stable template ID
+- A **Storybook** is generated per template for visual development and review
+
+**Constraints:**
+
+- **Images must be served from a CDN** (e.g. seekcdn.com) — embedded images are not supported
+- **Payload size:** keep templates under ~**70kb** pre-enrichment; Gmail truncates above ~**120kb**
+- The **Engagement** team recommends this repo for email templating (they do not own the repo)
+
+Raw MJML lacks SEEK patterns; `react-mjml` is less modular and lacks SEEK support. This monorepo provides SEEK-specific patterns, Storybook generation, and Vocab integration.
+
+---
+
 ### Source of truth
 
 Braid email source: [SEEK-Jobs/mjml-react-email-templates](https://github.com/SEEK-Jobs/mjml-react-email-templates). Verify props and APIs against installed `@seek/braid-email-ui` package types when building beyond the tables above.
-
