@@ -2,6 +2,14 @@
 
 **Ownership and team** are not duplicated here — read them from the **Braid** system and related catalog entities in Backstage via `get-catalog-entity` below (and linked TechDocs).
 
+## Support
+
+- `#braid-support` — Web implementation help
+- `#braid-design-support` — UX and patterns
+- `#braid-announcements` — Releases and changes
+- `#braid-email-support` — Email templates (see `email.md`)
+- `#experience-platforms` — Broader frontend questions
+
 ## Canonical resources (fallbacks)
 
 | Resource                      | URL                                                                     |
@@ -12,7 +20,6 @@
 | **Braid Native Android docs** | https://braid-android.skinfra.xyz/                                      |
 | **Braid Email UI docs**       | https://braid-email.skinfra.xyz/                                        |
 | **Braid Email UI Playroom**   | https://braid-email.skinfra.xyz/playroom                                |
-| **Phantom markdown (design)** | https://github.com/seek-oss/the-phantom-markdown                        |
 
 If Backstage entity metadata or TechDocs disagree with this table, **trust Backstage**.
 

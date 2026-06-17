@@ -1,28 +1,31 @@
 ---
+
 name: SEEK-braid
-description: SEEK Braid design system — seekJobs design language (web, native, email), accessibility,
-  adoption and governance, plus Backstage docs and URLs. Use when building or reviewing SEEK UI,
-  choosing tones and components, auditing Braid usage, or fetching live Braid documentation.
+description:
+ Usage guidance for SEEK Braid design system, seekJobs theme, including web, native and email platforms and accessibility, plus Backstage docs and URLs. Use when building or reviewing SEEK UI, choosing tones and components, auditing Braid usage, or fetching live Braid documentation.
 type: skill
 metadata:
-  author: "@SEEK-Jobs/design-practice"
-  tags: [braid, design-system, frontend, design, seekJobs, web, native, email]
+  author: "@SEEK-Jobs/design-systems"
+  tags: [braid, design-system, frontend, design, seekJobs, web, native, email, accessibility]
+
 ---
 
 # Braid design system
 
 SEEK **Braid** for the SEEK Group: shared foundations, platform guides, accessibility, adoption, and live documentation pointers. **Theme:** `seekJobs` (SEEK Jobs) unless the user specifies otherwise.
 
-Design rules live in `references/`; volatile facts (ownership, APIs, runbooks) come from **Backstage** — see `references/docs-and-urls.md`.
+Design rules live in `references/`. Ownership, APIs and runbooks come from **Backstage** — see `references/docs-and-urls.md`.
 
 ## What to read
 
-| Task / context | Read (in order) |
-| --- | --- |
-| Web UI (**default**) | `references/systems.md` → `references/web.md` |
-| iOS or Android | `references/systems.md` → `references/native.md` |
-| Email / MJML / CNS | `references/systems.md` → `references/email.md` |
-| Live docs, ownership, catalog | `references/docs-and-urls.md` |
+
+| Task / context                | Read (in order)                                  |
+| ----------------------------- | ------------------------------------------------ |
+| Web UI (**default**)          | `references/systems.md` → `references/web.md`    |
+| iOS or Android                | `references/systems.md` → `references/native.md` |
+| Email / MJML / CNS            | `references/systems.md` → `references/email.md`  |
+| Support, live docs, ownership, catalog | `references/docs-and-urls.md`                    |
+
 
 - **Default platform:** Web unless the user specifies otherwise.
 - **UI work:** shared foundations first (`systems.md`), then **one** platform file — do not load every platform guide.
@@ -33,18 +36,16 @@ Design rules live in `references/`; volatile facts (ownership, APIs, runbooks) c
 ## When to use this skill
 
 - User is **designing or building SEEK UI** with Braid
-- User is building a **React web app** at SEEK and needs accessible, brand-consistent UI
 - SEEK-hosted frontend experiences **should** use Braid (per technology strategy)
 - Questions about **tones**, **components**, **layout**, **typography**, **icons**, **elevation**
 - User specifies or implies a **platform** (web, iOS, Android, email)
 - **Accessibility** review or WCAG questions for Braid UIs
 - User needs **live Braid documentation** (Backstage, Playroom, catalog entities)
-- User references **phantom markdown** or **seekJobs** theme
+- User needs **support channels**, ownership, or repo links
+- User references **design guidelines** or **seekJobs** theme
 
 ## When NOT to use this skill
 
-- **Native apps** — use `references/native.md`, not web `braid-design-system` components
-- **Non-React web** — Braid web is React-only
 - **Backend services** — no UI
 - **Third-party partner UIs** — partners may use Braid or accessible primitives like Radix UI / React Aria (per frontend experience guidelines)
 - **Deep Sku, Gantry, or deploy mechanics** — use Tools plugin **sku**, **gantry**, etc. (see Ecosystem below)
@@ -56,29 +57,20 @@ Design rules live in `references/`; volatile facts (ownership, APIs, runbooks) c
 
 Braid sits alongside other SEEK frontend tools. For **deep** guidance on each, use the Tools plugin skill when available:
 
-| Tool | Role |
-| --- | --- |
-| **Sku** | Bundling, SSR, dev server for Braid web apps |
-| **Vocab** | Translated copy inside Braid components |
-| **Melways** | Routes traffic to Braid-powered apps; multi-site/locale |
-| **Metropolis** | Shared Braid UI published as packages across micro-frontends |
-| **Playroom** | Browser prototyping with real Braid components |
-| **Static Site Deploy** | Sku build output to production |
+
+| Tool                   | Role                                                         |
+| ---------------------- | ------------------------------------------------------------ |
+| **Sku**                | Bundling, SSR, dev server for Braid web apps                 |
+| **Vocab**              | Translated copy inside Braid components                      |
+| **Melways**            | Routes traffic to Braid-powered apps; multi-site/locale      |
+| **Metropolis**         | Custom and bespoke UI elements shared as packages |
+| **Playroom**           | Browser prototyping with real Braid components               |
+| **Static Site Deploy** | Sku build output to production                               |
+
 
 ---
 
 ## Support
 
-- `#braid-support` — Web implementation help
-- `#braid-design-support` — UX and patterns
-- `#braid-announcements` — Releases and changes
-- `#braid-email-support` — Email templates (see `references/email.md`)
-- `#experience-platforms` — Broader frontend questions
+Support channels, ownership, repo links, and Backstage queries — see `references/docs-and-urls.md`.
 
-**Ownership and repo links** — resolve from Backstage (`references/docs-and-urls.md`):
-
-```
-get-catalog-entity({ name: "braid", kind: "system", namespace: "default" })
-get-catalog-entity({ name: "braid-ios", kind: "component", namespace: "default" })
-get-catalog-entity({ name: "braid-email-ui", kind: "component", namespace: "default" })
-```
