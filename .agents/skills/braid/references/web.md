@@ -86,11 +86,15 @@ Sizes are **px**; **line gap** is the Capsize line-gap token (implementation com
 
 #### Text weight
 
-| Weight    | Web |
-| --------- | --- |
-| `regular` | 400 |
-| `medium`  | 600 |
-| `strong`  | 700 |
+Shared rules: [design system overview — Text weight](systems.md#text-weight).
+
+| Prop      | CSS weight | Font file | Notes                                      |
+| --------- | ---------- | --------- | ------------------------------------------ |
+| `regular` | 400        | Regular   | Default body                               |
+| `strong`  | 700        | Medium    | Use for emphasis                           |
+| `medium`  | 600        | Medium    | **Avoid** — legacy; identical to `strong`  |
+
+SeekSans web fonts map CSS weights 500–700 to the same Medium `@font-face` — see [seeksans.css](https://www.seek.com/static/shared-web/seeksans.css).
 
 ### Line height model
 

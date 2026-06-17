@@ -84,10 +84,14 @@ Colour tokens are organised by **group**. Each group defines where a token appli
 
 #### Text weight
 
-| Weight    | Email |
-| --------- | ----- |
-| `regular` | 400   |
-| `strong`  | 700   |
+Shared rules: [design system overview — Text weight](systems.md#text-weight). Email supports **`regular`** and **`strong`** only — no `medium` prop.
+
+| Prop      | Token weight | Font file |
+| --------- | ------------ | --------- |
+| `regular` | 400          | Regular   |
+| `strong`  | 700          | Medium    |
+
+`strong` sets CSS weight 700 but resolves to the **Medium** SeekSans face — same as on web.
 
 ### Line height model
 

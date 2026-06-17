@@ -95,11 +95,15 @@ Android line heights follow a consistent **1.5×** ratio.
 
 #### Text weight
 
-| Weight                | iOS                                    | Android                              |
-| --------------------- | -------------------------------------- | ------------------------------------ |
-| Regular               | `.regular`                             | `FontWeight.Normal`                  |
-| Medium (mid-emphasis) | `.medium`                              | —                                    |
-| Strong                | `.medium` (medium font file, not Bold) | `FontWeight.Bold` (medium font file) |
+Shared rules: [design system overview — Text weight](systems.md#text-weight).
+
+| Weight   | iOS                 | Android                              |
+| -------- | ------------------- | ------------------------------------ |
+| `regular` | `.regular`          | `FontWeight.Normal`                  |
+| `medium`  | `.medium`           | not supported — **avoid**            |
+| `strong`  | `.medium`           | `FontWeight.Bold` (medium font file) |
+
+Both `medium` and `strong` resolve to the **Medium** font file on iOS. On Android, only `regular` and `strong` are available; `strong` also uses the medium font asset.
 
 ### Line height model
 

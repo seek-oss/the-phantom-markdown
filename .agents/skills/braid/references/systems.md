@@ -142,11 +142,17 @@ Note: iOS and Android only expose heading levels `1` and `2`. Heading levels `3`
 
 #### Text weight
 
-| Weight (names vary by platform) | Role                                            |
-| ------------------------------- | ----------------------------------------------- |
-| Regular                         | Default body copy                               |
-| Medium                          | Legacy value, avoid using (web and native only) |
-| Strong / Bold                   | For emphasizing body content                    |
+SeekSans ships **Regular** and **Medium** font files only — there is no separate Bold face. Use **`regular`** for body copy and **`strong`** for emphasis.
+
+| Weight   | Use for        | Available on              |
+| -------- | -------------- | ------------------------- |
+| `regular` | Default body   | Web, native, email        |
+| `strong`  | Emphasis       | Web, native, email        |
+| `medium`  | **Avoid** — legacy; renders the same as `strong` | Web and iOS only |
+
+**Visual result:** only two weights exist — **Regular** and **Medium**. On every platform, `strong` (and `medium`, where supported) uses the **Medium** file; only `regular` uses the **Regular** file.
+
+Platform-specific props and token values: see **Platform guides** §3.
 
 ---
 
