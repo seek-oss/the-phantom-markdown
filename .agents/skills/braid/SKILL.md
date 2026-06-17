@@ -18,18 +18,29 @@ Design rules live in `references/`. Ownership, APIs and runbooks come from **Bac
 
 ## What to read
 
+### Always read
 
-| Task / context                | Read (in order)                                  |
-| ----------------------------- | ------------------------------------------------ |
-| Web UI (**default**)          | `references/systems.md` → `references/web.md`    |
-| iOS or Android                | `references/systems.md` → `references/native.md` |
-| Email / MJML / CNS            | `references/systems.md` → `references/email.md`  |
-| Support, live docs, ownership, catalog | `references/docs-and-urls.md`                    |
+1. `references/systems.md` — shared foundations (required for every platform)
+2. **One** platform guide — pick based on where the user is building:
 
 
-- **Default platform:** Web unless the user specifies otherwise.
-- **UI work:** shared foundations first (`systems.md`), then **one** platform file — do not load every platform guide.
+| Platform           | Platform guide         |
+| ------------------ | ---------------------- |
+| Web                | `references/web.md`    |
+| iOS or Android     | `references/native.md` |
+| Email / MJML / CNS | `references/email.md`  |
+
+
+- **Do not** load every platform guide — only the one that matches the task.
 - **Within each file:** use section maps; load only the sections that match the task.
+
+### Read as needed
+
+
+| Task / context                                   | Read                          |
+| ------------------------------------------------ | ----------------------------- |
+| Support, live docs, ownership, Backstage queries | `references/docs-and-urls.md` |
+
 
 ---
 
@@ -58,19 +69,13 @@ Design rules live in `references/`. Ownership, APIs and runbooks come from **Bac
 Braid sits alongside other SEEK frontend tools. For **deep** guidance on each, use the Tools plugin skill when available:
 
 
-| Tool                   | Role                                                         |
-| ---------------------- | ------------------------------------------------------------ |
-| **Sku**                | Bundling, SSR, dev server for Braid web apps                 |
-| **Vocab**              | Translated copy inside Braid components                      |
-| **Melways**            | Routes traffic to Braid-powered apps; multi-site/locale      |
-| **Metropolis**         | Custom and bespoke UI elements shared as packages |
-| **Playroom**           | Browser prototyping with real Braid components               |
-| **Static Site Deploy** | Sku build output to production                               |
+| Tool                   | Role                                                    |
+| ---------------------- | ------------------------------------------------------- |
+| **Sku**                | Bundling, SSR, dev server for Braid web apps            |
+| **Vocab**              | Translated copy inside Braid components                 |
+| **Melways**            | Routes traffic to Braid-powered apps; multi-site/locale |
+| **Metropolis**         | Custom and bespoke UI elements shared as packages       |
+| **Playroom**           | Browser prototyping with real Braid components          |
+| **Static Site Deploy** | Sku build output to production                          |
 
-
----
-
-## Support
-
-Support channels, ownership, repo links, and Backstage queries — see `references/docs-and-urls.md`.
 
