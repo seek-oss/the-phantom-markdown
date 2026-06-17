@@ -8,7 +8,6 @@ Platform-specific guide for Braid on **Web**. For shared foundations, see [Braid
 
 ### Section map
 
-
 | §   | Topic                  |
 | --- | ---------------------- |
 | 1   | Visual theme & style   |
@@ -22,19 +21,15 @@ Platform-specific guide for Braid on **Web**. For shared foundations, see [Braid
 | 9   | Custom and bespoke     |
 | 10  | Responsive behavior    |
 
-
 ---
 
 ## 1. Visual theme & style
 
-Shared brand intent for **SEEK Jobs** — magenta accent, white canvas, neutral-first colour, SEEK Sans, open systematic layout — is in the [design system overview §1](systems.md#1-visual-theme--style).
+Shared brand intent for **SEEK Jobs** is in the [design system overview §1](systems.md#1-visual-theme--style).
 
 **On web**, the theme is delivered as **React components** and **vanilla-extract** CSS variables (`vars.*`).
 
-- **Setup:** Wrap the app in **BraidProvider** with the **seekJobs** theme; import `braid-design-system/reset` before other styles.
-- **Reference:** [Braid Design System](https://seek-oss.github.io/braid-design-system/) for interactive examples; Playroom **`.snippets.tsx`** templates in `node_modules/braid-design-system` for composition patterns.
-
-Token and layout detail: §2–§10.
+**Reference:** Playroom `.snippets.tsx` templates in `node_modules/braid-design-system` for composition patterns.
 
 ---
 
@@ -44,25 +39,20 @@ Token and layout detail: §2–§10.
 
 Colour tokens are organised by **group**. Each group defines where a token applies in the UI.
 
-
 | Group             | Purpose                                    |
 | ----------------- | ------------------------------------------ |
-| `foregroundColor` | Text and Icons                             |
-| `backgroundColor` | Backgrounds and fills (e.g. Button, Alert) |
+| `foregroundColor` | Text, Icons                             |
+| `backgroundColor` | Backgrounds, fills (e.g. Button, Alert) |
 | `borderColor`     | Borders                                    |
 
-
 ### Prominence levels
-
 
 | Level    | Role                                                 |
 | -------- | ---------------------------------------------------- |
 | `light`  | Lighter tints for section fills                      |
 | `(base)` | Default tone for text, backgrounds, borders and CTAs |
 
-
 ### Interactive tones
-
 
 | Level    | Role                             |
 | -------- | -------------------------------- |
@@ -70,18 +60,13 @@ Colour tokens are organised by **group**. Each group defines where a token appli
 | `hover`  | Hover state button backgrounds   |
 | `active` | Pressed state button backgrounds |
 
-
-Web splits **prominence** (`light`, base) from **interactive state** tokens above. For the cross-platform prominence model, see [design system overview §2](systems.md#2-colour).
-
 ### Naming conventions
 
 Colour tokens are accessed via the [vars](https://seek-oss.github.io/braid-design-system/css/vars/) object. Prefix with `vars.`, then the group name, then the tone value (camelCase).
 
-
 | Platform | Pattern                      | Example                              |
 | -------- | ---------------------------- | ------------------------------------ |
 | Web      | `vars.{group}.{tone}{Level}` | `vars.backgroundColor.positiveLight` |
-
 
 ---
 
@@ -95,14 +80,11 @@ Sizes are **px**; **line gap** is the Capsize line-gap token (implementation com
 
 #### Heading weight
 
-
 | Platform | Default heading weight | "Weak" heading weight                    |
 | -------- | ---------------------- | ---------------------------------------- |
 | Web      | medium (600)           | regular (400) — via `weight="weak"` prop |
 
-
 #### Text weight
-
 
 | Weight    | Web |
 | --------- | --- |
@@ -110,14 +92,11 @@ Sizes are **px**; **line gap** is the Capsize line-gap token (implementation com
 | `medium`  | 600 |
 | `strong`  | 700 |
 
-
 ### Line height model
-
 
 | Platform | Model                                                                                                                                                                     |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Web      | **Capsize:** `precomputeValues(fontSize, lineGap, fontMetrics)` → computed `lineHeight` + `capsizeTrims`. Negative cap trims remove excess whitespace above/below glyphs. |
-
 
 **Links:** System default is **underlined** text links using link/visited foreground tokens.
 
@@ -135,7 +114,6 @@ Sizes are **px**; **line gap** is the Capsize line-gap token (implementation com
 
 ### Layout components
 
-
 | Component            | Purpose                                                                       |
 | -------------------- | ----------------------------------------------------------------------------- |
 | `Stack`              | Vertical rhythm with uniform spacing between children                         |
@@ -150,7 +128,6 @@ Sizes are **px**; **line gap** is the Capsize line-gap token (implementation com
 | `Page`               | Top-level page shell that controls footer placement                           |
 | `Hidden`             | Hides children at specified breakpoints or on print                           |
 | `HiddenVisually`     | Hides content visually while keeping it accessible to screen readers          |
-
 
 - Web is the only platform with responsive layout primitives (`Columns` collapse, `Hidden` breakpoints, `Tiles` column count per breakpoint).
 - `Bleed` on web is a standalone layout component. On native it exists only as a prop on specific components.
@@ -167,7 +144,6 @@ Sizes are **px**; **line gap** is the Capsize line-gap token (implementation com
 | -------- | ---------------------------- | --------- |
 | Web      | `Icon{Name}` React component | `IconAdd` |
 
-
 ### Available icons
 
 All icons are named exports from `braid-design-system`. Only the names below exist — do not invent names. For a full visual reference see [Iconography](https://seek-oss.github.io/braid-design-system/foundations/iconography) in the docs.
@@ -178,7 +154,6 @@ All icons are named exports from `braid-design-system`. Only the names below exi
 
 All icons share these props:
 
-
 | Prop                | Type                                                                                                                                  | Notes                                                                                             |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | `size`              | `'large'`, `'standard'`, `'small'`, `'xsmall'`, `'fill'`                                                                              | Standalone only — do not set when icon is inside `Text` or `Heading` (inherits size from context) |
@@ -187,9 +162,7 @@ All icons share these props:
 | `title` + `titleId` | `string`                                                                                                                              | Accessible label — must provide both or neither                                                   |
 | `data`              | `DataAttributeMap`                                                                                                                    | e.g. `{ testid: 'my-icon' }`                                                                      |
 
-
 ### Variant props (select icons only)
-
 
 | Icon                                                                                                             | Extra prop  | Type                                    | Default     |
 | ---------------------------------------------------------------------------------------------------------------- | ----------- | --------------------------------------- | ----------- |
@@ -200,7 +173,6 @@ All icons share these props:
 | `IconVisibility`                                                                                                 | `hidden`    | `boolean`                               | `false`     |
 | `IconBookmark`, `IconCareer`, `IconCompany`, `IconEnlarge`, `IconHeart`, `IconPeople`, `IconProfile`, `IconStar` | `active`    | `boolean`                               | `false`     |
 
-
 ---
 
 ## 6. Components
@@ -210,7 +182,6 @@ Prefer Braid components and **vars** / atoms over custom CSS. Do not hard-code s
 ### Props reference
 
 This table shows commonly used components and their key props. Do not invent props — see the installed `braid-design-system` package for full type definitions.
-
 
 | Component      | Available properties                                                                                                                   |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -226,20 +197,17 @@ This table shows commonly used components and their key props. Do not invent pro
 | `List`         | `size` · `space` · `tone` · `type` · `icon` · `start` · `data`                                                                         |
 | `Divider`      | `weight`                                                                                                                               |
 
-
 ---
 
 ## 7. Depth & elevation
 
 **Token path:** `vars.shadow.*`. Shadows use cool grey at low opacity for a soft, neutral float.
 
-
 | Shadow   | Role                                           |
 | -------- | ---------------------------------------------- |
 | `small`  | Popovers, menus, tooltips                      |
 | `medium` | Dialogs, drawers, and mid-weight overlays      |
 | `large`  | Prominent overlays needing strongest elevation |
-
 
 Apply shadows via `Box` props, atoms, or theme variables — do not hardcode `box-shadow` values.
 

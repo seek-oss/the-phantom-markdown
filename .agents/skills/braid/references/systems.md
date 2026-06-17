@@ -8,7 +8,7 @@ Braid is the themeable design system for the SEEK Group.
 
 This document covers **shared foundations** — the cross-platform concepts and rules used across the Braid product suite: visual theme, semantic tones, typography roles, layout principles, iconography, and component composition. It describes *what* is shared and *when* to use it, not platform-specific token names or APIs.
 
-Where platforms differ — token naming, typography values, colour groupings, prominence levels — see **Platform guides** below.
+Where platforms differ — token naming, typography values, colour groupings, prominence levels — see **Platform guides**.
 
 ### Platform guides
 
@@ -17,8 +17,6 @@ Where platforms differ — token naming, typography values, colour groupings, pr
 - [Web platform](web.md)
 - [Native Apps platforms (iOS and Android)](native.md)
 - [Email platform](email.md)
-
-**Default platform:** Unless the user specifies a platform, assume **Web** and read the [Web platform guide](web.md) before responding.
 
 ### Section map
 
@@ -36,9 +34,6 @@ Where platforms differ — token naming, typography values, colour groupings, pr
 | 9   | Custom and bespoke     |
 | 10  | Do's and Don'ts        |
 
-
-§9 (**Custom and bespoke**) appears in every **Platform guide**. §10 is platform-specific (e.g. Responsive behavior on web, Haptics on native).
-
 ---
 
 ## 1. Visual theme & style
@@ -47,10 +42,8 @@ SEEK Jobs is a clean, modern marketplace: **confident magenta** brand accent on 
 
 - **Spacing:** Components do not own surrounding whitespace — apply gaps, padding, and insets with **layout components** and the shared space scale (§4).
 - **Implementation:** Map spacing, colour, type, radii, and depth to **Braid theme tokens or component APIs** — not bespoke styling.
-- **Theme:** Use `**seekJobs`** only when this document applies — not other SEEK themes.
+- **Theme:** Use `seekJobs` only — not other SEEK themes.
 - **Voice:** Clear, direct, professional, human, optimistic — never gimmicky or ornamental for its own sake.
-
-Operational detail: §2–§10 and **Platform guides** in the Overview.
 
 ---
 
@@ -64,7 +57,7 @@ Braid provides a shared spectrum of `Tones`, used across the entire component su
 | Tone       | Role                                           |
 | ---------- | ---------------------------------------------- |
 | `critical` | High risk, High urgency, Error, Failed, Delete |
-| `caution`  | Low risk, Low urgency, Pending, Upcoming       |
+| `caution`  | Low risk, Low urgency, Warning, Upcoming       |
 | `positive` | New, Success, Complete                         |
 | `info`     | Help, Advice, Updated, Scheduled               |
 | `promote`  | Active, Beta, Promotional                      |
@@ -260,7 +253,7 @@ Use Braid components for all UI — do not invent custom primitives or props whe
 - Interactive targets should meet the **48px minimum** touch target where possible.
 - Do not invent props — use only those documented in the **platform guides** or the installed package API.
 
-For component prop names and platform-specific APIs, see **Platform guides**.
+Component sets and props differ accross platforms, see the relevant **Platform guide**.
 
 ---
 

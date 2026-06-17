@@ -6,19 +6,6 @@ Platform-specific guide for Braid on **Native Apps (iOS and Android)**. For shar
 
 **Themes included in this document:** `seekJobs` (SEEK Jobs).
 
-**Documentation and libraries:**
-
-- **iOS:** [Braid Native iOS docs](https://braid-native.skinfra.xyz/documentation/ios/documentation/braid) — modules `Braid` (UIKit), `BraidCore`, and `BraidSwiftUI` (DocC catalogs)
-- **Android:** [Braid Native Android docs](https://braid-android.skinfra.xyz/) — Material-based components with SEEK APAC themes
-- **Backstage:** `braid-ios` component (and Android catalog entity when available)
-
-**Ecosystem notes:**
-
-- Component sets differ from web — not all web components exist on native and vice versa
-- Styling follows platform conventions (UIKit / Compose), not vanilla-extract
-- **Vocab** integrates for translations on native (especially Android)
-- When the user is on iOS or Android, use **Braid Native** — not web `braid-design-system`
-
 ### Section map
 
 
@@ -40,11 +27,9 @@ Platform-specific guide for Braid on **Native Apps (iOS and Android)**. For shar
 
 ## 1. Visual theme & style
 
-Shared brand intent for **SEEK Jobs** — magenta accent, white canvas, neutral-first colour, SEEK Sans, open systematic layout — is in the [design system overview §1](systems.md#1-visual-theme--style).
+Shared brand intent for **SEEK Jobs** is in the [design system overview §1](systems.md#1-visual-theme--style).
 
 **On native (iOS and Android)**, the **seekJobs** theme resolves to platform semantic tokens. **Light and dark mode** adapt automatically — no conditional colour logic in app code.
-
-Token and layout detail: §2–§10.
 
 ---
 
@@ -58,7 +43,7 @@ Colour tokens are organised by **group**. Each group defines where a token appli
 | Group     | Role                                   |
 | --------- | -------------------------------------- |
 | `Surface` | Page/screen backgrounds, cards, sheets |
-| `Fill`    | Buttons, chips, form fields            |
+| `Fill`    | Buttons, badges, form fields            |
 | `Border`  | Dividers, input outlines               |
 | `Text`    | Typography colour                      |
 | `Icon`    | Icon tints                             |

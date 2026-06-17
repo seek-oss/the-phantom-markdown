@@ -4,7 +4,6 @@
 
 Platform-specific guide for Braid on **Email**. For shared foundations, see [Braid design system overview](systems.md).
 
-**Package:** `@seek/braid-email-ui` — an expression of Braid optimised for MJML-based email templates (private, `SEEK-Jobs` org).
 **Themes included in this document:** `seekJobs` (SEEK Jobs).
 
 ### Section map
@@ -29,20 +28,13 @@ Platform-specific guide for Braid on **Email**. For shared foundations, see [Bra
 
 ## 1. Visual theme & style
 
-Shared brand intent for **SEEK Jobs** — magenta accent, white canvas, neutral-first colour, SEEK Sans, open systematic layout — is in the [design system overview §1](systems.md#1-visual-theme--style).
+Shared brand intent for **SEEK Jobs** is in the [design system overview §1](systems.md#1-visual-theme--style).
 
 **On email**, the theme is delivered as **React components** via `@seek/braid-email-ui`, which wraps `@faire/mjml-react` to produce responsive HTML email. **Light and dark mode** tokens are available, but most email clients do not support `prefers-color-scheme` — background colours render in light mode only.
-
-- **Setup:** Wrap the template in `BraidProvider` (with `themeName="seekJobs"`) and include `BraidHead` inside `MjmlHead`. `BraidHead` injects the SeekSans web font and shared border-radius styles.
-- **Reference:** [Braid Email Storybook](https://mjml-react-email-templates-storybook.ssod.skinfra.xyz) for live template previews.
-
-Token and layout detail: §2–§10.
 
 ---
 
 ## 2. Colour
-
-Colour tokens are accessed via the `**useTokens()`** hook — not via `vars.*` as on web.
 
 ### Groupings
 
@@ -58,7 +50,7 @@ Colour tokens are organised by **group**. Each group defines where a token appli
 
 ### Naming conventions
 
-Tokens are accessed via `useTokens()`. There is no `vars.*` object as on web — pass resolved values directly as props or inline styles.
+Colour tokens are accessed via the `**useTokens()`** hook — not via `vars.*` as on web.
 
 
 | Pattern                                      | Example                                       |
