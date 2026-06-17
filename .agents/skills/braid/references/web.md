@@ -50,7 +50,7 @@ Colour tokens are organised by **group**. Each group defines where a token appli
 | Level    | Role                                                 |
 | -------- | ---------------------------------------------------- |
 | `light`  | Lighter tints for section fills                      |
-| `(base)` | Default tone for text, backgrounds, borders and CTAs |
+| `(base)` | Default tone for text, backgrounds and borders       |
 
 ### Interactive tones
 

@@ -97,8 +97,6 @@ Each tone may provide prominence levels to adjust its **visual weight**, not sem
 
 Native platforms use different naming for equivalent levels (e.g. Android `CriticalWeakest` ≈ iOS `criticalWeakest`).
 
-On web, **interactive state** tokens (`soft`, `hover`, `active`) are documented separately from prominence — see [Web platform §2](web.md#2-colour).
-
 ### Key rules
 
 1. Always use semantic tokens. Never use palette values (e.g. grey700).

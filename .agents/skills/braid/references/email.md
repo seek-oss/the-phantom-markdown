@@ -38,25 +38,31 @@ Shared brand intent for **SEEK Jobs** is in the [design system overview §1](sys
 
 Colour tokens are organised by **group**. Each group defines where a token applies in the UI.
 
-| Group                | Purpose               |
-| -------------------- | --------------------- |
-| `color.foreground.`* | Text and icon colours |
-| `color.background.*` | Backgrounds and fills |
-| `border.color.*`     | Borders               |
+| Group              | Purpose               |
+| ------------------ | --------------------- |
+| `color.foreground` | Text, icons           |
+| `color.background` | Backgrounds, fills    |
+| `border.color`     | Borders               |
+
+### Prominence levels
+
+| Level    |Role                                            |
+| -------- | ---------------------------------------------- |
+| `soft`   | Soft button backgrounds                        |
+| `light`  | Lighter tints for section fills                |
+| `(base)` | Default tone for text, backgrounds and borders |
 
 ### Naming conventions
 
-Colour tokens are accessed via the `**useTokens()`** hook — not via `vars.*` as on web.
+- **Colour tokens** are accessed via the `useTokens()` hook.
+- **Background** values are plain hex strings.
+- **Foreground and border** tokens return `{ light, dark }` objects — `.light` / `.dark` are **color-mode variants** for light vs dark backgrounds, not prominence. Braid components resolve these via `BackgroundLightnessProvider`; pick `.light` or `.dark` explicitly only in custom styles (most email clients render light mode only).
 
-| Pattern                                      | Example                                       |
-| -------------------------------------------- | --------------------------------------------- |
-| `useTokens().color.background.{tone}{Level}` | `useTokens().color.background.positiveLight`  |
-| `useTokens().color.foreground.{tone}.light`  | `useTokens().color.foreground.critical.light` |
-| `useTokens().border.color.{tone}.light`      | `useTokens().border.color.formAccent.light`   |
-
-Background tokens are plain hex strings. Foreground and border tokens return `{ light, dark }` objects — you must pick `.light` (or `.dark`) explicitly when composing custom styles outside of Braid components.
-
-Background prominence variants are embedded in the token name: e.g. `positiveLight`, `criticalSoft`, `brandAccentSoft`.
+| Access       | Pattern                                      | Example                                       |
+| ------------ | -------------------------------------------- | --------------------------------------------- |
+| Background   | `useTokens().color.background.{tokenName}`   | `useTokens().color.background.positiveLight`  |
+| Foreground   | `useTokens().color.foreground.{tone}.{mode}` | `useTokens().color.foreground.critical.light` |
+| Border       | `useTokens().border.color.{tone}.{mode}`     | `useTokens().border.color.formAccent.light`   |
 
 ### Key rules
 

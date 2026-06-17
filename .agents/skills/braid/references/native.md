@@ -55,8 +55,6 @@ Colour tokens are organised by **group**. Each group defines where a token appli
 | `(base)`  | Badge regular, IconButton soft              |
 | `Strong`  | Solid button backgrounds, Badge strong      |
 
-Reserved for shapes and decorative elements; `Weak` is not used by any current production component.
-
 ### Naming conventions
 
 | Platform | Pattern                                              | Example                             |
@@ -66,14 +64,12 @@ Reserved for shapes and decorative elements; `Weak` is not used by any current p
 
 ### Surface context
 
-| Platform | Behaviour                                                              |
-| -------- | ---------------------------------------------------------------------- |
-| Android  | Text and icon tokens auto-resolve for the current surface              |
-| iOS      | Requires explicit `onBrand` and `onStrong` tokens on coloured surfaces |
+On coloured surfaces, text and icon tokens behave differently by platform:
 
-**Android:** `Text.Primary`, `Icon.Default`, and similar tokens resolve automatically — no separate token needed for brand or strong-coloured backgrounds.
-
-**iOS:** Use `onBrand` tokens (e.g. `Text.onBrandPrimary`) on brand surfaces and `onStrong` tokens (e.g. `Text.onCriticalStrong`) on strong-coloured fills. `Text.primary` on a dark or coloured surface will produce unreadable text.
+| Platform | Rule | Examples |
+| -------- | ---- | -------- |
+| Android | Text and icon tokens **auto-resolve** for the current surface — no separate token for brand or strong backgrounds | `Text.Primary`, `Icon.Default` |
+| iOS | Use explicit **`onBrand`** / **`onStrong`** tokens on coloured surfaces — `Text.primary` on a dark or coloured fill is unreadable | `Text.onBrandPrimary`, `Text.onCriticalStrong` |
 
 ## 3. Typography
 
