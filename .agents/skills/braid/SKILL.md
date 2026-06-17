@@ -25,24 +25,20 @@ Design rules live in `references/`. Ownership, APIs and runbooks come from **Bac
 
 #### Choosing the platform guide
 
-
 | Platform           | Read                   | Codebase signals                                                                     |
 | ------------------ | ---------------------- | ------------------------------------------------------------------------------------ |
 | Web                | `references/web.md`    | `braid-design-system` in `package.json` or imports                                   |
 | iOS or Android     | `references/native.md` | Braid Native iOS or Android deps, Swift `Braid` modules, or Compose Braid components |
 | Email / MJML / CNS | `references/email.md`  | `@seek/braid-email-ui`, `@faire/mjml-react`, or MJML email templates                 |
 
-
 - If the platform is not clear from the user's request or codebase signals, **ask the user to clarify** before loading a platform guide.
 - **Within each file:** use section maps; load only the sections that match the task.
 
 ### Read as needed
 
-
 | Task / context                                   | Read                          |
 | ------------------------------------------------ | ----------------------------- |
 | Support, live docs, ownership, Backstage queries | `references/docs-and-urls.md` |
-
 
 ---
 
@@ -70,7 +66,6 @@ Design rules live in `references/`. Ownership, APIs and runbooks come from **Bac
 
 Braid sits alongside other SEEK frontend tools. For **deep** guidance on each, use the Tools plugin skill when available:
 
-
 | Tool                   | Role                                                    |
 | ---------------------- | ------------------------------------------------------- |
 | **Sku**                | Bundling, SSR, dev server for Braid web apps            |
@@ -79,5 +74,4 @@ Braid sits alongside other SEEK frontend tools. For **deep** guidance on each, u
 | **Metropolis**         | Custom and bespoke UI elements shared as packages       |
 | **Playroom**           | Browser prototyping with real Braid components          |
 | **Static Site Deploy** | Sku build output to production                          |
-
 

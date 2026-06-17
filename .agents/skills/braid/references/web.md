@@ -139,7 +139,6 @@ Sizes are **px**; **line gap** is the Capsize line-gap token (implementation com
 
 ### Naming conventions
 
-
 | Platform | Pattern                      | Example   |
 | -------- | ---------------------------- | --------- |
 | Web      | `Icon{Name}` React component | `IconAdd` |
@@ -259,14 +258,12 @@ Shared rules: [design system overview §9](systems.md#9-custom-and-bespoke).
 
 **Breakpoints** (`min-width`, from [breakpoints.ts](https://github.com/seek-oss/braid-design-system/blob/master/packages/braid-design-system/src/lib/css/breakpoints.ts)):
 
-
 | Name        | Min width | Notes                                                 |
 | ----------- | --------- | ----------------------------------------------------- |
 | **mobile**  | 0         | Default; single-column layouts, smaller heading sizes |
 | **tablet**  | 740px     | Larger heading sizes, multi-column layouts            |
 | **desktop** | 992px     | Full two- and three-column shells                     |
 | **wide**    | 1200px    | Maximum horizontal use                                |
-
 
 **Typography:** Heading and text **sizes and gaps** are defined separately for **mobile** and **tablet**; from **tablet upward** the tablet values apply unless a component uses custom responsive props.
 

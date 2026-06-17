@@ -20,7 +20,6 @@ Where platforms differ — token naming, typography values, colour groupings, pr
 
 ### Section map
 
-
 | §   | Topic                  |
 | --- | ---------------------- |
 | 1   | Visual theme & style   |
@@ -53,7 +52,6 @@ Braid provides a shared spectrum of `Tones`, used across the entire component su
 
 ### Semantic tones
 
-
 | Tone       | Role                                           |
 | ---------- | ---------------------------------------------- |
 | `critical` | High risk, High urgency, Error, Failed, Delete |
@@ -62,9 +60,7 @@ Braid provides a shared spectrum of `Tones`, used across the entire component su
 | `info`     | Help, Advice, Updated, Scheduled               |
 | `promote`  | Active, Beta, Promotional                      |
 
-
 ### Brand accent tones
-
 
 | Tone          | Role                                                                                               |
 | ------------- | -------------------------------------------------------------------------------------------------- |
@@ -72,9 +68,7 @@ Braid provides a shared spectrum of `Tones`, used across the entire component su
 | `formAccent`  | A step down from brandAccent, used to emphasize actions. May be used repeatedly on the same screen |
 | `brand`       | Hero banner backgrounds                                                                            |
 
-
 ### Neutral and surface tones
-
 
 | Tone        | Role                                                                      |
 | ----------- | ------------------------------------------------------------------------- |
@@ -83,9 +77,7 @@ Braid provides a shared spectrum of `Tones`, used across the entire component su
 | `neutral`   | Body copy, Text, Headings, default Buttons, TextLinks                     |
 | `secondary` | Optional and supporting text (foreground only)                            |
 
-
 ### Link and focus tones
-
 
 | Tone          | Role                             |
 | ------------- | -------------------------------- |
@@ -94,17 +86,14 @@ Braid provides a shared spectrum of `Tones`, used across the entire component su
 | `focus`       | Keyboard focus outline (border)  |
 | `field`       | Default field outlines (border)  |
 
-
 ### Prominence levels
 
 Each tone may provide prominence levels to adjust its **visual weight**, not semantic meaning. Available levels vary by tone and platform.
-
 
 | Platform               | Prominence levels                        | Examples                                  |
 | ---------------------- | ---------------------------------------- | ----------------------------------------- |
 | Web                    | `Soft` → `Light` → `(base)`              | `criticalLight`, `criticalSoft`           |
 | Native (iOS & Android) | `Weakest` → `Weak` → `(base)` → `Strong` | `criticalWeakest`, `criticalStrong` (iOS) |
-
 
 Native platforms use different naming for equivalent levels (e.g. Android `CriticalWeakest` ≈ iOS `criticalWeakest`).
 
@@ -125,7 +114,6 @@ The Braid theme `seekJobs` uses the custom font family `SeekSans`.
 
 Note: iOS and Android only expose heading levels `1` and `2`. Heading levels `3` and `4` are web and email only.
 
-
 | Level | Role                                           |
 | ----- | ---------------------------------------------- |
 | `1`   | Page titles, hero headings. Limit 1 per screen |
@@ -133,20 +121,16 @@ Note: iOS and Android only expose heading levels `1` and `2`. Heading levels `3`
 | `3`   | Subsection headings (web only)                 |
 | `4`   | Minor headings, card titles (web only)         |
 
-
 #### Heading weight
 
 Note: iOS, Android, and Email only expose heading weight `regular`. Heading weight `weak` is web only.
-
 
 | Weight    | Role                                     |
 | --------- | ---------------------------------------- |
 | `regular` | Default, recommended weight for headings |
 | `weak`    | For de-emphisizing a heading (web only)  |
 
-
 ### Text
-
 
 | Size       | Role                                   |
 | ---------- | -------------------------------------- |
@@ -155,16 +139,13 @@ Note: iOS, Android, and Email only expose heading weight `regular`. Heading weig
 | `small`    | Metadata, captions, secondary labels   |
 | `xsmall`   | Fine print, legal copy (use sparingly) |
 
-
 #### Text weight
-
 
 | Weight (names vary by platform) | Role                                               |
 | ------------------------------- | -------------------------------------------------- |
 | Regular                         | Default body copy                                  |
 | Medium                          | For emphasizing body content (web and native only) |
 | Strong / Bold                   | For emphasizing body content                       |
-
 
 Note: Email supports `regular` and `strong` only — there is no medium weight.
 
@@ -179,7 +160,6 @@ Braid provides a standard white space scale across the entire component suite. A
 Note: `xxxxsmall` is available on Native platforms only. `xxxsmall` is available on Native and Email. `gutter` is available on Web, Android, and Email.
 
 **gutter** is a semantic value used to maintain consistent insets across components, e.g. Card, Alert, Button, etc. This value should only be used for aligning to this concept.
-
 
 | Space       | Role                                                                                                            |
 | ----------- | --------------------------------------------------------------------------------------------------------------- |
@@ -197,11 +177,9 @@ Note: `xxxxsmall` is available on Native platforms only. `xxxsmall` is available
 | `xxxlarge`  | Page-level rhythm                                                                                               |
 | `custom`    | Variable spacing value (Android only)                                                                           |
 
-
 ### Layout components
 
 Layout spacing is always applied using Braid spacing tokens, not hardcoded values. The core layout patterns — vertical stacking, horizontal arrangement, overlapping layers, and dividers — exist on all platforms, though the component names differ.
-
 
 | Concept          | Web                  | iOS               | Android                          |
 | ---------------- | -------------------- | ----------------- | -------------------------------- |
@@ -210,7 +188,6 @@ Layout spacing is always applied using Braid spacing tokens, not hardcoded value
 | Overlay / layer  | `Box`                | `ZStack`          | `Surface` / Compose `Box`        |
 | Divider          | `Divider`            | `Divider`         | `Divider`                        |
 | Page shell       | `Page`               | —                 | `Page` / `LazyPage`              |
-
 
 Email uses a different layout paradigm (MJML table-based, `PageBlock` / `Card` / `Tiles`) with no direct equivalents to the components above — see the Email platform guide §4.
 
@@ -225,13 +202,11 @@ Email uses a different layout paradigm (MJML table-based, `PageBlock` / `Card` /
 
 Web and Native share the same icon suite and art grid. Icon naming follows the same family names across platforms, though the syntax differs. **Email has a limited set of 8 named icons** — see the Email platform guide §5.
 
-
 | Concept             | Web                 | iOS                  | Android              | Email                     |
 | ------------------- | ------------------- | -------------------- | -------------------- | ------------------------- |
 | Colour              | `tone` prop         | `foregroundColor`    | `tint`: `IconColor`  | image-based; no tone prop |
 | Accessibility label | `title` + `titleId` | `accessibilityLabel` | `contentDescription` | `alt` prop                |
 | Icon button         | `ButtonIcon`        | `IconButton`         | `IconButton`         | `Button` with `icon` prop |
-
 
 - Icons are always sized relative to text — use the icon size that matches the text size in the same context.
 - Colour is always applied via tokens, never hardcoded.

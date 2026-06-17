@@ -8,7 +8,6 @@ Platform-specific guide for Braid on **Email**. For shared foundations, see [Bra
 
 ### Section map
 
-
 | §   | Topic                      |
 | --- | -------------------------- |
 | 1   | Visual theme & style       |
@@ -22,7 +21,6 @@ Platform-specific guide for Braid on **Email**. For shared foundations, see [Bra
 | 9   | Custom and bespoke         |
 | 10  | Email clients & testing    |
 | 11  | Delivery, CNS, and tooling |
-
 
 ---
 
@@ -40,25 +38,21 @@ Shared brand intent for **SEEK Jobs** is in the [design system overview §1](sys
 
 Colour tokens are organised by **group**. Each group defines where a token applies in the UI.
 
-
 | Group                | Purpose               |
 | -------------------- | --------------------- |
 | `color.foreground.`* | Text and icon colours |
 | `color.background.*` | Backgrounds and fills |
 | `border.color.*`     | Borders               |
 
-
 ### Naming conventions
 
 Colour tokens are accessed via the `**useTokens()`** hook — not via `vars.*` as on web.
-
 
 | Pattern                                      | Example                                       |
 | -------------------------------------------- | --------------------------------------------- |
 | `useTokens().color.background.{tone}{Level}` | `useTokens().color.background.positiveLight`  |
 | `useTokens().color.foreground.{tone}.light`  | `useTokens().color.foreground.critical.light` |
 | `useTokens().border.color.{tone}.light`      | `useTokens().border.color.formAccent.light`   |
-
 
 Background tokens are plain hex strings. Foreground and border tokens return `{ light, dark }` objects — you must pick `.light` (or `.dark`) explicitly when composing custom styles outside of Braid components.
 
@@ -80,30 +74,24 @@ Sizes are **px** and **fixed** — email has no breakpoint-based size stepping.
 
 #### Heading weight
 
-
 | Platform | Default heading weight | "Weak" heading weight |
 | -------- | ---------------------- | --------------------- |
 | Email    | strong (700)           | no weak variant       |
 
-
 #### Text weight
 
 Email supports two weights only — there is no `medium` weight.
-
 
 | Weight    | Email |
 | --------- | ----- |
 | `regular` | 400   |
 | `strong`  | 700   |
 
-
 ### Line height model
-
 
 | Platform | Model                                                                                                                                                                      |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Email    | Explicit `lineHeight` in **px** per style, sourced directly from `seekJobs` theme tokens. No Capsize trimming. Values are fixed — they do not scale with user preferences. |
-
 
 **Links:** `underline` decoration by default, using the `link` foreground token.
 
@@ -119,14 +107,12 @@ Email supports two weights only — there is no `medium` weight.
 
 Email uses **MJML table-based layout** — there is no `Stack`, `Columns`, `Box`, `Inline`, `Spread`, `Hidden`, or `HiddenVisually` as on web.
 
-
 | Component   | Purpose                                                                                         |
 | ----------- | ----------------------------------------------------------------------------------------------- |
 | `PageBlock` | Page-level container; applies horizontal gutters and optional background                        |
 | `CardBlock` | Wrapper for one or more `Card` components; manages spacing between cards                        |
 | `Card`      | Bordered surface card — must be rendered inside `CardBlock`                                     |
 | `Tiles`     | Multi-column layout; collapses to single column on mobile by default (`collapseBelow="tablet"`) |
-
 
 - **Content width:** Set on the outer MJML shell (e.g. `MjmlBody` width in the template wrapper) — not via `PageBlock`. Theme tokens define `contentWidth` values (e.g. `small` 660px) for reference when configuring the shell.
 - `**PageBlock` gutters:** Applies horizontal inset using the `small` space token (`pageBlockGutter`) — not a `width` prop.
@@ -147,7 +133,6 @@ These are hosted as `.png` images on `seekcdn.com`. Do not invent other names.
 
 ### Icon props
 
-
 | Prop            | Type                                                         | Notes                                                          |
 | --------------- | ------------------------------------------------------------ | -------------------------------------------------------------- |
 | `name`          | one of the 8 named icons above                               | One of `name` or `url` is required — not both                  |
@@ -156,7 +141,6 @@ These are hosted as `.png` images on `seekcdn.com`. Do not invent other names.
 | `size`          | `'xsmall'` · `'small'` · `'standard'` · `'large'` · `'fill'` | Default `'standard'`. `'fill'` omits explicit width/height     |
 | `align`         | `'left'` · `'center'` · `'right'`                            | Default `'center'`                                             |
 | `paddingBottom` | `Space`                                                      | Spacing below the icon                                         |
-
 
 ### Inline icons
 
@@ -171,7 +155,6 @@ All components are imported from `@seek/braid-email-ui`. Do not use raw MJML ele
 ### Props reference
 
 This table shows commonly used components and their key props. Do not invent props — see the installed `@seek/braid-email-ui` package for full type definitions.
-
 
 | Component   | Available properties                                                                                                                                 |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -190,7 +173,6 @@ This table shows commonly used components and their key props. Do not invent pro
 | `Logo`      | `brand`(required) · `alt`(required) · `href` · `align` · `allowDeepLink` · `paddingBottom`                                                           |
 | `Tiles`     | `columns`(required) · `space`(required) · `collapseBelow` · `paddingBottom` · `children`                                                             |
 | `Icon`      | see §5                                                                                                                                               |
-
 
 ---
 
