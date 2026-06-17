@@ -1,23 +1,14 @@
 ---
 name: SEEK-braid
-description: >-
-  SEEK Braid design system — seekJobs design language (web, native, email), accessibility,
+description: SEEK Braid design system — seekJobs design language (web, native, email), accessibility,
   adoption and governance, plus Backstage docs and URLs. Use when building or reviewing SEEK UI,
   choosing tones and components, auditing Braid usage, or fetching live Braid documentation.
 type: skill
 metadata:
   author: "@SEEK-Jobs/design-practice"
-  tags:
-    - braid
-    - design-system
-    - design
-    - web
-    - native
-    - email
-    - accessibility
-    - seekJobs
-    - seek-internal
+  tags: [braid, design-system, frontend, design, seekJobs, web, native, email]
 ---
+
 # Braid design system
 
 SEEK **Braid** for the SEEK Group: shared foundations, platform guides, accessibility, adoption, and live documentation pointers. **Theme:** `seekJobs` (SEEK Jobs) unless the user specifies otherwise.
