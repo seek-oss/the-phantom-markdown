@@ -31,9 +31,6 @@ Design rules live in `references/`; volatile facts (ownership, APIs, runbooks) c
 | Web UI (**default**) | `references/systems.md` → `references/web.md` |
 | iOS or Android | `references/systems.md` → `references/native.md` |
 | Email / MJML / CNS | `references/systems.md` → `references/email.md` |
-| Accessibility review | `references/accessibility/review.md` → `examples.md` if needed |
-| Quick a11y check | `references/accessibility/accessibility.md` |
-| Full WCAG checklist | `references/accessibility/reference.md` |
 | Adoption / audit / compliance | `references/governance-and-adoption.md` |
 | Strategy / OKRs / investment case | `references/strategy-and-vision.md` |
 | Live docs, ownership, catalog | `references/docs-and-urls.md` |

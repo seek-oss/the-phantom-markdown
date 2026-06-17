@@ -292,16 +292,9 @@ SEEK targets [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Level AA. Braid component
 - **Icon-only controls** need an action-oriented accessible name (see §5).
 - Do not use **colour alone** for critical meaning.
 - Keep **focus indicators** visible — do not remove or shrink them (see §7).
-- **Touch targets:** aim for **48px** on primary controls (§6); WCAG minimums are in the accessibility reference below.
+- **Touch targets:** aim for **48px** on primary controls (§6).
 - **Contrast:** semantic tokens on **seekJobs** are designed for contrast; verify custom or non-token colour combinations.
 - Respect **heading hierarchy** and platform heading limits (see §3).
-
-### SEEK accessibility resources
-
-- [Accessibility quick reference](accessibility/accessibility.md)
-- [Full WCAG checklist and testing](accessibility/reference.md)
-- [Accessibility review skill](accessibility/review.md)
-- [Review finding examples](accessibility/examples.md)
 
 Platform-specific accessibility (keyboard, screen readers, APIs): see §8 in **Platform guides**.
 
