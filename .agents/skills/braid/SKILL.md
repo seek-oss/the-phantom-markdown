@@ -12,7 +12,7 @@ metadata:
 
 # Braid design system
 
-SEEK **Braid** for the SEEK Group: shared foundations, platform guides, accessibility, adoption, and live documentation pointers. **Theme:** `seekJobs` (SEEK Jobs) unless the user specifies otherwise.
+SEEK **Braid** for the SEEK Group: shared foundations, platform guides, accessibility and live documentation pointers. **Theme:** `seekJobs` (SEEK Jobs) unless the user specifies otherwise.
 
 Design rules live in `references/`. Ownership, APIs and runbooks come from **Backstage** — see `references/docs-and-urls.md`.
 
@@ -20,18 +20,20 @@ Design rules live in `references/`. Ownership, APIs and runbooks come from **Bac
 
 ### Always read
 
-1. `references/systems.md` — shared foundations (required for every platform)
-2. **One** platform guide — pick based on where the user is building:
+1. `references/systems.md` — shared foundations (required for every platform).
+2. **One** platform guide — matched to the task. **Do not** load every platform guide.
+
+#### Choosing the platform guide
 
 
-| Platform           | Platform guide         |
-| ------------------ | ---------------------- |
-| Web                | `references/web.md`    |
-| iOS or Android     | `references/native.md` |
-| Email / MJML / CNS | `references/email.md`  |
+| Platform           | Read                   | Codebase signals                                                                     |
+| ------------------ | ---------------------- | ------------------------------------------------------------------------------------ |
+| Web                | `references/web.md`    | `braid-design-system` in `package.json` or imports                                   |
+| iOS or Android     | `references/native.md` | Braid Native iOS or Android deps, Swift `Braid` modules, or Compose Braid components |
+| Email / MJML / CNS | `references/email.md`  | `@seek/braid-email-ui`, `@faire/mjml-react`, or MJML email templates                 |
 
 
-- **Do not** load every platform guide — only the one that matches the task.
+- If the platform is not clear from the user's request or codebase signals, **ask the user to clarify** before loading a platform guide.
 - **Within each file:** use section maps; load only the sections that match the task.
 
 ### Read as needed
