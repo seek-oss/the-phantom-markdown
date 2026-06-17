@@ -1,25 +1,17 @@
 # Braid docs and URLs
 
-**Ownership and team** are not duplicated here — read them from the **Braid** system and related catalog entities in Backstage via `get-catalog-entity` below (and linked TechDocs).
-
-## Support
-
-- `#braid-support` — Web implementation help
-- `#braid-design-support` — UX and patterns
-- `#braid-announcements` — Releases and changes
-- `#braid-email-support` — Email templates (see `email.md`)
-- `#experience-platforms` — Broader frontend questions
+Ownership and team details live in Backstage — use the `get-catalog-entity` queries below.
 
 ## Canonical resources (fallbacks)
 
-| Resource                      | URL                                                                     |
-| ----------------------------- | ----------------------------------------------------------------------- |
-| **Braid web (open source)**   | https://github.com/seek-oss/braid-design-system                         |
-| **Published docs & Playroom** | https://seek-oss.github.io/braid-design-system (Playroom: `/playroom/`) |
-| **Braid Native iOS docs**     | https://braid-native.skinfra.xyz/documentation/ios/documentation/braid  |
-| **Braid Native Android docs** | https://braid-android.skinfra.xyz/                                      |
-| **Braid Email UI docs**       | https://braid-email.skinfra.xyz/                                        |
-| **Braid Email UI Playroom**   | https://braid-email.skinfra.xyz/playroom                                |
+| Resource                      | URL                                                                                                                                              |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Braid web (open source)**   | [https://github.com/seek-oss/braid-design-system](https://github.com/seek-oss/braid-design-system)                                               |
+| **Published docs & Playroom** | [https://seek-oss.github.io/braid-design-system](https://seek-oss.github.io/braid-design-system) (Playroom: `/playroom/`)                        |
+| **Braid Native iOS docs**     | [https://braid-native.skinfra.xyz/documentation/ios/documentation/braid](https://braid-native.skinfra.xyz/documentation/ios/documentation/braid) |
+| **Braid Native Android docs** | [https://braid-android.skinfra.xyz/](https://braid-android.skinfra.xyz/)                                                                         |
+| **Braid Email UI docs**       | [https://braid-email.skinfra.xyz/](https://braid-email.skinfra.xyz/)                                                                             |
+| **Braid Email UI Playroom**   | [https://braid-email.skinfra.xyz/playroom](https://braid-email.skinfra.xyz/playroom)                                                             |
 
 If Backstage entity metadata or TechDocs disagree with this table, **trust Backstage**.
 
@@ -44,4 +36,14 @@ For **Android**, if there is a dedicated catalog entity (e.g. a `braid-android` 
 
 Generic searches (e.g. "design system" alone) will return noise across many repos — narrow with the queries above or entity filters.
 
-If the **Backstage MCP** is unavailable, use this skill's **references/**, **GitHub** and other URLs in this file, the **RFC** plugin or RFC skill for formal SEEK standards, and **Backstage in the browser** (https://backstage.myseek.xyz) when live catalog content is required.
+If the **Backstage MCP** is unavailable, use this skill's **references/**, **GitHub** and other URLs in this file, the **RFC** plugin or RFC skill for formal SEEK standards, and **Backstage in the browser** ([https://backstage.myseek.xyz](https://backstage.myseek.xyz)) when live catalog content is required.
+
+## Slack support channels
+
+- `#braid-support` — Web implementation help
+- `#braid-design-support` — Web design guidance
+- `#braid-native-support` – Native implementation and design
+- `#braid-announcements` — Releases and changes
+- `#braid-email-support` — Email templates (see `email.md`)
+- `#experience-platforms` — Broader frontend questions
+
