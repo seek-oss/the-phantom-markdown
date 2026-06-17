@@ -76,17 +76,13 @@ Colour tokens are organised by **group**. Each group defines where a token appli
 **Font family:** `SeekSans`, `Arial`, `Tahoma`, `sans-serif`
 **Web font:** loaded automatically by `BraidHead` from `https://www.seek.com/static/shared-web/seeksans.css`
 
-Sizes are **px** and **fixed** — email has no breakpoint-based size stepping.
-
 #### Heading weight
 
-| Platform | Default heading weight | "Weak" heading weight |
-| -------- | ---------------------- | --------------------- |
-| Email    | strong (700)           | no weak variant       |
+| Platform | Heading weight         |
+| -------- | ---------------------- |
+| Email    | strong (700)           |
 
 #### Text weight
-
-Email supports two weights only — there is no `medium` weight.
 
 | Weight    | Email |
 | --------- | ----- |
@@ -97,7 +93,7 @@ Email supports two weights only — there is no `medium` weight.
 
 | Platform | Model                                                                                                                                                                      |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Email    | Explicit `lineHeight` in **px** per style, sourced directly from `seekJobs` theme tokens. No Capsize trimming. Values are fixed — they do not scale with user preferences. |
+| Email    | Explicit `lineHeight` in **px** per style, sourced directly from `seekJobs` theme tokens. |
 
 **Links:** `underline` decoration by default, using the `link` foreground token.
 

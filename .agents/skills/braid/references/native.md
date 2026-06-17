@@ -86,10 +86,10 @@ iOS sizes are in **pt**; Android sizes are in **sp**. Typography is fixed on bot
 
 #### Heading weight
 
-| Platform | Default heading weight    | "Weak" heading weight                           |
-| -------- | ------------------------- | ----------------------------------------------- |
-| iOS      | `.medium`                 | no weak variant                                 |
-| Android  | `Bold` (medium font file) | no weak variant — `Heading.Weight.Regular` only |
+| Platform | Heading weight            |
+| -------- | ------------------------- |
+| iOS      | `.medium`                 |
+| Android  | `Bold` (medium font file) |
 
 Android line heights follow a consistent **1.5×** ratio.
 
