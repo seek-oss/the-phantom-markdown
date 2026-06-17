@@ -322,7 +322,7 @@ About **80%** of UI should be built from Braid components (§6). When a pattern 
 
 ### Contribute back
 
-If a custom pattern repeats across teams, **propose it to Braid** rather than maintaining a fork. See `governance-and-adoption.md` for the 80/20 guidance and audit patterns.
+If a custom pattern repeats across teams, **propose it to Braid** rather than maintaining a fork.
 
 Platform-specific constraints for custom UI: see §9 in **Platform guides**.
 

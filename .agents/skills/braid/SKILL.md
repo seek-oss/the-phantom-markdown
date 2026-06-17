@@ -31,7 +31,6 @@ Design rules live in `references/`; volatile facts (ownership, APIs, runbooks) c
 | Web UI (**default**) | `references/systems.md` → `references/web.md` |
 | iOS or Android | `references/systems.md` → `references/native.md` |
 | Email / MJML / CNS | `references/systems.md` → `references/email.md` |
-| Adoption / audit / compliance | `references/governance-and-adoption.md` |
 | Live docs, ownership, catalog | `references/docs-and-urls.md` |
 
 - **Default platform:** Web unless the user specifies otherwise.
@@ -48,7 +47,6 @@ Design rules live in `references/`; volatile facts (ownership, APIs, runbooks) c
 - Questions about **tones**, **components**, **layout**, **typography**, **icons**, **elevation**
 - User specifies or implies a **platform** (web, iOS, Android, email)
 - **Accessibility** review or WCAG questions for Braid UIs
-- **Adoption or audit** questions about Braid at SEEK
 - User needs **live Braid documentation** (Backstage, Playroom, catalog entities)
 - User references **phantom markdown** or **seekJobs** theme
 
@@ -59,7 +57,6 @@ Design rules live in `references/`; volatile facts (ownership, APIs, runbooks) c
 - **Backend services** — no UI
 - **Third-party partner UIs** — partners may use Braid or accessible primitives like Radix UI / React Aria (per frontend experience guidelines)
 - **Deep Sku, Gantry, or deploy mechanics** — use Tools plugin **sku**, **gantry**, etc. (see Ecosystem below)
-- **Machine or project setup** — use `../machine-setup/` or `../new-braid-web-project/`
 - **Non-SEEK** UI
 
 ---
@@ -94,10 +91,3 @@ get-catalog-entity({ name: "braid", kind: "system", namespace: "default" })
 get-catalog-entity({ name: "braid-ios", kind: "component", namespace: "default" })
 get-catalog-entity({ name: "braid-email-ui", kind: "component", namespace: "default" })
 ```
-
----
-
-## Related skills
-
-- `../machine-setup/SKILL.md` — Part 1: prepare Mac for Braid prototyping
-- `../new-braid-web-project/SKILL.md` — Part 2: scaffold Sku + Braid web project
