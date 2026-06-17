@@ -19,7 +19,8 @@ Platform-specific guide for Braid on **Web**. For shared foundations, see [Braid
 | 6   | Components             |
 | 7   | Depth & elevation      |
 | 8   | Accessibility          |
-| 9   | Responsive behavior    |
+| 9   | Custom and bespoke     |
+| 10  | Responsive behavior    |
 
 
 ---
@@ -33,7 +34,7 @@ Shared brand intent for **SEEK Jobs** — magenta accent, white canvas, neutral-
 - **Setup:** Wrap the app in **BraidProvider** with the **seekJobs** theme; import `braid-design-system/reset` before other styles.
 - **Reference:** [Braid Design System](https://seek-oss.github.io/braid-design-system/) for interactive examples; Playroom **`.snippets.tsx`** templates in `node_modules/braid-design-system` for composition patterns.
 
-Token and layout detail: §2–§9.
+Token and layout detail: §2–§10.
 
 ---
 
@@ -120,7 +121,7 @@ Sizes are **px**; **line gap** is the Capsize line-gap token (implementation com
 
 **Links:** System default is **underlined** text links using link/visited foreground tokens.
 
-**Responsive:** Heading and text sizes step up at the **tablet** breakpoint — see §9.
+**Responsive:** Heading and text sizes step up at the **tablet** breakpoint — see §10.
 
 ---
 
@@ -266,7 +267,27 @@ Shared Braid accessibility rules and WCAG resources: [design system overview §8
 
 ---
 
-## 9. Responsive behavior
+## 9. Custom and bespoke
+
+Prefer Braid components and component props over custom CSS. When Braid does not cover a need, build on **`Box`**, **`vars`**, and **atoms** — not raw HTML and inline styles.
+
+### Last resort patterns
+
+- **`Box`** — lowest-level primitive for applying theme tokens to a single element (padding, background, border, outline).
+- **`vars.*` and atoms** — use theme variables and vanilla-extract atoms for one-off styling; do not hardcode values.
+- **`style={{ ... }}`** — only when component props and atoms cannot express the layout; document why.
+
+### Do not
+
+- Override Braid component CSS to change tones, focus rings, or spacing — compose with Braid components instead.
+- Use raw `<div>`, `<button>`, or `<p>` when `Box`, `Button`, or `Text` would work.
+- Hardcode `box-shadow`, colours, or spacing outside the token scale (§2, §4, §7).
+
+Shared rules: [design system overview §9](systems.md#9-custom-and-bespoke).
+
+---
+
+## 10. Responsive behavior
 
 **Breakpoints** (`min-width`, from [breakpoints.ts](https://github.com/seek-oss/braid-design-system/blob/master/packages/braid-design-system/src/lib/css/breakpoints.ts)):
 

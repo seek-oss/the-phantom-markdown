@@ -20,8 +20,9 @@ Platform-specific guide for Braid on **Email**. For shared foundations, see [Bra
 | 6   | Components                 |
 | 7   | Depth & elevation          |
 | 8   | Accessibility              |
-| 9   | Email clients & testing    |
-| 10  | Delivery, CNS, and tooling |
+| 9   | Custom and bespoke         |
+| 10  | Email clients & testing    |
+| 11  | Delivery, CNS, and tooling |
 
 
 ---
@@ -35,7 +36,7 @@ Shared brand intent for **SEEK Jobs** — magenta accent, white canvas, neutral-
 - **Setup:** Wrap the template in `BraidProvider` (with `themeName="seekJobs"`) and include `BraidHead` inside `MjmlHead`. `BraidHead` injects the SeekSans web font and shared border-radius styles.
 - **Reference:** [Braid Email Storybook](https://mjml-react-email-templates-storybook.ssod.skinfra.xyz) for live template previews.
 
-Token and layout detail: §2–§9.
+Token and layout detail: §2–§10.
 
 ---
 
@@ -228,7 +229,28 @@ Shared Braid accessibility rules and WCAG resources: [design system overview §8
 
 ---
 
-## 9. Email clients & testing
+## 9. Custom and bespoke
+
+Email templates should use **`@seek/braid-email-ui` components** for all standard patterns. Custom elements are acceptable when Braid does not provide a component — but must still use **theme tokens** via `useTokens()` and `useAtoms()`.
+
+### Allowed custom patterns
+
+- **`Icon` with `url`** — custom icon images hosted on a CDN (§5).
+- **`useTokens()` / `useAtoms()`** — bespoke section backgrounds, borders, or spacing outside standard components.
+- **`BackgroundRenderer`** — differentiated section fills when layouts cannot be expressed via `PageBlock` or `Card`.
+
+### Do not
+
+- Hardcode hex colours or px spacing — resolve values from `useTokens()` (§2, §4).
+- Use raw MJML for content Braid components already cover (§6).
+- Apply CSS `box-shadow` — email clients do not support it reliably (§7).
+- Embed images — serve from a CDN (§11).
+
+Shared rules: [design system overview §9](systems.md#9-custom-and-bespoke).
+
+---
+
+## 10. Email clients & testing
 
 ### Client testing
 
@@ -254,7 +276,7 @@ yarn nx g workspace-plugin:new-email-template 'your-template-name' --domain={hir
 
 ---
 
-## 10. Delivery, CNS, and tooling
+## 11. Delivery, CNS, and tooling
 
 The standard email stack at SEEK is [SEEK-Jobs/mjml-react-email-templates](https://github.com/SEEK-Jobs/mjml-react-email-templates) — an internal monorepo that renders React components to MJML (email-safe HTML). `@seek/braid-email-ui` (`packages/braid-email-ui`) is the design-system layer.
 

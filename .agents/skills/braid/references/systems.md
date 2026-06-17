@@ -33,10 +33,11 @@ Where platforms differ — token naming, typography values, colour groupings, pr
 | 6   | Components             |
 | 7   | Depth & elevation      |
 | 8   | Accessibility          |
-| 9   | Do's and Don'ts        |
+| 9   | Custom and bespoke     |
+| 10  | Do's and Don'ts        |
 
 
-§9 in **Platform guides** is platform-specific (e.g. Responsive behavior on web, Haptics on native).
+§9 (**Custom and bespoke**) appears in every **Platform guide**. §10 is platform-specific (e.g. Responsive behavior on web, Haptics on native).
 
 ---
 
@@ -46,10 +47,10 @@ SEEK Jobs is a clean, modern marketplace: **confident magenta** brand accent on 
 
 - **Spacing:** Components do not own surrounding whitespace — apply gaps, padding, and insets with **layout components** and the shared space scale (§4).
 - **Implementation:** Map spacing, colour, type, radii, and depth to **Braid theme tokens or component APIs** — not bespoke styling.
-- **Theme:** Use **`seekJobs`** only when this document applies — not other SEEK themes.
+- **Theme:** Use `**seekJobs`** only when this document applies — not other SEEK themes.
 - **Voice:** Clear, direct, professional, human, optimistic — never gimmicky or ornamental for its own sake.
 
-Operational detail: §2–§9 and **Platform guides** in the Overview.
+Operational detail: §2–§10 and **Platform guides** in the Overview.
 
 ---
 
@@ -106,9 +107,9 @@ Braid provides a shared spectrum of `Tones`, used across the entire component su
 Each tone may provide prominence levels to adjust its **visual weight**, not semantic meaning. Available levels vary by tone and platform.
 
 
-| Platform               | Prominence levels                        | Examples                               |
-| ---------------------- | ---------------------------------------- | -------------------------------------- |
-| Web                    | `Soft` → `Light` → `(base)`              | `criticalLight`, `criticalSoft`        |
+| Platform               | Prominence levels                        | Examples                                  |
+| ---------------------- | ---------------------------------------- | ----------------------------------------- |
+| Web                    | `Soft` → `Light` → `(base)`              | `criticalLight`, `criticalSoft`           |
 | Native (iOS & Android) | `Weakest` → `Weak` → `(base)` → `Strong` | `criticalWeakest`, `criticalStrong` (iOS) |
 
 
@@ -300,7 +301,34 @@ Platform-specific accessibility (keyboard, screen readers, APIs): see §8 in **P
 
 ---
 
-## 9. Do's and Don'ts
+## 9. Custom and bespoke
+
+### 80/20 rule
+
+About **80%** of UI should be built from Braid components (§6). When a pattern is not covered, custom UI is acceptable if it still follows Braid foundations.
+
+### When custom UI is appropriate
+
+- The interaction or layout is **genuinely unique** to the product and not a candidate for a Braid component
+- A Braid component is close but needs **composition** of existing primitives — not a fork with custom styling
+- You have confirmed **no existing Braid component** fits (check platform guides and Backstage docs)
+
+### Rules for custom work
+
+- Use **theme tokens** for spacing, colour, typography, radii, and depth — see §2–§7. Never hardcode hex, px, or palette values.
+- Prefer **layout components** (§4) and platform primitives (`Box`, `Surface`, etc.) over raw markup.
+- Maintain **accessibility** (§8) — custom controls need labels, focus, contrast, and keyboard support where applicable.
+- Do not **override** Braid component styles in ways that break focus rings, ARIA, or semantic tones.
+
+### Contribute back
+
+If a custom pattern repeats across teams, **propose it to Braid** rather than maintaining a fork. See `governance-and-adoption.md` for the 80/20 guidance and audit patterns.
+
+Platform-specific constraints for custom UI: see §9 in **Platform guides**.
+
+---
+
+## 10. Do's and Don'ts
 
 **Do**
 
@@ -315,4 +343,4 @@ Platform-specific accessibility (keyboard, screen readers, APIs): see §8 in **P
 - Bypass visible **focus styling** on interactive elements.
 - Hard-code **spacing**, **colours**, or **styles** outside Braid tokens and component APIs without a strong reason.
 
-For component composition rules (tones on actions, labels, touch targets), see §6. For accessibility, see §8. For platform-specific styling constraints, see **Platform guides**.
+For component composition rules (tones on actions, labels, touch targets), see §6. For accessibility, see §8. For custom UI, see §9. For platform-specific styling constraints, see **Platform guides**.

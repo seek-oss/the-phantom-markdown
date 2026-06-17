@@ -32,7 +32,6 @@ Design rules live in `references/`; volatile facts (ownership, APIs, runbooks) c
 | iOS or Android | `references/systems.md` → `references/native.md` |
 | Email / MJML / CNS | `references/systems.md` → `references/email.md` |
 | Adoption / audit / compliance | `references/governance-and-adoption.md` |
-| Strategy / OKRs / investment case | `references/strategy-and-vision.md` |
 | Live docs, ownership, catalog | `references/docs-and-urls.md` |
 
 - **Default platform:** Web unless the user specifies otherwise.
@@ -49,7 +48,7 @@ Design rules live in `references/`; volatile facts (ownership, APIs, runbooks) c
 - Questions about **tones**, **components**, **layout**, **typography**, **icons**, **elevation**
 - User specifies or implies a **platform** (web, iOS, Android, email)
 - **Accessibility** review or WCAG questions for Braid UIs
-- **Adoption, audit, or strategy** questions about Braid at SEEK
+- **Adoption or audit** questions about Braid at SEEK
 - User needs **live Braid documentation** (Backstage, Playroom, catalog entities)
 - User references **phantom markdown** or **seekJobs** theme
 

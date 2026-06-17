@@ -32,7 +32,8 @@ Platform-specific guide for Braid on **Native Apps (iOS and Android)**. For shar
 | 6   | Components             |
 | 7   | Depth & elevation      |
 | 8   | Accessibility          |
-| 9   | Haptics                |
+| 9   | Custom and bespoke     |
+| 10  | Haptics                |
 
 
 ---
@@ -43,7 +44,7 @@ Shared brand intent for **SEEK Jobs** — magenta accent, white canvas, neutral-
 
 **On native (iOS and Android)**, the **seekJobs** theme resolves to platform semantic tokens. **Light and dark mode** adapt automatically — no conditional colour logic in app code.
 
-Token and layout detail: §2–§9.
+Token and layout detail: §2–§10.
 
 ---
 
@@ -295,11 +296,31 @@ Shared Braid accessibility rules and WCAG resources: [design system overview §8
 
 - **Labels:** use §5 props (`accessibilityLabel`, `contentDescription`); names must describe the action (overview §8).
 - **Text scaling:** see §3 (Dynamic Type, **sp**).
-- **Haptics** (§9) reinforce interaction; they do not replace visible feedback or accessible names.
+- **Haptics** (§10) reinforce interaction; they do not replace visible feedback or accessible names.
 
 ---
 
-## 9. Haptics
+## 9. Custom and bespoke
+
+Native apps should use **Braid Native components** first. Custom UI must still use **semantic tokens** and platform layout patterns — not hardcoded colours or arbitrary spacing.
+
+### When building custom views
+
+- **iOS:** compose with `VStack`, `HStack`, `Label`, and `SemanticColor` / `Spacing` tokens.
+- **Android:** compose with Compose `Column`/`Row`, Braid `Surface`, and `Colors.*` / `Spacing.*` tokens.
+- Apply **surface context** rules from §2 — especially `onBrand` / `onStrong` on iOS.
+
+### Do not
+
+- Import web `braid-design-system` components into native apps.
+- Add arbitrary shadows or elevation to cards and lists (§7).
+- Skip accessible names on custom icon-only or interactive controls (§8).
+
+Shared rules: [design system overview §9](systems.md#9-custom-and-bespoke).
+
+---
+
+## 10. Haptics
 
 Haptics are **native-only** — not used on web. **iOS** provides built-in haptics on several Braid components. **Android** does not expose a Braid haptic API; press feedback is visual via themed **Material ripple** (`LocalRippleConfiguration`).
 
