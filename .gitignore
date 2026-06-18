@@ -23,3 +23,6 @@ Desktop.ini
 *.bak
 *.log
 
+# Braid skill — maintained in braid-context repo
+.agents/skills/braid/
+
