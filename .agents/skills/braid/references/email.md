@@ -273,7 +273,7 @@ The standard email stack at SEEK is [SEEK-Jobs/mjml-react-email-templates](https
 - **Payload size:** keep templates under ~**70kb** pre-enrichment; Gmail truncates above ~**120kb**
 - The **Engagement** team recommends this repo for email templating (they do not own the repo)
 
-Raw MJML lacks SEEK patterns; `react-mjml` is less modular and lacks SEEK support. This monorepo provides SEEK-specific patterns, Storybook generation, and Vocab integration.
+Raw MJML lacks SEEK patterns; `react-mjml` is less modular and lacks SEEK support. This monorepo provides SEEK specific patterns, Storybook generation, and Vocab integration.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: SEEK-machine-setup
+name: Machine-setup
 description: >-
   Set up a macOS machine for Braid web prototyping in Cursor — Node.js, Homebrew,
   Git, pnpm, global design rule, and IDE extensions. Use when the user needs Part 1
@@ -14,7 +14,7 @@ metadata:
     - onboarding
     - cursor
     - macos
-    - seek-internal
+    - internal
 ---
 # Machine setup for Braid prototyping
 
@@ -26,7 +26,7 @@ Procedural workflow for setting up a **designer's Mac** to run, build, and previ
 
 **Related skill (Part 2):**
 
-- `SEEK-new-braid-web-project` — scaffold a new Sku + Braid web project after Part 1 is complete. In this repo: `../new-braid-web-project/SKILL.md`
+- `New-braid-web-project` — scaffold a new Sku + Braid web project after Part 1 is complete. In this repo: `../new-braid-web-project/SKILL.md`
 
 ---
 
@@ -39,7 +39,7 @@ Procedural workflow for setting up a **designer's Mac** to run, build, and previ
 
 ## When NOT to use this skill
 
-- Machine is already set up and user only needs a **new project** — use `SEEK-new-braid-web-project` instead
+- Machine is already set up and user only needs a **new project** — use `New-braid-web-project` instead
 - User is on **Windows or Linux** — this workflow is macOS-specific (Homebrew, `~/.zprofile` paths)
 - User needs **native app** or **email** tooling — this skill only prepares the web prototyping stack
 
@@ -72,4 +72,4 @@ Full commands and verification: `references/machine-setup.md`.
 
 Tell the user Part 1 is complete and their machine is ready for a Braid web project.
 
-Ask whether they want to create a new project now. If yes, switch to the **new-braid-web-project** skill (`../new-braid-web-project/SKILL.md` or `SEEK-new-braid-web-project` when installed via AI Toolkit).
+Ask whether they want to create a new project now. If yes, switch to the **new-braid-web-project** skill (`../new-braid-web-project/SKILL.md` or `New-braid-web-project` when installed via AI Toolkit).

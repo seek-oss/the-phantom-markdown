@@ -1,6 +1,6 @@
 ---
 
-name: SEEK-braid
+name: Braid
 description:
  Usage guidance for SEEK Braid design system, seekJobs theme, including web, native and email platforms and accessibility, plus Backstage docs and URLs. Use when building or reviewing SEEK UI, choosing tones and components, auditing Braid usage, or fetching live Braid documentation.
 type: skill
@@ -45,7 +45,7 @@ Design rules live in `references/`. Ownership, APIs and runbooks come from **Bac
 ## When to use this skill
 
 - User is **designing or building SEEK UI** with Braid
-- SEEK-hosted frontend experiences **should** use Braid (per technology strategy)
+- SEEK hosted frontend experiences **should** use Braid (per technology strategy)
 - Questions about **tones**, **components**, **layout**, **typography**, **icons**, **elevation**
 - User specifies or implies a **platform** (web, iOS, Android, email)
 - **Accessibility** review or WCAG questions for Braid UIs

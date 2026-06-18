@@ -1,5 +1,5 @@
 ---
-name: SEEK-new-braid-web-project
+name: New-braid-web-project
 description: >-
   Set up a new Braid web design project from scratch with Sku and braid-design-system.
   Use when the user wants to start a new Braid web prototype, scaffold a designer project,
@@ -14,7 +14,7 @@ metadata:
     - prototyping
     - web
     - frontend
-    - seek-internal
+    - internal
 ---
 # New Braid web project
 
@@ -26,7 +26,7 @@ Procedural workflow for designers (and others) creating a **new Braid web projec
 
 **Related skill (Part 1):**
 
-- `SEEK-machine-setup` — Node, Homebrew, Git, pnpm, Cursor rule, extensions (**run first if prerequisites are missing**). In this repo: `../machine-setup/SKILL.md`
+- `Machine-setup` — Node, Homebrew, Git, pnpm, Cursor rule, extensions (**run first if prerequisites are missing**). In this repo: `../machine-setup/SKILL.md`
 
 ---
 
@@ -51,7 +51,7 @@ Procedural workflow for designers (and others) creating a **new Braid web projec
 Work through `references/new-web-project.md` **step by step** from Step 0. After each step, verify success before continuing. If a step fails, stop and explain what went wrong.
 
 - **Step 0:** Ask for (or confirm) the project name — do not scaffold with a placeholder.
-- **Step 1:** Targeted `brew update && brew upgrade pnpm git`, then verify `node`, `pnpm`, and `git`. If prerequisites fail, follow **machine-setup** first (`../machine-setup/SKILL.md` or `SEEK-machine-setup`).
+- **Step 1:** Targeted `brew update && brew upgrade pnpm git`, then verify `node`, `pnpm`, and `git`. If prerequisites fail, follow **machine-setup** first (`../machine-setup/SKILL.md` or `Machine-setup`).
 
 ---
 
