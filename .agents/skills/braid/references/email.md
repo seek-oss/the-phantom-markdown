@@ -84,8 +84,6 @@ Colour tokens are organised by **group**. Each group defines where a token appli
 
 #### Text weight
 
-Shared rules: [design system overview — Text weight](systems.md#text-weight). Email supports **`regular`** and **`strong`** only — no `medium` prop.
-
 | Prop      | Token weight | Font file |
 | --------- | ------------ | --------- |
 | `regular` | 400          | Regular   |

@@ -124,6 +124,7 @@ The Braid theme `seekJobs` uses the custom font family `SeekSans`.
 
 Note: iOS and Android only expose heading levels `1` and `2`. Heading levels `3` and `4` are web and email only.
 
+
 | Level | Role                                           |
 | ----- | ---------------------------------------------- |
 | `1`   | Page titles, hero headings. Limit 1 per screen |
@@ -131,7 +132,9 @@ Note: iOS and Android only expose heading levels `1` and `2`. Heading levels `3`
 | `3`   | Subsection headings (web only)                 |
 | `4`   | Minor headings, card titles (web only)         |
 
+
 ### Text
+
 
 | Size       | Role                                   |
 | ---------- | -------------------------------------- |
@@ -140,19 +143,18 @@ Note: iOS and Android only expose heading levels `1` and `2`. Heading levels `3`
 | `small`    | Metadata, captions, secondary labels   |
 | `xsmall`   | Fine print, legal copy (use sparingly) |
 
+
 #### Text weight
 
-SeekSans ships **Regular** and **Medium** font files only — there is no separate Bold face. Use **`regular`** for body copy and **`strong`** for emphasis.
+SeekSans ships **Regular** and **Medium** font files only — there is no separate Bold face. Both `medium` and `strong` resolve to the Medium font file. Use `stong` for emphasis and avoid using `medium`.
 
-| Weight   | Use for        | Available on              |
-| -------- | -------------- | ------------------------- |
-| `regular` | Default body   | Web, native, email        |
-| `strong`  | Emphasis       | Web, native, email        |
-| `medium`  | **Avoid** — legacy; renders the same as `strong` | Web and iOS only |
 
-**Visual result:** only two weights exist — **Regular** and **Medium**. On every platform, `strong` (and `medium`, where supported) uses the **Medium** file; only `regular` uses the **Regular** file.
+| Weight    | Role                                             | Available on       |
+| --------- | ------------------------------------------------ | ------------------ |
+| `regular` | Default body                                     | Web, native, email |
+| `strong`  | Emphasis                                         | Web, native, email |
+| `medium`  | **Avoid** — legacy; renders the same as `strong` | Web and iOS only   |
 
-Platform-specific props and token values: see **Platform guides** §3.
 
 ---
 
