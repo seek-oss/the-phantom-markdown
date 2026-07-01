@@ -1,10 +1,17 @@
 ---
-name: Machine-setup
+name: machine-setup
 description: >-
-  Set up a macOS machine for Braid web prototyping in Cursor — Node.js, Homebrew,
-  Git, pnpm, global design rule, and IDE extensions. Use when the user needs Part 1
-  machine setup, is on a new Mac, or prerequisites for a Braid project are missing.
+  Set up a macOS machine for Braid web prototyping — Node.js, Homebrew, Git, pnpm,
+  SEEK AI Toolkit with Braid skill, and Cursor extensions. Use when the user needs
+  Part 1 machine setup, is on a new Mac, or prerequisites for a Braid prototype
+  are missing. Do not use on Windows/Linux or when only a new project is needed.
 type: skill
+compatible_tools: [cursor, copilot, claude]
+compatibility: >-
+  macOS with administrator access for Homebrew, network access, permission to run
+  terminal commands, and Cursor installed via SEEK Self Service. Step 5 (AI Toolkit)
+  requires GitHub access to SEEK-Jobs and SSH keys in 1Password — skippable if
+  unavailable.
 metadata:
   author: "@SEEK-Jobs/design-practice"
   tags:
@@ -14,11 +21,12 @@ metadata:
     - onboarding
     - cursor
     - macos
+    - ai-toolkit
     - internal
 ---
 # Machine setup for Braid prototyping
 
-Procedural workflow for setting up a **designer's Mac** to run, build, and preview Braid web projects locally in Cursor. This is **Part 1: machine setup**. Part 2 (scaffolding a new project) is a separate skill.
+Procedural workflow for setting up a **designer's Mac** to run, build, and preview Braid web projects locally. This is **Part 1: machine setup** — do this once. Part 2 (scaffolding a new prototype) is a separate skill.
 
 **References** (read when executing this workflow):
 
@@ -26,30 +34,20 @@ Procedural workflow for setting up a **designer's Mac** to run, build, and previ
 
 **Related skill (Part 2):**
 
-- `New-braid-web-project` — scaffold a new Sku + Braid web project after Part 1 is complete. In this repo: `../new-braid-web-project/SKILL.md`
+- `new-braid-web-prototype` — scaffold a new Sku + Braid web prototype after Part 1 is complete. In this repo: `../new-braid-web-prototype/SKILL.md`
+
+**Source guide:** [Part 1 (Do once)](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364383759/Part+1+Do+once)
 
 ---
 
-## When to use this skill
+## Agent behavior
 
-- User is on a **new Mac** or has never set up Braid prototyping locally
-- User wants **Part 1** machine setup before creating a project
-- Prerequisites for a Braid web project are **missing** (`node`, `pnpm`, or `git` not available or wrong version)
-- User asks to **prepare their machine** for Braid or designer prototyping in Cursor
+**Be interactive, not autonomous.** Work through `references/machine-setup.md` **step by step**. After each step, verify success before continuing. If a step fails, stop and explain what went wrong.
 
-## When NOT to use this skill
-
-- Machine is already set up and user only needs a **new project** — use `New-braid-web-project` instead
-- User is on **Windows or Linux** — this workflow is macOS-specific (Homebrew, `~/.zprofile` paths)
-- User needs **native app** or **email** tooling — this skill only prepares the web prototyping stack
-
----
-
-## Before you start
-
-1. Confirm the user is on **macOS** and using **Cursor**.
-2. Work through `references/machine-setup.md` **step by step**. After each step, verify success before continuing.
-3. Steps marked **user action required** (especially Homebrew install) must not be skipped or simulated — wait for the user.
+- Confirm the user is on **macOS** with **Cursor** installed via SEEK Self Service before starting.
+- **Step 2 (Homebrew)** requires the user to run the installer themselves — it prompts for a password. Do not skip or simulate.
+- **Step 5 (AI Toolkit)** is skippable if the user lacks GitHub access to SEEK-Jobs — note this and continue to Step 6.
+- **Step 6 (extensions)** is optional but recommended.
 
 ---
 
@@ -61,15 +59,24 @@ Procedural workflow for setting up a **designer's Mac** to run, build, and previ
 | 2 | Install Homebrew (user runs installer) |
 | 3 | Install Git |
 | 4 | Install pnpm and configure PATH |
-| 5 | Create global Cursor design rule (`design-guidelines.mdc`) |
-| 6 | Install recommended Cursor extensions |
+| 5 | Install SEEK AI Toolkit and Braid skill *(skippable without GitHub access)* |
+| 6 | Install recommended Cursor extensions *(optional)* |
 
 Full commands and verification: `references/machine-setup.md`.
 
 ---
 
+## NEVER
+
+- Never skip Homebrew install or simulate the interactive password prompt — the user must run it themselves
+- Never append duplicate pnpm PATH blocks to `~/.zshrc` — check before writing
+- Never fail the whole workflow because Step 5 was skipped — Part 2 has a conditional workaround for Braid guidelines
+- Never proceed past a failed verification step without stopping and reporting the error
+
+---
+
 ## After setup
 
-Tell the user Part 1 is complete and their machine is ready for a Braid web project.
+Tell the user Part 1 is complete and their machine is ready for a Braid web prototype.
 
-Ask whether they want to create a new project now. If yes, switch to the **new-braid-web-project** skill (`../new-braid-web-project/SKILL.md` or `New-braid-web-project` when installed via AI Toolkit).
+Ask whether they want to create a new project now. If yes, switch to the **new-braid-web-prototype** skill (`../new-braid-web-prototype/SKILL.md` or `SEEK-new-braid-web-prototype` when installed via AI Toolkit).
