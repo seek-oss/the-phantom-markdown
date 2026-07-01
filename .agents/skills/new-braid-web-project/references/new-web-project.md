@@ -122,8 +122,8 @@ Load the **braid** skill and follow its platform routing:
 Alternatively, fetch the public entry points:
 
 ```
-https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems.md
-https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/web/web.md
+https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/systems.md
+https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/web.md
 ```
 
 Follow all guidelines from those sources, including accessibility requirements.

@@ -135,7 +135,7 @@ alwaysApply: true
 
 # Design Guidelines
 
-Read these guidelines: https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems.md
+Read these guidelines: https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/systems.md
 EOF
 ```
 

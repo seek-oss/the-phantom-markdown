@@ -79,4 +79,4 @@ Remind the user that when they reopen the project they should run:
 pnpm install && pnpm start
 ```
 
-For ongoing UI work, use the **braid** skill (`../braid/SKILL.md`) or the public [systems.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems.md) and [web guide](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/web/web.md).
+For ongoing UI work, use the **braid** skill (`../braid/SKILL.md`) or the public [systems.md](https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/systems.md) and [web guide](https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/web.md).
