@@ -12,25 +12,18 @@
 
 Read each of the following files to get up to speed:
 
-| File                                                                                                                                 | Description              |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |
-| [accessibility.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/accessibility/accessibility.md) | Accessibility guidelines |
-| [systems.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems/systems.md)                   | Design systems           |
+| File                                                                                                                                                                                              | Description                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| [systems.md](https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/systems.md) | Shared Braid foundations — tones, typography, layout, components, accessibility, custom UI |
+| [web.md](https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/web.md)         | Web platform guide — tokens, components, and implementation                                  |
 
 ## Additional context
 
 Read the following files only when needed:
 
-### Design Systems
+### Platform guides
 
-| File                                                                                                             | When to use                                                             |
-| ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [email.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems/email.md)   | When designing for iOS and Android native apps                          |
-| [native.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems/native.md) | When designing for Email                                                |
-| [custom.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/systems/custom.md) | When creating new elements that are not part of the Braid design system |
-
-### Accessibility review
-
-| File                                                                                                                   | When to use                                                |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| [review.md](https://raw.githubusercontent.com/seek-oss/the-phantom-markdown/refs/heads/master/accessibility/review.md) | Run this file when you want to run an Accessibility review |
+| File                                                                                                                                                                                              | When to use                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| [native.md](https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/native.md) | When designing for iOS and Android native apps   |
+| [email.md](https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/email.md) | When designing for Email                         |
