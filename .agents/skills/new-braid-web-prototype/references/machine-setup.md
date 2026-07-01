@@ -2,9 +2,13 @@
 
 You are helping set up a designer's machine to run, build, and preview Braid projects locally. Work through each step below **in order**. After each step, verify it succeeded before continuing. If a step fails, stop and clearly explain what went wrong and what the user needs to do manually.
 
+> **When to use this reference:** Read this when `node`, `pnpm`, `git`, or Homebrew are missing during Part 2, or when the user asks for one-time machine setup on a new Mac.
+
 > **Before starting:** Ensure the user has installed their IDE of choice via **SEEK Self Service**. This guide assumes **Cursor** on macOS.
 
 > **Note:** Some steps require the user to act — do not attempt to skip or simulate them.
+
+**Source guide:** [Part 1 (Do once)](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364383759/Part+1+Do+once)
 
 ---
 
@@ -122,9 +126,11 @@ You should see a version starting with `10` or higher. If not, stop and report t
 
 ---
 
-## Step 5: Install SEEK AI Toolkit
+## Step 5: Install SEEK AI Toolkit and Braid skill
 
-This step requires a GitHub license and access to the SEEK-Jobs organisation. If the user doesn't yet have access, **skip to Step 6** and let them know Part 2 includes a conditional workaround for Braid guidelines.
+If the user already has `ai-toolkit` installed (e.g. they are running this skill from AI Toolkit), skip the tap and install commands — go straight to verifying or installing the **Braid skill**.
+
+This step requires a GitHub license and access to the SEEK-Jobs organisation. If the user doesn't yet have access, **skip this step** and continue to Step 6.
 
 > **SSH keys:** The user will need SSH keys in 1Password to authenticate. See [setup details](https://myseek.atlassian.net/wiki/spaces/DP/blog/2020/09/14/857116358) and [GitHub onboarding](https://myseek.atlassian.net/wiki/spaces/DP/pages/2169283073/GitHub+Onboarding#Optional---but-highly-recommended).
 
@@ -185,6 +191,4 @@ Report a short completion summary:
 - Whether AI Toolkit and the Braid skill were installed or skipped (and why)
 - Whether Cursor extensions were installed or skipped
 
-Point them to [Part 2: Setting up your project](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364350996) if they want to continue manually.
-
-Ask whether they want to set up a new Braid web prototype now. If yes, follow the **new-braid-web-prototype** skill (`../new-braid-web-prototype/SKILL.md` from `.agents/skills/machine-setup/SKILL.md`, or `SEEK-new-braid-web-prototype` when installed via AI Toolkit).
+Continue with `references/new-web-prototype.md` to scaffold a new Braid web prototype.
