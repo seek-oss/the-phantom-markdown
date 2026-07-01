@@ -93,10 +93,10 @@ Ensure the shell config file exists:
 touch ~/.zshrc
 ```
 
-Append the pnpm PATH configuration to `~/.zshrc` **only if it isn't already there**:
+Check whether pnpm PATH is already configured — skip the append if `~/.zshrc` already contains `PNPM_HOME`:
 
 ```bash
-cat >> ~/.zshrc << 'EOF'
+grep -q 'PNPM_HOME' ~/.zshrc && echo "Already configured" || cat >> ~/.zshrc << 'EOF'
 
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
@@ -178,6 +178,12 @@ If any extension fails to install, note it but do not block completion — this 
 ## Done
 
 All Part 1 steps are complete. Tell the user their machine is ready for Part 2.
+
+Report a short completion summary:
+
+- `node`, `pnpm`, and `git` versions from verification
+- Whether AI Toolkit and the Braid skill were installed or skipped (and why)
+- Whether Cursor extensions were installed or skipped
 
 Point them to [Part 2: Setting up your project](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364350996) if they want to continue manually.
 

@@ -6,10 +6,10 @@ description: >-
   create a Sku app with Braid, or run Part 2 project setup after machine setup.
   Do not use for native apps, email templates, existing repos, or backend-only work.
 type: skill
-compatible_tools: [cursor, copilot, claude]
+compatible_tools: [cursor]
 compatibility: >-
-  macOS with Homebrew, nvm (Node v22+), pnpm v10+, git, network access, and
-  permission to run terminal commands. Part 1 machine setup must be complete.
+  macOS with Homebrew, nvm (Node v22+), pnpm v10+, git, network access, Cursor,
+  and permission to run terminal commands. Part 1 machine setup must be complete.
 metadata:
   author: "@SEEK-Jobs/design-practice"
   tags:
@@ -32,7 +32,7 @@ Procedural workflow for designers (and others) creating a **new Braid web protot
 
 **Related skill (Part 1):**
 
-- `machine-setup` — Node, Homebrew, Git, pnpm, Cursor rule, extensions, AI Toolkit (**run first if prerequisites are missing**). In this repo: `../machine-setup/SKILL.md`
+- `machine-setup` — Node, Homebrew, Git, pnpm, AI Toolkit, extensions (**run first if prerequisites are missing**). In this repo: `../machine-setup/SKILL.md`
 
 **Source guide:** [Part 2 (Every project)](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364350996/Part+2+Every+project)
 
@@ -44,7 +44,7 @@ Procedural workflow for designers (and others) creating a **new Braid web protot
 
 - **Step 0 (before Step 1):** Ask for (or confirm) the project name — do not scaffold with a placeholder.
 - If `brew`, `pnpm`, `node`, or `git` are missing or fail, redirect to **machine-setup** (`../machine-setup/SKILL.md` or `SEEK-machine-setup`).
-- **Step 6 is conditional** — only run the Braid guidelines workaround when the user did not install the Braid skill via AI Toolkit during Part 1.
+- **Step 6 is conditional** — only run the Braid guidelines workaround when the user did not install the Braid skill via AI Toolkit during Part 1 Step 5 of **machine-setup**
 
 ---
 

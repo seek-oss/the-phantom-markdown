@@ -6,7 +6,7 @@ description: >-
   Part 1 machine setup, is on a new Mac, or prerequisites for a Braid prototype
   are missing. Do not use on Windows/Linux or when only a new project is needed.
 type: skill
-compatible_tools: [cursor, copilot, claude]
+compatible_tools: [cursor]
 compatibility: >-
   macOS with administrator access for Homebrew, network access, permission to run
   terminal commands, and Cursor installed via SEEK Self Service. Step 5 (AI Toolkit)
@@ -78,5 +78,11 @@ Full commands and verification: `references/machine-setup.md`.
 ## After setup
 
 Tell the user Part 1 is complete and their machine is ready for a Braid web prototype.
+
+Report a short completion summary:
+
+- `node`, `pnpm`, and `git` versions from verification
+- Whether AI Toolkit and the Braid skill were installed or skipped (and why)
+- Whether Cursor extensions were installed or skipped
 
 Ask whether they want to create a new project now. If yes, switch to the **new-braid-web-prototype** skill (`../new-braid-web-prototype/SKILL.md` or `SEEK-new-braid-web-prototype` when installed via AI Toolkit).

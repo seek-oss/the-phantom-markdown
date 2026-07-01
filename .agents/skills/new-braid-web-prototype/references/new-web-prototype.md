@@ -102,7 +102,7 @@ In Cursor, click **Open project** in the centre of the window, or **Open folder*
 
 ## Step 6: Load Braid guidelines (conditional)
 
-**Only run this step** if the user was **unable to install the Braid skill via AI Toolkit** during [Part 1 Step 6](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364383759/Part+1+Do+once#Step-6.-Install-SEEK-AI-Toolkit).
+**Only run this step** if the user was **unable to install the Braid skill via AI Toolkit** during Part 1 Step 5 of the **machine-setup** skill (see `../machine-setup/SKILL.md` or [Part 1 (Do once)](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364383759/Part+1+Do+once)).
 
 If the user already has the **braid** skill installed (`SEEK-braid` via AI Toolkit), skip this step.
 
