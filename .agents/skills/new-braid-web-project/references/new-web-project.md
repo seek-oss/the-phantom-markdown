@@ -114,12 +114,7 @@ If the command fails, ask the user to open the folder manually: in Cursor, click
 
 ## Step 6: Connect with design context
 
-Load the **braid** skill and follow its platform routing:
-
-- In this repo: `../braid/SKILL.md` (or `SEEK-braid` when installed via AI Toolkit)
-- Read `references/systems.md` and `references/web.md` from that skill (default platform is **Web**)
-
-Alternatively, fetch the public entry points:
+Load the **braid** skill from [seek-oss/braid-context](https://github.com/seek-oss/braid-context) (`SEEK-braid` when installed via AI Toolkit), or fetch the public entry points:
 
 ```
 https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/systems.md
