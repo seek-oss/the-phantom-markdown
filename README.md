@@ -14,4 +14,4 @@ To get up and running, see our [setup guides in Confluence](https://myseek.atlas
 
 ---
 
-_This is an ongoing experiment that is likely to change and evolve!_
+_This is an ongoing experiment that is likely to change and evolve._
