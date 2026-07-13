@@ -4,7 +4,7 @@
 
 > Install the tools your machine needs to run, build and preview Braid prototypes locally — for **Web**, **iOS**, **Android**, and **Email**.
 
-<!-- Confluence: add Table of Contents macro (exclude page title) -->
+
 
 > **Before starting:** Install your AI-enabled IDE (Cursor, Claude Code, or GitHub Copilot) via **SEEK Self Service**.
 >
@@ -14,23 +14,29 @@
 
 > **Info panel:** You do not need every step. Follow the **All platforms** steps, then only the steps marked for the platform(s) you use. Skip anything labelled for a platform you are not setting up.
 
+
+
 ### What you need by platform
 
-| Step | Web | iOS | Android | Email (Track B) |
-| --- | --- | --- | --- | --- |
-| 1. Administrator access | ✓ | ✓ | ✓ | ✓ |
-| 2. Homebrew | ✓ | ✓ | ✓ | ✓ |
-| 3. Git | ✓ | ✓ | ✓ | ✓ |
-| 4. Node.js | ✓ | — | — | ✓ |
-| 5a. pnpm | ✓ | — | — | — |
-| 5b. Yarn | — | — | — | ✓ |
-| 6a. Xcode | — | ✓ | — | — |
-| 6b. Android Studio | — | — | ✓ | — |
-| 7. GitHub access | ✓ | ✓ | ✓ | ✓ |
-| 8. SEEK AI Toolkit | ✓ | ✓ | ✓ | ✓ |
-| 9. IDE extensions | ✓ | ✓ | ✓ | ✓ |
+
+| Step                    | Web | iOS | Android | Email (Track B) |
+| ----------------------- | --- | --- | ------- | --------------- |
+| 1. Administrator access | ✓   | ✓   | ✓       | ✓               |
+| 2. Homebrew             | ✓   | ✓   | ✓       | ✓               |
+| 3. Git                  | ✓   | ✓   | ✓       | ✓               |
+| 4. Node.js              | ✓   | —   | —       | ✓               |
+| 5a. pnpm                | ✓   | —   | —       | —               |
+| 5b. Yarn                | —   | —   | —       | ✓               |
+| 6a. Xcode               | —   | ✓   | —       | —               |
+| 6b. Android Studio      | —   | —   | ✓       | —               |
+| 7. GitHub access        | ✓   | ✓   | ✓       | ✓               |
+| 8. SEEK AI Toolkit      | ✓   | ✓   | ✓       | ✓               |
+| 9. IDE extensions       | ✓   | ✓   | ✓       | ✓               |
+
 
 ---
+
+
 
 ### Step 1: Request administrator access
 
@@ -38,9 +44,11 @@
 
 To install software you must first **Request administrator access** in the top right-hand menu of your machine (checkmark icon).
 
-<!-- Confluence: insert screenshot from existing web Part 1 page -->
+
 
 ---
+
+
 
 ### Step 2: Install Homebrew
 
@@ -69,6 +77,8 @@ You should see a version number printed (e.g. `4.1.8`).
 
 ---
 
+
+
 ### Step 3: Install Git
 
 > **All platforms**
@@ -88,6 +98,8 @@ git --version
 You should see a version starting with `git version 2` or higher.
 
 ---
+
+
 
 ### Step 4: Install Node.js
 
@@ -113,9 +125,13 @@ You should see a version starting with `v22` or higher.
 
 ---
 
+
+
 ### Step 5: Install a JavaScript package manager
 
 > **Web and Email only** — skip if you are only setting up iOS or Android. Web uses **pnpm**; Email uses **Yarn 1.x**. Install only what you need.
+
+
 
 #### 5a. Install pnpm (Web)
 
@@ -180,9 +196,13 @@ You should see version `1.x`.
 
 ---
 
+
+
 ### Step 6: Install platform SDKs
 
 > **iOS and Android only** — skip if you are only setting up Web or Email.
+
+
 
 #### 6a. Install Xcode (iOS)
 
@@ -212,14 +232,16 @@ adb --version
 
 ---
 
+
+
 ### Step 7: Set up GitHub access
 
 > **All platforms** need GitHub access for the SEEK AI Toolkit (Step 8). Some platforms have extra one-time checks or credentials — complete only the subsections for platforms you use.
 
 You'll need a GitHub licence and access to the **SEEK-Jobs** organisation. SSH keys in 1Password are recommended:
 
-* Follow the developer [setup guide](https://myseek.atlassian.net/wiki/spaces/DP/blog/2020/09/14/857116358) + [GitHub onboarding](https://myseek.atlassian.net/wiki/spaces/DP/pages/2169283073/GitHub+Onboarding#Optional---but-highly-recommended)
-* Or use the [Agent-assisted copy and paste prompt](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5606015700) (non-engineer friendly)
+- Follow the developer [setup guide](https://myseek.atlassian.net/wiki/spaces/DP/blog/2020/09/14/857116358) + [GitHub onboarding](https://myseek.atlassian.net/wiki/spaces/DP/pages/2169283073/GitHub+Onboarding#Optional---but-highly-recommended)
+- Or use the [Agent-assisted copy and paste prompt](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5606015700) (non-engineer friendly)
 
 Verify GitHub SSH access:
 
@@ -241,7 +263,7 @@ git ls-remote git@github.com:SEEK-Jobs/mjml-react-email-templates.git HEAD
 
 If this fails, you do not yet have access. Request access via your team or [GitHub onboarding](https://myseek.atlassian.net/wiki/spaces/DP/pages/2169283073/GitHub+Onboarding#Optional---but-highly-recommended).
 
-#### 7b. Disk-based SSH key for Xcode and confirm braid-ios (iOS)
+#### 7b. Disk-based SSH key for Xcode (iOS)
 
 > **iOS only** — Braid iOS prototypes add [braid-ios](https://github.com/SEEK-Jobs/braid-ios) as a Swift package dependency in a blank Xcode app (Part 2). **Xcode does not support SSH agents** (including 1Password), so it cannot use the agent-based SSH setup from Step 7 above. Create a **disk-based** key that Xcode can select directly. Keep 1Password SSH for Terminal/`git`/AI Toolkit if you already use it.
 
@@ -273,22 +295,7 @@ pbcopy < ~/.ssh/id_ed25519_xcode.pub
 2. Select `~/.ssh/id_ed25519_xcode` (**not** the `.pub` file)
 3. Enter the passphrase if prompted
 
-**Optional safety net** — if Xcode stores an `https://github.com/…` package URL, rewrite HTTPS to SSH:
-
-```bash
-git config --global url."git@github.com:".insteadOf "https://github.com/"
-git config --global --get-regexp url
-```
-
-You should see `url.git@github.com:.insteadof https://github.com/`.
-
-Confirm access to braid-ios:
-
-```bash
-git ls-remote git@github.com:SEEK-Jobs/braid-ios.git HEAD
-```
-
-If this fails, check that your **Xcode disk key** is on GitHub with **SEEK-Jobs SSO** authorised, and that Terminal SSH can reach GitHub.
+You'll add the `braid-ios` package itself in Part 2.
 
 #### 7c. GitHub Packages token and confirm android-app-template (Android)
 
@@ -299,7 +306,7 @@ If this fails, check that your **Xcode disk key** is on GitHub with **SEEK-Jobs 
 1. Visit [github.com/settings/tokens](https://github.com/settings/tokens)
 2. Click **Generate new token (classic)**
 3. Name it `Android Studio GitHub`
-4. Grant the **`read:packages`** permission (and **`repo`** if you will clone via HTTPS)
+4. Grant the `read:packages` permission (and `repo` if you will clone via HTTPS)
 5. Generate the token and copy it — you **cannot** view it again
 6. Click **Enable SSO** and authorise access to **SEEK-Jobs**
 
@@ -314,6 +321,8 @@ git ls-remote git@github.com:SEEK-Jobs/android-app-template.git HEAD
 If this fails, request access via your team or GitHub onboarding before continuing.
 
 ---
+
+
 
 ### Step 8: Install [SEEK AI Toolkit](https://backstage.myseek.xyz/docs/default/component/seek-ai-toolkit/)
 
@@ -344,6 +353,8 @@ You will be prompted to select your IDE (**Cursor**, **Claude Code**, or **Copil
 
 ---
 
+
+
 ### Step 9: Install IDE extensions (optional but recommended)
 
 > **All platforms** share **GitLens**. Other extensions depend on what you edit.
@@ -359,11 +370,13 @@ cursor --install-extension esbenp.prettier-vscode
 cursor --install-extension dbaeumer.vscode-eslint
 ```
 
-| Extension | ID | Platforms |
-| --- | --- | --- |
-| GitLens | `eamodio.gitlens` | All |
-| Prettier | `esbenp.prettier-vscode` | Web, Email |
-| ESLint | `dbaeumer.vscode-eslint` | Web, Email |
+
+| Extension | ID                       | Platforms  |
+| --------- | ------------------------ | ---------- |
+| GitLens   | `eamodio.gitlens`        | All        |
+| Prettier  | `esbenp.prettier-vscode` | Web, Email |
+| ESLint    | `dbaeumer.vscode-eslint` | Web, Email |
+
 
 > **iOS only (optional):** If you also edit Swift in a VS Code–compatible IDE, consider the **Swift** extension (`swiftlang.swift-vscode`).
 >
@@ -371,11 +384,14 @@ cursor --install-extension dbaeumer.vscode-eslint
 
 ---
 
+
+
 ### Done!
 
 > **Note panel:** You can now move on to Part 2 for your platform:
 >
 > - **[Part 2 — Web: Setting up your project](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364350996)**
-> - **[Part 2 — iOS: Set up your project](<!-- link to Part 2 iOS page when published -->)**
-> - **[Part 2 — Android: Set up your project](<!-- link to Part 2 Android page when published -->)**
-> - **[Part 2 — Email: Set up your workspace](<!-- link to Part 2 Email page when published -->)**
+> - **[Part 2 — iOS: Set up your project](!-- link to Part 2 iOS page when published --)**
+> - **[Part 2 — Android: Set up your project](!-- link to Part 2 Android page when published --)**
+> - **[Part 2 — Email: Set up your workspace](!-- link to Part 2 Email page when published --)**
+

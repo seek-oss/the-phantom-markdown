@@ -4,11 +4,9 @@
 
 > Install the tools your machine needs to run, build and preview Braid iOS prototypes locally.
 
-
-
 > **Before starting:** Install **Xcode** and your AI-enabled IDE (Cursor, Claude Code, or GitHub Copilot) via **SEEK Self Service**.
 
-> **Already completed [Part 1 (Do once)](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364383759)?** If you have already set up Git and the SEEK AI Toolkit for web prototyping, you can skip Step 1 and Step 7 below — but still complete **Steps 3–6** (Xcode needs its own disk-based SSH key).
+> **Already completed [Part 1 (Do once)](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364383759)?** If you have already set up Git and the SEEK AI Toolkit for web prototyping, you can skip Step 1 and Step 6 below — but still complete **Steps 3–5** (Xcode needs its own disk-based SSH key).
 
 ---
 
@@ -112,39 +110,9 @@ Enter the passphrase if prompted.
 
 
 
-### Step 6: Configure git HTTPS → SSH and confirm braid-ios access
+### Step 6: Install [SEEK AI Toolkit](https://backstage.myseek.xyz/docs/default/component/seek-ai-toolkit/)
 
-When you add braid-ios in Part 2, prefer the SSH package URL. This one-time git configuration is a safety net if Xcode stores an `https://github.com/…` URL instead — Swift Package Manager still uses git to fetch packages.
-
-In **Terminal**, run:
-
-```bash
-git config --global url."git@github.com:".insteadOf "https://github.com/"
-```
-
-Verify the setting:
-
-```bash
-git config --global --get-regexp url
-```
-
-You should see `url.git@github.com:.insteadof https://github.com/`.
-
-Confirm access to braid-ios:
-
-```bash
-git ls-remote git@github.com:SEEK-Jobs/braid-ios.git HEAD
-```
-
-If this fails, check that your **Xcode disk key** is added to GitHub with **SEEK-Jobs SSO** authorised (Steps 3–4), and that Terminal SSH can reach GitHub (1Password agent or your disk key).
-
----
-
-
-
-### Step 7: Install [SEEK AI Toolkit](https://backstage.myseek.xyz/docs/default/component/seek-ai-toolkit/)
-
-This step requires a GitHub licence and access to the SEEK-Jobs organisation. If you don't yet have access, skip to Step 8.
+This step requires a GitHub licence and access to the SEEK-Jobs organisation. If you don't yet have access, skip to Step 7.
 
 In **Terminal**, run:
 
@@ -171,7 +139,7 @@ You will be prompted to select your IDE (**Cursor**, **Claude Code**, or **Copil
 
 
 
-### Step 8: Install IDE extensions (optional but recommended)
+### Step 7: Install IDE extensions (optional but recommended)
 
 Install these extensions via your IDE's **Extensions** marketplace (names are the same across VS Code–compatible editors):
 
