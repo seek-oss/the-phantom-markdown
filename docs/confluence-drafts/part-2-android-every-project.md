@@ -6,7 +6,7 @@
 
 <!-- Confluence: add Table of Contents macro (exclude page title) -->
 
-> **Note panel:** Please ensure you've completed **[Part 1 — Android: Set up your machine](<!-- link to Part 1 Android page -->)** (or the shared Git and AI Toolkit steps from [Part 1 (Do once)](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364383759)) before continuing.
+> **Note panel:** Please ensure you've completed **[Part 1 — Shared](<!-- link to Part 1 Shared -->)** and **[Part 1 — Android](<!-- link to Part 1 Android page -->)** before continuing.
 
 > **Info panel:** These instructions are for **Android projects only**. Build and preview in **Android Studio**. Use your AI-enabled IDE (Cursor, Claude Code, or GitHub Copilot) to open the same project folder for assistant help.
 
@@ -50,7 +50,7 @@ This template includes Braid Compose and the `seekJobs` theme pre-configured.
 
 ### Step 3: Add GitHub authentication
 
-Create or edit `local.properties` in the project root (this file is git-ignored). Add your GitHub username and token from [Part 1 — Android, Step 3](<!-- link -->):
+Create or edit `local.properties` in the project root (this file is git-ignored). Add your GitHub username and token from [Part 1 — Android, Step 2](<!-- link -->):
 
 ```properties
 github.username=YourGithubUsername
@@ -118,7 +118,7 @@ Open the same project folder in your AI-enabled IDE:
 
 ### [Conditional] Step 8: If AI Toolkit has not been installed
 
-This step is only required if you were unable to install the [Braid skill using AI Toolkit](<!-- link to Part 1 Android Step 5 -->) during Part 1.
+This step is only required if you were unable to install the [Braid skill using AI Toolkit](<!-- link to Part 1 Shared Step 5 -->) during Part 1 — Shared.
 
 Copy and paste this prompt into your **Agent** chat:
 

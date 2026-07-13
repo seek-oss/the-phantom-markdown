@@ -38,7 +38,7 @@ Click **Share** in the toolbar to copy a link. The URL stores your prototype sta
 
 Best when you want Cursor, Claude Code, or GitHub Copilot to help write Braid email code. You still preview in Playroom (hosted or local).
 
-> **Note panel:** Complete **[Part 1 — Email: Set up your machine](<!-- link -->)** before starting Track B (or the shared steps from [Part 1 (Do once)](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364383759) plus Yarn).
+> **Note panel:** Complete **[Part 1 — Shared](<!-- link to Part 1 Shared -->)** and **[Part 1 — Email](<!-- link to Part 1 Email -->)** before starting Track B.
 
 ---
 
@@ -126,7 +126,7 @@ Do **not** commit personal prototype code to the shared monorepo unless your tea
 
 ### [Conditional] Step 6: If AI Toolkit has not been installed
 
-This step is only required if you were unable to install the [Braid skill using AI Toolkit](<!-- link to Part 1 Email Step 6 -->) during Part 1.
+This step is only required if you were unable to install the [Braid skill using AI Toolkit](<!-- link to Part 1 Shared Step 5 -->) during Part 1 — Shared.
 
 Copy and paste this prompt into your **Agent** chat:
 
@@ -155,4 +155,4 @@ For ongoing Braid guidance, use the **Braid skill** installed via AI Toolkit (`S
 | Track | Setup | AI assistant | Best for |
 | --- | --- | --- | --- |
 | **A — Playroom only** | None | No (paste-only) | Quick visual exploration |
-| **B — Playroom + AI** | Part 1 Email + one clone | Yes | Iterating with agent help on Braid email code |
+| **B — Playroom + AI** | Part 1 Shared + Part 1 Email + one clone | Yes | Iterating with agent help on Braid email code |

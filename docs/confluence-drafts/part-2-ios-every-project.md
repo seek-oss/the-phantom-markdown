@@ -6,7 +6,7 @@
 
 <!-- Confluence: add Table of Contents macro (exclude page title) -->
 
-> **Note panel:** Please ensure you've completed **[Part 1 — iOS: Set up your machine](<!-- link to Part 1 iOS page -->)** before continuing — especially the **disk-based SSH key for Xcode** and selecting that private key in Xcode (Part 1, Steps 3–5).
+> **Note panel:** Please ensure you've completed **[Part 1 — Shared](<!-- link to Part 1 Shared -->)** and **[Part 1 — iOS](<!-- link to Part 1 iOS page -->)** before continuing — especially the **disk-based SSH key for Xcode** and selecting that private key in Xcode (Part 1 — iOS, Steps 2–4).
 
 > **Info panel:** These instructions are for **iOS projects only**. Build and preview in **Xcode**. Use your AI-enabled IDE (Cursor, Claude Code, or GitHub Copilot) to open the same project folder for assistant help.
 
@@ -127,7 +127,7 @@ Open the project folder in your AI-enabled IDE so your assistant can help with S
 
 ### [Conditional] Step 7: If AI Toolkit has not been installed
 
-This step is only required if you were unable to install the [Braid skill using AI Toolkit](<!-- link to Part 1 iOS Step 6 -->) during Part 1.
+This step is only required if you were unable to install the [Braid skill using AI Toolkit](<!-- link to Part 1 Shared Step 5 -->) during Part 1 — Shared.
 
 Copy and paste this prompt into your **Agent** chat:
 
