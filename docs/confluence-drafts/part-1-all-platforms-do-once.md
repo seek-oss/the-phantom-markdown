@@ -241,19 +241,42 @@ git ls-remote git@github.com:SEEK-Jobs/mjml-react-email-templates.git HEAD
 
 If this fails, you do not yet have access. Request access via your team or [GitHub onboarding](https://myseek.atlassian.net/wiki/spaces/DP/pages/2169283073/GitHub+Onboarding#Optional---but-highly-recommended).
 
-#### 7b. Configure git HTTPS → SSH and confirm braid-ios (iOS)
+#### 7b. Disk-based SSH key for Xcode and confirm braid-ios (iOS)
 
-> **iOS only** — the iOS app template depends on private SEEK packages (including [braid-ios](https://github.com/SEEK-Jobs/braid-ios)). Swift Package Manager uses git to fetch packages; this one-time configuration makes HTTPS GitHub URLs use SSH instead (so 1Password credentials apply).
+> **iOS only** — Braid iOS prototypes add [braid-ios](https://github.com/SEEK-Jobs/braid-ios) as a Swift package dependency in a blank Xcode app (Part 2). **Xcode does not support SSH agents** (including 1Password), so it cannot use the agent-based SSH setup from Step 7 above. Create a **disk-based** key that Xcode can select directly. Keep 1Password SSH for Terminal/`git`/AI Toolkit if you already use it.
 
-In **Terminal**, run:
+**Create the key** (replace the email with your SEEK email):
+
+```bash
+mkdir -p ~/.ssh
+ssh-keygen -t ed25519 -C "your.name@seek.com.au" -f ~/.ssh/id_ed25519_xcode
+```
+
+Use a **passphrase** when prompted. This creates:
+
+- **Private key:** `~/.ssh/id_ed25519_xcode` (no extension) — use this in Xcode
+- **Public key:** `~/.ssh/id_ed25519_xcode.pub` — add this to GitHub
+
+**Add the public key to GitHub:**
+
+```bash
+pbcopy < ~/.ssh/id_ed25519_xcode.pub
+```
+
+1. Go to **Settings → SSH and GPG keys** → **New SSH key**
+2. Set **Key type** = **Authentication Key**, paste the key, and save
+3. Click **Configure SSO** and authorise access to **SEEK-Jobs**
+
+**Select the private key in Xcode** when prompted (for example while adding or resolving a package):
+
+1. Choose **Choose…**
+2. Select `~/.ssh/id_ed25519_xcode` (**not** the `.pub` file)
+3. Enter the passphrase if prompted
+
+**Optional safety net** — if Xcode stores an `https://github.com/…` package URL, rewrite HTTPS to SSH:
 
 ```bash
 git config --global url."git@github.com:".insteadOf "https://github.com/"
-```
-
-Verify the setting:
-
-```bash
 git config --global --get-regexp url
 ```
 
@@ -265,7 +288,7 @@ Confirm access to braid-ios:
 git ls-remote git@github.com:SEEK-Jobs/braid-ios.git HEAD
 ```
 
-If this fails, check your 1Password SSH setup and SEEK-Jobs GitHub access before continuing.
+If this fails, check that your **Xcode disk key** is on GitHub with **SEEK-Jobs SSO** authorised, and that Terminal SSH can reach GitHub.
 
 #### 7c. GitHub Packages token and confirm android-app-template (Android)
 
