@@ -1,0 +1,126 @@
+---
+name: new-braid-prototype
+description: >-
+  Set up a new Braid prototype on macOS for Web, iOS, Android, or Email — including
+  one-time machine setup and per-project scaffolding. Use when the user wants to start
+  a Braid prototype, scaffold a design project, or is missing prerequisites. Do not use
+  for existing production apps or backend-only work.
+type: skill
+compatible_tools: [cursor, claude, copilot]
+compatibility: >-
+  macOS with an AI-enabled IDE (Cursor, Claude Code, or GitHub Copilot via SEEK Self
+  Service), network access, and permission to run terminal commands. Platform tools
+  (Xcode, Android Studio, Node/pnpm/Yarn) are checked and installed via references.
+metadata:
+  author: "@SEEK-Jobs/design-practice"
+  tags:
+    - braid
+    - design
+    - prototyping
+    - web
+    - ios
+    - android
+    - email
+    - onboarding
+    - ai-toolkit
+    - internal
+---
+
+# New Braid prototype
+
+Procedural workflow for creating a **new Braid prototype** on macOS. Supports **Web**, **iOS**, **Android**, and **Email**.
+
+## When to use
+
+- User wants a new Braid prototype / design project
+- User needs machine setup before prototyping
+- User asks to scaffold Sku + Braid (web), blank Xcode + braid-ios, Android template, or email Playroom + AI
+
+## When not to use
+
+- Existing production app repos (unless they explicitly want a separate prototype)
+- Backend-only or non-Braid work
+- Windows/Linux (this skill assumes macOS)
+
+## References
+
+**Machine setup** (one-time):
+
+| File | When |
+| --- | --- |
+| `references/machine-setup/common.md` | Always — Homebrew, Git, Terminal GitHub SSH, AI Toolkit, GitLens |
+| `references/machine-setup/Web.md` | Web — Node, pnpm, Prettier/ESLint |
+| `references/machine-setup/iOS.md` | iOS — Xcode, disk-based SSH key for Xcode |
+| `references/machine-setup/Android.md` | Android — Android Studio, GitHub Packages token |
+| `references/machine-setup/Email.md` | Email Track B — Node, Yarn, email repo access |
+| `references/machine-setup/ssh-keys-1password.md` | When Terminal SSH to GitHub fails — agent-assisted 1Password setup |
+
+**Project setup** (every prototype / workspace):
+
+| File | When |
+| --- | --- |
+| `references/project-setup/Web-project.md` | Web — Sku scaffold + braid-design-system |
+| `references/project-setup/iOS-project.md` | iOS — blank Xcode app + braid-ios |
+| `references/project-setup/Android-project.md` | Android — clone android-app-template |
+| `references/project-setup/Email-project.md` | Email — Track A (Playroom only) or Track B (clone + Playroom) |
+
+**Source guides:**
+
+- Web Part 1: https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364383759
+- Web Part 2: https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364350996
+- SSH (1Password) agent prompt: https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5606015700
+
+---
+
+## Agent behavior
+
+**Be interactive, not autonomous.** Work step by step. After each step, verify success before continuing. If a step fails, stop and explain what the user must do.
+
+### 1. Confirm platform
+
+If the user has **not** already stated a platform, ask which one:
+
+- **Web**
+- **iOS**
+- **Android**
+- **Email**
+
+If they already said it, confirm briefly and continue.
+
+**Email only:** Ask whether they want **Track A** (hosted Playroom only — no machine/project clone) or **Track B** (local clone + AI assistant). Default to Track B if they want AI help.
+
+### 2. Machine setup
+
+1. Read `references/machine-setup/common.md` and complete any **missing** steps (skip what already works).
+2. Read the platform file (`Web.md` / `iOS.md` / `Android.md` / `Email.md`) and complete any **missing** steps.
+3. If `ssh -T git@github.com` fails during common setup, read `references/machine-setup/ssh-keys-1password.md`.
+
+**Email Track A:** Skip machine setup entirely. Go straight to `Email-project.md` Track A.
+
+### 3. Project setup
+
+Read and follow the matching project file:
+
+- Web → `references/project-setup/Web-project.md`
+- iOS → `references/project-setup/iOS-project.md`
+- Android → `references/project-setup/Android-project.md`
+- Email → `references/project-setup/Email-project.md`
+
+---
+
+## NEVER
+
+- Never scaffold or create a project without a **confirmed** project/workspace name
+- Never skip machine setup when prerequisites fail — complete missing steps first
+- Never simulate the Homebrew password prompt — the user must run the installer themselves
+- Never use `cd ~/Code new-cool-project` — path separator must be `/` (`cd ~/Code/<name>`)
+- Never tell iOS users that 1Password SSH agent works in Xcode — Xcode needs the disk-based key
+- Never scaffold email like a Sku web app — email preview is **Playroom**
+
+---
+
+## After setup
+
+Remind the user how to reopen their prototype (commands differ by platform — see the project reference).
+
+For ongoing Braid UI guidance, use the **braid** skill from [braid-context](https://github.com/seek-oss/braid-context) (`SEEK-braid` when installed via AI Toolkit).
