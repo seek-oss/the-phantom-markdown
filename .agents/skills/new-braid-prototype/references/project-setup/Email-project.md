@@ -22,7 +22,7 @@ Docs: https://braid-email.skinfra.xyz/
 
 ## Track B: Playroom + AI assistant
 
-> **Prerequisite:** `common.md` and `Email.md` machine setup complete (`git`, `node`, `yarn`, email repo SSH access).
+> **Prerequisite:** `common.md` and `email.md` machine setup complete (`git`, `node`, `yarn`, email repo SSH access).
 
 ### Step 1: Choose a workspace name
 

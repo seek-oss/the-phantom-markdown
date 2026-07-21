@@ -2,7 +2,7 @@
 
 You are helping create a new Braid **web** prototype. Work through each step **in order**. Verify after each step.
 
-> **Prerequisite:** `common.md` and `Web.md` machine setup complete (`brew`, `git`, `node`, `pnpm` available). If not, stop and finish those first.
+> **Prerequisite:** `common.md` and `web.md` machine setup complete (`brew`, `git`, `node`, `pnpm` available). If not, stop and finish those first.
 
 ---
 

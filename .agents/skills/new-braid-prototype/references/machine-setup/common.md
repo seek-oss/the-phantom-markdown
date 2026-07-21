@@ -71,9 +71,9 @@ You should see a success message mentioning the user’s GitHub username.
 
 ---
 
-## Step 4: Install SEEK AI Toolkit and Braid skill
+## Step 4: Install SEEK AI Toolkit, Braid skill, and braid-ui rule
 
-If `ai-toolkit` is already installed (e.g. this skill was launched from AI Toolkit), skip the tap/install — go straight to installing or verifying the **Braid skill**.
+If `ai-toolkit` is already installed (e.g. this skill was launched from AI Toolkit), skip the tap/install — go straight to installing or verifying the **Braid skill** and **braid-ui rule**.
 
 This step requires SEEK-Jobs GitHub access. If the user doesn’t have it yet, **skip** and continue to Step 5.
 
@@ -90,15 +90,16 @@ brew install SEEK-Jobs/homebrew-tools/ai-toolkit
 ai-toolkit
 ```
 
-Once AI Toolkit is running, install the **Braid skill**:
+Once AI Toolkit is running, install the **Braid skill** and the **braid-ui rule**:
 
 ```bash
 ai-toolkit install skill Braid --catalog seek-oss/braid-context/.agents@master
+ai-toolkit install rule braid-ui --catalog seek-oss/braid-context/.agents@master
 ```
 
-The user will be prompted to select their IDE (**Cursor**, **Claude Code**, or **Copilot**) and installation target (**Workspace** or user profile).
+The user will be prompted to select their IDE (**Cursor**, **Claude Code**, or **Copilot**) and installation target (**Workspace** or user profile) for each install.
 
-**Verify:** user confirms the Braid skill installed, or they explicitly skipped due to missing GitHub access.
+**Verify:** user confirms the Braid skill and braid-ui rule installed, or they explicitly skipped due to missing GitHub access.
 
 ---
 
@@ -116,10 +117,10 @@ cursor --install-extension eamodio.gitlens
 
 If install fails, note it but do not block — this step is optional.
 
-Platform-specific extensions are in `Web.md`, `iOS.md`, `Android.md`, and `Email.md`.
+Platform-specific extensions are in `web.md`, `ios.md`, `android.md`, and `email.md`.
 
 ---
 
 ## Done
 
-Common machine setup is complete. Continue with the **platform** machine-setup file (`Web.md`, `iOS.md`, `Android.md`, or `Email.md`), then the matching project-setup file.
+Common machine setup is complete. Continue with the **platform** machine-setup file (`web.md`, `ios.md`, `android.md`, or `email.md`), then the matching project-setup file.

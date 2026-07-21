@@ -2,7 +2,7 @@
 
 Complete `common.md` first. These steps are for **Track B** (Playroom + AI assistant).
 
-> **Track A:** If the user only wants hosted Playroom, skip this file and go to `Email-project.md` Track A.
+> **Track A:** If the user only wants hosted Playroom, skip this file and go to `email-project.md` Track A.
 
 ---
 
@@ -74,4 +74,4 @@ cursor --install-extension dbaeumer.vscode-eslint
 
 ## Done
 
-Continue with `references/project-setup/Email-project.md` (Track B).
+Continue with `references/project-setup/email-project.md` (Track B).

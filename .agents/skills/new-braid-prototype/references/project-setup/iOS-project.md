@@ -2,7 +2,7 @@
 
 You are helping create a new Braid **iOS** prototype: blank Xcode app + [braid-ios](https://github.com/SEEK-Jobs/braid-ios). Work step by step. Many steps are **user actions in Xcode** — guide them; do not pretend Xcode UI steps ran yourself.
 
-> **Prerequisite:** `common.md` and `iOS.md` complete — especially the disk-based SSH key `~/.ssh/id_ed25519_xcode`.
+> **Prerequisite:** `common.md` and `ios.md` complete — especially the disk-based SSH key `~/.ssh/id_ed25519_xcode`.
 
 ---
 

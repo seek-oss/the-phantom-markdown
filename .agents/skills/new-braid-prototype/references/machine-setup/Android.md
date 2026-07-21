@@ -53,4 +53,4 @@ If they edit Kotlin in a VS Code–compatible IDE, suggest **Kotlin** (`fwcd.kot
 
 ## Done
 
-Continue with `references/project-setup/Android-project.md`.
+Continue with `references/project-setup/android-project.md`.

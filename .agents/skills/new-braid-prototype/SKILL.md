@@ -44,20 +44,20 @@ Procedural workflow for creating a **new Braid prototype** on macOS. Supports **
 | File | When |
 | --- | --- |
 | `references/machine-setup/common.md` | Always — Homebrew, Git, Terminal GitHub SSH, AI Toolkit, GitLens |
-| `references/machine-setup/Web.md` | Web — Node, pnpm, Prettier/ESLint |
-| `references/machine-setup/iOS.md` | iOS — Xcode, disk-based SSH key for Xcode |
-| `references/machine-setup/Android.md` | Android — Android Studio, GitHub Packages token |
-| `references/machine-setup/Email.md` | Email Track B — Node, Yarn, email repo access |
+| `references/machine-setup/web.md` | Web — Node, pnpm, Prettier/ESLint |
+| `references/machine-setup/ios.md` | iOS — Xcode, disk-based SSH key for Xcode |
+| `references/machine-setup/android.md` | Android — Android Studio, GitHub Packages token |
+| `references/machine-setup/email.md` | Email Track B — Node, Yarn, email repo access |
 | `references/machine-setup/ssh-keys-1password.md` | When Terminal SSH to GitHub fails — agent-assisted 1Password setup |
 
 **Project setup** (every prototype / workspace):
 
 | File | When |
 | --- | --- |
-| `references/project-setup/Web-project.md` | Web — Sku scaffold + braid-design-system |
-| `references/project-setup/iOS-project.md` | iOS — blank Xcode app + braid-ios |
-| `references/project-setup/Android-project.md` | Android — clone android-app-template |
-| `references/project-setup/Email-project.md` | Email — Track A (Playroom only) or Track B (clone + Playroom) |
+| `references/project-setup/web-project.md` | Web — Sku scaffold + braid-design-system |
+| `references/project-setup/ios-project.md` | iOS — blank Xcode app + braid-ios |
+| `references/project-setup/android-project.md` | Android — clone android-app-template |
+| `references/project-setup/email-project.md` | Email — Track A (Playroom only) or Track B (clone + Playroom) |
 
 ---
 
@@ -79,19 +79,19 @@ If they already said the platform (and track, for Email), confirm briefly and co
 ### 2. Machine setup
 
 1. Read `references/machine-setup/common.md` and complete any **missing** steps (skip what already works).
-2. Read the platform file (`Web.md` / `iOS.md` / `Android.md` / `Email.md`) and complete any **missing** steps.
+2. Read the platform file (`web.md` / `ios.md` / `android.md` / `email.md`) and complete any **missing** steps.
 3. If `ssh -T git@github.com` fails during common setup, read `references/machine-setup/ssh-keys-1password.md`.
 
-**Email Track A:** Skip machine setup entirely. Go straight to `Email-project.md` Track A.
+**Email Track A:** Skip machine setup entirely. Go straight to `email-project.md` Track A.
 
 ### 3. Project setup
 
 Read and follow the matching project file:
 
-- Web → `references/project-setup/Web-project.md`
-- iOS → `references/project-setup/iOS-project.md`
-- Android → `references/project-setup/Android-project.md`
-- Email → `references/project-setup/Email-project.md`
+- Web → `references/project-setup/web-project.md`
+- iOS → `references/project-setup/ios-project.md`
+- Android → `references/project-setup/android-project.md`
+- Email → `references/project-setup/email-project.md`
 
 ---
 
@@ -102,7 +102,7 @@ Read and follow the matching project file:
 - Never simulate the Homebrew password prompt — the user must run the installer themselves
 - Never use `cd ~/Code new-cool-project` — path separator must be `/` (`cd ~/Code/<name>`)
 
-Platform-specific NEVERs live in the matching reference file (e.g. iOS SSH key handling in `iOS.md`, email scaffolding in `Email-project.md`).
+Platform-specific NEVERs live in the matching reference file (e.g. iOS SSH key handling in `ios.md`, email scaffolding in `email-project.md`).
 
 ---
 

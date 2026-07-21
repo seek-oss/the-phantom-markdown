@@ -6,7 +6,7 @@ Use this reference when Terminal GitHub SSH fails during common machine setup (`
 
 **Not the goal here:** set up an existing project’s remote, or require commit signing (optional at the end).
 
-**Xcode note:** This flow does **not** authenticate Xcode SPM. For iOS package resolve, use the disk-based key in `iOS.md`.
+**Xcode note:** This flow does **not** authenticate Xcode SPM. For iOS package resolve, use the disk-based key in `ios.md`.
 
 ---
 

@@ -2,7 +2,7 @@
 
 You are helping create a new Braid **Android** prototype from [android-app-template](https://github.com/SEEK-Jobs/android-app-template). Work step by step.
 
-> **Prerequisite:** `common.md` and `Android.md` complete — GitHub Packages token ready.
+> **Prerequisite:** `common.md` and `android.md` complete — GitHub Packages token ready.
 
 ---
 

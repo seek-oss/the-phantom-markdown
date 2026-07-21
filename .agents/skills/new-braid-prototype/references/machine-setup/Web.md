@@ -89,4 +89,4 @@ GitLens is in `common.md`.
 
 ## Done
 
-Continue with `references/project-setup/Web-project.md`.
+Continue with `references/project-setup/web-project.md`.

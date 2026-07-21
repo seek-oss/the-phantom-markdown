@@ -77,4 +77,4 @@ If they edit Swift in a VS Code–compatible IDE, suggest **Swift** (`swiftlang.
 
 ## Done
 
-Continue with `references/project-setup/iOS-project.md`.
+Continue with `references/project-setup/ios-project.md`.
