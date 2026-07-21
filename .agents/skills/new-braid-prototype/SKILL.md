@@ -6,11 +6,6 @@ description: >-
   a Braid prototype, scaffold a design project, or is missing prerequisites. Do not use
   for existing production apps or backend-only work.
 type: skill
-compatible_tools: [cursor, claude, copilot]
-compatibility: >-
-  macOS with an AI-enabled IDE (Cursor, Claude Code, or GitHub Copilot via SEEK Self
-  Service), network access, and permission to run terminal commands. Platform tools
-  (Xcode, Android Studio, Node/pnpm/Yarn) are checked and installed via references.
 metadata:
   author: "@SEEK-Jobs/design-practice"
   tags:
@@ -64,30 +59,22 @@ Procedural workflow for creating a **new Braid prototype** on macOS. Supports **
 | `references/project-setup/Android-project.md` | Android — clone android-app-template |
 | `references/project-setup/Email-project.md` | Email — Track A (Playroom only) or Track B (clone + Playroom) |
 
-**Source guides:**
-
-- Web Part 1: https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364383759
-- Web Part 2: https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364350996
-- SSH (1Password) agent prompt: https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5606015700
-
 ---
 
 ## Agent behavior
 
 **Be interactive, not autonomous.** Work step by step. After each step, verify success before continuing. If a step fails, stop and explain what the user must do.
 
-### 1. Confirm platform
+### 1. Confirm platform (and track, for Email)
 
 If the user has **not** already stated a platform, ask which one:
 
 - **Web**
 - **iOS**
 - **Android**
-- **Email**
+- **Email** — if chosen, also ask in the same turn whether they want **Track A** (hosted Playroom only — no machine/project clone) or **Track B** (local clone + AI assistant). Default to Track B if they want AI help.
 
-If they already said it, confirm briefly and continue.
-
-**Email only:** Ask whether they want **Track A** (hosted Playroom only — no machine/project clone) or **Track B** (local clone + AI assistant). Default to Track B if they want AI help.
+If they already said the platform (and track, for Email), confirm briefly and continue.
 
 ### 2. Machine setup
 
@@ -114,8 +101,8 @@ Read and follow the matching project file:
 - Never skip machine setup when prerequisites fail — complete missing steps first
 - Never simulate the Homebrew password prompt — the user must run the installer themselves
 - Never use `cd ~/Code new-cool-project` — path separator must be `/` (`cd ~/Code/<name>`)
-- Never tell iOS users that 1Password SSH agent works in Xcode — Xcode needs the disk-based key
-- Never scaffold email like a Sku web app — email preview is **Playroom**
+
+Platform-specific NEVERs live in the matching reference file (e.g. iOS SSH key handling in `iOS.md`, email scaffolding in `Email-project.md`).
 
 ---
 

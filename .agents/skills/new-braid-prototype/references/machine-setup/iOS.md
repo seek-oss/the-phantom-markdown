@@ -40,6 +40,8 @@ This creates:
 
 Keep 1Password SSH for Terminal (from `common.md`) — separate from this key.
 
+> **NEVER tell the user the 1Password SSH agent works in Xcode.** Xcode does not support SSH agents — it needs this disk-based key.
+
 ---
 
 ## Step 3: Add the public key to GitHub

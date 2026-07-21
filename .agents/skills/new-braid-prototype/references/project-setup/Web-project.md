@@ -4,8 +4,6 @@ You are helping create a new Braid **web** prototype. Work through each step **i
 
 > **Prerequisite:** `common.md` and `Web.md` machine setup complete (`brew`, `git`, `node`, `pnpm` available). If not, stop and finish those first.
 
-**Source guide:** [Part 2 (Every project)](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364350996/Part+2+Every+project)
-
 ---
 
 ## Step 1: Choose a project name

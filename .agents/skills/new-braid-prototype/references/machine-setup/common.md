@@ -6,8 +6,6 @@ You are helping set up a macOS machine for Braid prototyping. Work through each 
 
 > **User action required:** Some steps need the user to act (password prompts, browser SSO). Do not skip or simulate them.
 
-**Source guides:** Shared Part 1 drafts; Web Part 1 Confluence (Homebrew / Git / AI Toolkit overlap): https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364383759
-
 ---
 
 ## Step 1: Install Homebrew
@@ -59,11 +57,7 @@ You should see a version number.
 
 The user needs a GitHub licence and access to the **SEEK-Jobs** organisation. For Terminal, `git`, and AI Toolkit, SSH keys in **1Password** are recommended.
 
-If SSH is not working yet, read and follow `ssh-keys-1password.md` in this folder (agent-assisted setup). Manual docs:
-
-- [SSH key setup in 1Password](https://myseek.atlassian.net/wiki/spaces/DP/blog/2020/09/14/857116358)
-- [GitHub onboarding](https://myseek.atlassian.net/wiki/spaces/DP/pages/2169283073/GitHub+Onboarding#Optional---but-highly-recommended)
-- [Agent prompt for SSH keys](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5606015700)
+If SSH is not working yet, read and follow `ssh-keys-1password.md` in this folder (agent-assisted setup).
 
 Verify:
 

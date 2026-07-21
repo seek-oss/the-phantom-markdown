@@ -2,8 +2,6 @@
 
 Complete `common.md` first. Then work through these Web-only steps. Skip anything already installed.
 
-**Source guide:** [Part 1 (Do once)](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5364383759/Part+1+Do+once)
-
 ---
 
 ## Step 1: Install Node.js

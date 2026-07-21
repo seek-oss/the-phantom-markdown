@@ -8,12 +8,6 @@ Use this reference when Terminal GitHub SSH fails during common machine setup (`
 
 **Xcode note:** This flow does **not** authenticate Xcode SPM. For iOS package resolve, use the disk-based key in `iOS.md`.
 
-**Related docs:**
-
-- [Agent prompt for setting up SSH keys](https://myseek.atlassian.net/wiki/spaces/DPRAC/pages/5606015700) (signing-oriented; adapted below for auth-first)
-- [SSH key setup in 1Password](https://myseek.atlassian.net/wiki/spaces/DP/blog/2020/09/14/857116358)
-- [GitHub onboarding](https://myseek.atlassian.net/wiki/spaces/DP/pages/2169283073/GitHub+Onboarding#Optional---but-highly-recommended)
-
 ---
 
 ## Agent behavior
