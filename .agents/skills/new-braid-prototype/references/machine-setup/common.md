@@ -67,7 +67,7 @@ ssh -T git@github.com
 
 You should see a success message mentioning the user’s GitHub username.
 
-> **Note:** Platform-specific credentials (Xcode disk key, Android Packages token) are in the platform machine-setup files — not here.
+> **Note:** Platform-specific credentials (Xcode disk key, Android Cloudsmith token) are in the platform machine-setup files — not here.
 
 ---
 

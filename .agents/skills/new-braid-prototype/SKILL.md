@@ -29,7 +29,7 @@ Procedural workflow for creating a **new Braid prototype** on macOS. Supports **
 
 - User wants a new Braid prototype / design project
 - User needs machine setup before prototyping
-- User asks to scaffold Sku + Braid (web), blank Xcode + braid-ios, Android template, or email Playroom + AI
+- User asks to scaffold Sku + Braid (web), blank Xcode + braid-ios, blank Android Studio + braid-compose, or email Playroom + AI
 
 ## When not to use
 
@@ -46,7 +46,7 @@ Procedural workflow for creating a **new Braid prototype** on macOS. Supports **
 | `references/machine-setup/common.md` | Always — Homebrew, Git, Terminal GitHub SSH, AI Toolkit, GitLens |
 | `references/machine-setup/web.md` | Web — Node, pnpm, Prettier/ESLint |
 | `references/machine-setup/ios.md` | iOS — Xcode, disk-based SSH key for Xcode |
-| `references/machine-setup/android.md` | Android — Android Studio, GitHub Packages token |
+| `references/machine-setup/android.md` | Android — Android Studio, Cloudsmith Gradle token |
 | `references/machine-setup/email.md` | Email Track B — Node, Yarn, email repo access |
 | `references/machine-setup/ssh-keys-1password.md` | When Terminal SSH to GitHub fails — agent-assisted 1Password setup |
 
@@ -56,7 +56,7 @@ Procedural workflow for creating a **new Braid prototype** on macOS. Supports **
 | --- | --- |
 | `references/project-setup/web-project.md` | Web — Sku scaffold + braid-design-system |
 | `references/project-setup/ios-project.md` | iOS — blank Xcode app + braid-ios |
-| `references/project-setup/android-project.md` | Android — clone android-app-template |
+| `references/project-setup/android-project.md` | Android — blank Android Studio app + braid-compose |
 | `references/project-setup/email-project.md` | Email — Track A (Playroom only) or Track B (clone + Playroom) |
 
 ---

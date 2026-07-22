@@ -16,36 +16,32 @@ Optional verify:
 adb --version
 ```
 
+Optional: create a **Pixel** emulator via **Tools → Device Manager → Create Virtual Device** (Phone → Pixel, default API level). They can also do this during project setup.
+
 ---
 
-## Step 2: Generate a GitHub Packages token
+## Step 2: Get a Cloudsmith Gradle token
 
-The Android app template depends on private SEEK packages on GitHub Packages (including Braid via [android-app-platform](https://github.com/SEEK-Jobs/android-app-platform)).
+Braid Android packages are hosted on SEEK’s private [Cloudsmith](https://cloudsmith.com) Gradle repo (see [braid-android](https://github.com/SEEK-Jobs/braid-android)). Token guidance also lives in [Backstage artifact management docs](https://backstage.myseek.xyz/docs/default/component/artifact-management-docs/).
 
 Guide the user:
 
-1. Visit [github.com/settings/tokens](https://github.com/settings/tokens)
-2. **Generate new token (classic)**
-3. Name it `Android Studio GitHub`
-4. Grant **`read:packages`** (and **`repo`** if cloning via HTTPS)
-5. Generate and copy the token — they cannot view it again
-6. **Enable SSO** → authorise **SEEK-Jobs**
+1. Get access to **Cloudsmith** via **Lumos / Okta**
+2. Open and sign in at [cloudsmith.com](https://cloudsmith.com)
+3. Open the **Gradle** repository settings
+4. Copy the **entitlement token**
 
-Keep username + token handy for project setup (`local.properties`).
+They will add it to each project’s `local.properties` during project setup:
 
----
-
-## Step 3: Confirm access to android-app-template
-
-```bash
-git ls-remote git@github.com:SEEK-Jobs/android-app-template.git HEAD
+```properties
+cloudsmith.gradle=YOUR_TOKEN
 ```
 
-If this fails, they need SEEK-Jobs access / SSO before continuing.
+Keep the token handy. Do not commit it.
 
 ---
 
-## Step 4: IDE extensions (optional)
+## Step 3: IDE extensions (optional)
 
 If they edit Kotlin in a VS Code–compatible IDE, suggest **Kotlin** (`fwcd.kotlin`).
 
