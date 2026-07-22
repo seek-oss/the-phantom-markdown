@@ -8,7 +8,7 @@ You are helping create a new Braid **iOS** prototype: blank Xcode app + [braid-i
 
 ## Step 1: Choose a project name
 
-Ask for (or confirm) the prototype name and a folder-safe name under `~/Code/` (e.g. `JobAlertSettings` or `job-alert-settings`).
+Ask for (or confirm) a single folder-safe name under `~/Code/` (e.g. `JobAlertSettings` or `job-alert-settings`). Use that same name as the Xcode **Product Name**.
 
 Validate:
 
@@ -24,7 +24,7 @@ Guide the user:
 
 1. Open **Xcode** → **File → New → Project…**
 2. **iOS** → **App** → **Next**
-3. **Product Name:** their prototype name
+3. **Product Name:** the confirmed project name
 4. **Organization Identifier:** e.g. `com.seek`
 5. **Interface:** **SwiftUI**, **Language:** **Swift**
 6. Save to `~/Code/`, create
@@ -45,11 +45,24 @@ Guide the user:
    ```
 
 3. Dependency rule: **Up to Next Major Version** (accept the suggested starting version)
-4. Add product **BraidSwiftUI** to the app target
+4. When Xcode shows the products list, ensure **BraidSwiftUI** is checked for the **app target**, then **Add Package**
+
+   Xcode can resolve the package **without** linking the product. Confirm **BraidSwiftUI** is listed under the app target → **General** → **Frameworks, Libraries, and Embedded Content**.
 
 When Xcode asks for an SSH key: **Choose…** → `~/.ssh/id_ed25519_xcode` (private key, not `.pub`).
 
-**Verify:** **braid-ios** appears under Package Dependencies without errors.
+**Verify (both required):**
+
+1. **braid-ios** appears under **Package Dependencies** without errors
+2. **BraidSwiftUI** is linked to the app target
+
+Agent check (preferred): confirm `BraidSwiftUI` appears in `packageProductDependencies` / `XCSwiftPackageProductDependency` in `*.xcodeproj/project.pbxproj`. Do **not** write the smoke-test `ContentView` until this passes.
+
+**If the package resolved but BraidSwiftUI is missing from the target:**
+
+1. Select the project (blue icon) → select the **app target**
+2. **General** → **Frameworks, Libraries, and Embedded Content** → **+**
+3. Choose **BraidSwiftUI** → **Add**
 
 ---
 
@@ -72,7 +85,7 @@ struct ContentView: View {
             Button("Hello World") {
                 print("hello")
             }
-            .buttonStyle(braid: .solid)
+            .buttonStyle(.solid)
             .buttonTone(.formAccent)
         }
         .padding()
@@ -88,7 +101,7 @@ struct ContentView: View {
 
 Guide: select a simulator → **Run** (▶) / **Cmd+R**.
 
-**Verify:** alert and button appear.
+**Verify:** alert and button appear. Do **not** mark setup complete until this succeeds.
 
 ---
 
