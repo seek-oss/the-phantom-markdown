@@ -69,14 +69,6 @@ Opens Playroom locally (typically `http://localhost:9000`).
 - Save Share links per design
 - Do **not** commit personal prototypes to the shared monorepo unless the team owns that work
 
-### Conditional: Braid skill missing
-
-```
-Read all SEEK design guidelines upfront at: https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/systems.md and https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/email.md
-
-Follow all guidelines from those files. Let me know when this has been done.
-```
-
 ---
 
 ## Done

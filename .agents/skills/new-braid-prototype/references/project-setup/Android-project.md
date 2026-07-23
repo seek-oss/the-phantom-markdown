@@ -211,18 +211,6 @@ Do **not** mark setup complete until the project is open in the AI IDE.
 
 ---
 
-## Conditional: Braid skill missing
-
-If AI Toolkit / Braid skill was skipped, have them paste:
-
-```
-Read all SEEK design guidelines upfront at: https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/systems.md and https://raw.githubusercontent.com/seek-oss/braid-context/refs/heads/master/.agents/skills/braid/references/native.md
-
-Follow all guidelines from those files. Let me know when this has been done.
-```
-
----
-
 ## Done
 
 Remind: reopen in **Android Studio** + Run; open the same folder in the IDE for AI help. Docs: https://braid-android.skinfra.xyz/

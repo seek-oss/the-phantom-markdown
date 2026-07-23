@@ -75,7 +75,7 @@ You should see a success message mentioning the user’s GitHub username.
 
 If `ai-toolkit` is already installed (e.g. this skill was launched from AI Toolkit), skip the tap/install — go straight to installing or verifying the **Braid skill** and **braid-ui rule**.
 
-This step requires SEEK-Jobs GitHub access. If the user doesn’t have it yet, **skip** and continue to Step 5.
+This step requires SEEK-Jobs GitHub access.
 
 In **Terminal**, run:
 
@@ -99,7 +99,7 @@ ai-toolkit install rule braid-ui --catalog seek-oss/braid-context/.agents@master
 
 The user will be prompted to select their IDE (**Cursor**, **Claude Code**, or **Copilot**) and installation target (**Workspace** or user profile) for each install.
 
-**Verify:** user confirms the Braid skill and braid-ui rule installed, or they explicitly skipped due to missing GitHub access.
+**Verify:** user confirms the Braid skill and braid-ui rule installed.
 
 ---
 
