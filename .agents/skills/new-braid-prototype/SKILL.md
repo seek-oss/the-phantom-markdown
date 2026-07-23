@@ -45,7 +45,7 @@ Procedural workflow for creating a **new Braid prototype** on macOS. Supports **
 | --- | --- |
 | `references/machine-setup/common.md` | Always — Homebrew, Git, Terminal GitHub SSH, AI Toolkit, GitLens |
 | `references/machine-setup/web.md` | Web — Node, pnpm, Prettier/ESLint |
-| `references/machine-setup/ios.md` | iOS — Xcode, disk-based SSH key for Xcode |
+| `references/machine-setup/ios.md` | iOS — Xcode, disk-based SSH key, optional xcsift / Xcode MCP |
 | `references/machine-setup/android.md` | Android — Android Studio, Cloudsmith Gradle token |
 | `references/machine-setup/email.md` | Email Track B — Node, Yarn, email repo access |
 | `references/machine-setup/ssh-keys-1password.md` | When Terminal SSH to GitHub fails — agent-assisted 1Password setup |

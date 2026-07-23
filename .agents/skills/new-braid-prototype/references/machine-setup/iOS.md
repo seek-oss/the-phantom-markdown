@@ -75,6 +75,48 @@ If they edit Swift in a VS Code–compatible IDE, suggest **Swift** (`swiftlang.
 
 ---
 
+## Step 6: AI coding tools for Cursor (optional, recommended)
+
+Not required to scaffold a Braid prototype (project setup still uses Xcode UI). Recommended for better AI-assisted iteration afterward. Source of truth: [Candidate iOS Apps — AI Coding Agents](https://backstage.myseek.xyz/docs/default/system/candidate-ios-apps/AI%20Coding%20Agents/).
+
+### xcsift (recommended)
+
+Parses `xcodebuild` / Swift build output into a token-efficient form for agents.
+
+```bash
+brew install xcsift
+xcsift install-cursor --global
+```
+
+### Xcode MCP server (if Xcode 26.3+)
+
+Lets Cursor use Xcode for builds, tests, docs, and more. Check version first:
+
+```bash
+xcodebuild -version
+```
+
+If **26.3 or later**, add to `~/.cursor/mcp.json` (merge with any existing `mcpServers`; use the standard name `xcode-tools`):
+
+```json
+{
+  "mcpServers": {
+    "xcode-tools": {
+      "command": "xcrun",
+      "args": ["mcpbridge"]
+    }
+  }
+}
+```
+
+`xcrun mcpbridge` uses the active Xcode (`xcode-select`). If they have multiple installs, select the right one before relying on the MCP.
+
+Skip this block if Xcode is older than 26.3.
+
+> Do **not** treat exporting Xcode agent skills (`xcrun agent skills export…`) as part of this setup — that tooling is still evolving. Point curious users at the Backstage page instead.
+
+---
+
 ## Done
 
 Continue with `references/project-setup/ios-project.md`.
