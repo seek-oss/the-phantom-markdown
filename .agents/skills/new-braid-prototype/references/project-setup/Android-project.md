@@ -8,7 +8,9 @@ You are helping create a new Braid **Android** prototype: blank Android Studio a
 
 ## Step 1: Choose a project name
 
-Ask for (or confirm) a single folder-safe name under `~/Code/` (e.g. `JobAlertSettings` or `job-alert-settings`). Use that same name as the Android Studio project / app name.
+Ask for (or confirm) a single folder-safe name under `~/Code/`. Prefer **underscores or CamelCase** (e.g. `JobAlertSettings` or `job_alert_settings`). Avoid hyphens — Android Studio often rewrites them to underscores (e.g. `test-android5` → `test_android5`).
+
+Use that same name as the Android Studio project / app name.
 
 Validate:
 
@@ -35,6 +37,8 @@ Guide the user:
 
 **Verify:** project opens with `MainActivity.kt`; Gradle sync succeeds.
 
+**After create:** confirm the **actual** folder under `~/Code/` (Android Studio may have changed hyphens to underscores). Use that real path for all later steps.
+
 ---
 
 ## Step 3: Add the Cloudsmith token
@@ -45,7 +49,7 @@ Android Studio creates `local.properties` in the project root (git-ignored) with
 cloudsmith.gradle=YOUR_TOKEN
 ```
 
-Do not commit this file.
+Have the user paste the token themselves (do not ask them to send it in chat). Do not commit this file.
 
 ---
 
@@ -83,22 +87,38 @@ Merge with the file’s existing structure — do not duplicate `dependencyResol
 
 ---
 
-## Step 5: Add the braid-compose dependency
+## Step 5: Add braid-compose + enable desugaring
 
-In `app/build.gradle.kts`, add:
+Braid requires **core library desugaring**. In `app/build.gradle.kts`:
+
+1. In `android { compileOptions { … } }`, enable desugaring (keep existing Java compatibility lines):
+
+```kotlin
+compileOptions {
+    // existing sourceCompatibility / targetCompatibility …
+    isCoreLibraryDesugaringEnabled = true
+}
+```
+
+2. In `dependencies { … }`, add both:
 
 ```kotlin
 dependencies {
     // …
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
     implementation("seek.braid:braid-compose:20.2.0")
 }
 ```
 
-`20.2.0` is a known-good starting version. For the latest, check [Cloudsmith — braid-compose](https://app.cloudsmith.com/seek/gradle?page=1&query=name%3Abraid-compose) (SEEK login required).
+`20.2.0` is a known-good starting version for braid-compose. For the latest, check [Cloudsmith — braid-compose](https://app.cloudsmith.com/seek/gradle?page=1&query=name%3Abraid-compose) (SEEK login required).
+
+You may edit the Gradle files directly once the blank app exists; keep the Cloudsmith token paste as a user action.
 
 **Verify:** Gradle sync succeeds and the dependency resolves (no “Could not find seek.braid:braid-compose” errors). Do **not** write the smoke-test UI until this passes.
 
 **If sync fails on auth / missing package:** re-check `cloudsmith.gradle` in `local.properties`, Cloudsmith access (Lumos/Okta), and that the token was pasted without extra spaces.
+
+**If build fails on AAR metadata / “requires core library desugaring”:** confirm Step 5 desugaring lines are present, then sync again.
 
 ---
 
@@ -163,7 +183,13 @@ Remove unused default theme / scaffold imports if the build complains.
 
 ## Step 7: Run on an emulator
 
-Guide: start a **Pixel** emulator (or any device) → **Run** (▶).
+Guide the user:
+
+1. **Tools → Device Manager** → **add a device** (Phone → Pixel is fine) → follow the prompts
+2. If Android Studio offers an **SDK Component Installer**, accept/install
+3. Start the emulator, then **Run** (▶)
+
+The emulator often opens **embedded** in Android Studio’s **Running Devices** panel (unlike the separate iOS Simulator window). That is normal.
 
 **Verify:** info alert and “Hello World” button appear. Do **not** mark setup complete until this succeeds.
 
@@ -171,9 +197,17 @@ Guide: start a **Pixel** emulator (or any device) → **Run** (▶).
 
 ## Step 8: Open the project in the AI IDE
 
-Open `~/Code/<project-folder>` in Cursor / Copilot / Claude Code.
+Only after Step 7 succeeds: open the **actual** project folder in Cursor / Copilot / Claude Code (use the real path under `~/Code/`, including any underscore rewrite).
+
+Example:
+
+```bash
+cursor ~/Code/<actual-project-folder>
+```
 
 > Edit in the IDE; **run/preview in Android Studio**.
+
+Do **not** mark setup complete until the project is open in the AI IDE.
 
 ---
 
