@@ -1,73 +1,184 @@
-# Agent instructions: Braid email prototype workspace
+# Agent instructions: new Braid email prototype
 
-Email preview is always **Playroom** (browser). The AI assistant helps write code; Playroom is where templates are composed and previewed.
+You are helping create a new Braid **email** prototype: a standalone TypeScript project with [`@seek/braid-email-ui`](https://braid-email.skinfra.xyz/?path=/docs/braid-email-ui-getting-started--docs). Work step by step.
 
-**Do not** scaffold a Sku-style app for email.
-
----
-
-## Track A: Playroom only (no setup)
-
-Use when the user wants visual exploration **without** a local clone / AI project context.
-
-1. Open [Braid Email Playroom](https://braid-email.skinfra.xyz/playroom/) (SEEK SSO)
-2. Use **Snippets**, edit code, preview in frames
-3. **Share** to copy a URL
-
-Stop here unless they want Track B.
-
-Docs: https://braid-email.skinfra.xyz/
+> **Prerequisite:** `common.md` and `email.md` complete — especially Cloudsmith npm auth for `@seek` packages.
 
 ---
 
-## Track B: Playroom + AI assistant
+## Step 1: Choose a project name
 
-> **Prerequisite:** `common.md` and `email.md` machine setup complete (`git`, `node`, `yarn`, email repo SSH access).
-
-### Step 1: Choose a workspace name
-
-One clone is reused for many prototypes. Naming: lowercase, numbers, hyphens.
+Ask for (or confirm) a single folder-safe name under `~/Code/` (e.g. `job-alert-email` or `welcome-email-proto`). Prefer lowercase with hyphens.
 
 Validate:
 
 ```bash
-test ! -e ~/Code/<workspace-name> && echo "OK" || echo "Folder already exists"
+test ! -e ~/Code/<project-folder> && echo "OK" || echo "Folder already exists"
 ```
 
-### Step 2: Clone the email monorepo (once)
+---
+
+## Step 2: Scaffold a standalone project
+
+Create `~/Code/<project-folder>` with a minimal Yarn + TypeScript + React setup (agent may write these files):
+
+**`package.json`** (use the confirmed project name):
+
+```json
+{
+  "name": "<project-folder>",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "render": "tsx src/render.tsx"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
+```
+
+**`tsconfig.json`:**
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src"]
+}
+```
+
+**`.gitignore`:** include at least `node_modules/`, `out/`, `dist/`.
+
+Then install dependencies:
 
 ```bash
-cd ~/Code
-git clone git@github.com:SEEK-Jobs/mjml-react-email-templates.git <workspace-name>
-cd ~/Code/<workspace-name>
-yarn install
+cd ~/Code/<project-folder>
+yarn add @seek/braid-email-ui @faire/mjml-react mjml react@^18 react-dom@^18
+yarn add -D typescript tsx @types/react @types/react-dom @types/mjml
 ```
 
-### Step 3: Open the workspace in the AI IDE
+**Verify:** install succeeds and `@seek/braid-email-ui` resolves from Cloudsmith (no `E401` / missing package).
 
-Open `~/Code/<workspace-name>` in Cursor / Copilot / Claude Code.
+**If install fails on auth:** send the user back to `email.md` Step 3 (Cloudsmith npm). Do **not** fall back to cloning the monorepo or hosted Playroom as a substitute for fixing auth.
 
-### Step 4: Prototype in Playroom
+---
 
-**Option A — Hosted (recommended):**
+## Step 3: Smoke-test Braid email shell
 
-1. Open https://braid-email.skinfra.xyz/playroom/
-2. Ask the assistant to draft React + `@seek/braid-email-ui` code
-3. Paste into Playroom; preview; **Share**
+Add a minimal layout, sample template, and render script. Keep `themeName="seekJobs"`.
 
-**Option B — Local (optional):**
+**`src/EmailLayout.tsx`:**
+
+```tsx
+import { Mjml, MjmlBody, MjmlHead, MjmlPreview } from '@faire/mjml-react';
+import { BraidHead, BraidProvider } from '@seek/braid-email-ui';
+import type { FC, PropsWithChildren } from 'react';
+
+type EmailLayoutProps = PropsWithChildren<{
+  previewText?: string;
+}>;
+
+export const EmailLayout: FC<EmailLayoutProps> = ({
+  children,
+  previewText,
+}) => (
+  <BraidProvider themeName="seekJobs">
+    <Mjml>
+      <MjmlHead>
+        <BraidHead />
+        {previewText ? <MjmlPreview>{previewText}</MjmlPreview> : null}
+      </MjmlHead>
+      <MjmlBody>{children}</MjmlBody>
+    </Mjml>
+  </BraidProvider>
+);
+```
+
+**`src/WelcomeEmail.tsx`:**
+
+```tsx
+import { Button, Heading, PageBlock, Text } from '@seek/braid-email-ui';
+import type { FC } from 'react';
+
+import { EmailLayout } from './EmailLayout';
+
+export const WelcomeEmail: FC = () => (
+  <EmailLayout previewText="Welcome to your Braid email prototype">
+    <PageBlock>
+      <Heading level="1" paddingBottom="small">
+        Welcome
+      </Heading>
+      <Text paddingBottom="medium">
+        Braid email is connected. You can start prototyping.
+      </Text>
+      <Button href="https://www.seek.com.au">Go to SEEK</Button>
+    </PageBlock>
+  </EmailLayout>
+);
+```
+
+**`src/render.tsx`:**
+
+```tsx
+import { render } from '@faire/mjml-react/utils/render';
+import { mkdir, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+
+import { WelcomeEmail } from './WelcomeEmail';
+
+async function main() {
+  const outDir = path.join(process.cwd(), 'out');
+  const outFile = path.join(outDir, 'welcome.html');
+
+  const { html } = await render(<WelcomeEmail />);
+
+  await mkdir(outDir, { recursive: true });
+  await writeFile(outFile, html, 'utf8');
+
+  console.log(`Wrote ${outFile}`);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+```
+
+Docs: https://braid-email.skinfra.xyz/?path=/docs/braid-email-ui-getting-started--docs
+
+---
+
+## Step 4: Render and preview
 
 ```bash
-yarn playroom
+cd ~/Code/<project-folder>
+yarn render
+open out/welcome.html
 ```
 
-Opens Playroom locally (typically `http://localhost:9000`).
+**Verify:** `out/welcome.html` is written and opens in a browser with the Welcome heading / button. There is no live reload — after edits, run `yarn render` again and refresh the browser.
 
-### Step 5: Keep prototypes organised
+Do **not** mark setup complete until render + preview succeed.
 
-- Name Playroom frames clearly
-- Save Share links per design
-- Do **not** commit personal prototypes to the shared monorepo unless the team owns that work
+---
+
+## Step 5: Open the project in the AI IDE
+
+Open `~/Code/<project-folder>` in Cursor / Copilot / Claude Code.
+
+> Edit templates in the IDE; preview with `yarn render` + open the HTML.
+
+Do **not** mark setup complete until the project is open in the AI IDE.
 
 ---
 
@@ -75,6 +186,8 @@ Opens Playroom locally (typically `http://localhost:9000`).
 
 | Goal | Action |
 | --- | --- |
-| Preview | Hosted Playroom or `yarn playroom` |
-| AI help | Open the workspace folder in the IDE + braid skill |
-| Share | Playroom **Share** link |
+| Preview | `yarn render` then open `out/welcome.html` |
+| Edit | Change `src/WelcomeEmail.tsx` (or add templates) + re-render |
+| Docs | https://braid-email.skinfra.xyz/ |
+
+Optional: [hosted Playroom](https://braid-email.skinfra.xyz/playroom/) is fine for quick visual experiments, but the prototype source of truth is this local project.

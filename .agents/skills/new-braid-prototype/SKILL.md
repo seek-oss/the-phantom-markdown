@@ -29,7 +29,7 @@ Procedural workflow for creating a **new Braid prototype** on macOS. Supports **
 
 - User wants a new Braid prototype / design project
 - User needs machine setup before prototyping
-- User asks to scaffold Sku + Braid (web), blank Xcode + braid-ios, blank Android Studio + braid-compose, or email Playroom + AI
+- User asks to scaffold Sku + Braid (web), blank Xcode + braid-ios, blank Android Studio + braid-compose, or a standalone `@seek/braid-email-ui` email project
 
 ## When not to use
 
@@ -47,7 +47,7 @@ Procedural workflow for creating a **new Braid prototype** on macOS. Supports **
 | `references/machine-setup/web.md` | Web — Node, pnpm, Prettier/ESLint |
 | `references/machine-setup/ios.md` | iOS — Xcode, disk-based SSH key, optional xcsift / Xcode MCP |
 | `references/machine-setup/android.md` | Android — Android Studio, Cloudsmith Gradle token |
-| `references/machine-setup/email.md` | Email Track B — Node, Yarn, email repo access |
+| `references/machine-setup/email.md` | Email — Node, Yarn, Cloudsmith npm auth |
 | `references/machine-setup/ssh-keys-1password.md` | When Terminal SSH to GitHub fails — agent-assisted 1Password setup |
 
 **Project setup** (every prototype / workspace):
@@ -57,7 +57,7 @@ Procedural workflow for creating a **new Braid prototype** on macOS. Supports **
 | `references/project-setup/web-project.md` | Web — Sku scaffold + braid-design-system |
 | `references/project-setup/ios-project.md` | iOS — blank Xcode app + braid-ios |
 | `references/project-setup/android-project.md` | Android — blank Android Studio app + braid-compose |
-| `references/project-setup/email-project.md` | Email — Track A (Playroom only) or Track B (clone + Playroom) |
+| `references/project-setup/email-project.md` | Email — standalone project + `@seek/braid-email-ui` |
 
 ---
 
@@ -65,24 +65,22 @@ Procedural workflow for creating a **new Braid prototype** on macOS. Supports **
 
 **Be interactive, not autonomous.** Work step by step. After each step, verify success before continuing. If a step fails, stop and explain what the user must do.
 
-### 1. Confirm platform (and track, for Email)
+### 1. Confirm platform
 
 If the user has **not** already stated a platform, ask which one:
 
 - **Web**
 - **iOS**
 - **Android**
-- **Email** — if chosen, also ask in the same turn whether they want **Track A** (hosted Playroom only — no machine/project clone) or **Track B** (local clone + AI assistant). Default to Track B if they want AI help.
+- **Email**
 
-If they already said the platform (and track, for Email), confirm briefly and continue.
+If they already said the platform, confirm briefly and continue.
 
 ### 2. Machine setup
 
 1. Read `references/machine-setup/common.md` and complete any **missing** steps (skip what already works).
 2. Read the platform file (`web.md` / `ios.md` / `android.md` / `email.md`) and complete any **missing** steps.
 3. If `ssh -T git@github.com` fails during common setup, read `references/machine-setup/ssh-keys-1password.md`.
-
-**Email Track A:** Skip machine setup entirely. Go straight to `email-project.md` Track A.
 
 ### 3. Project setup
 

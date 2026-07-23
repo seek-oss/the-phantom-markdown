@@ -1,8 +1,6 @@
-# Agent instructions: Email machine setup (Track B)
+# Agent instructions: Email machine setup
 
-Complete `common.md` first. These steps are for **Track B** (Playroom + AI assistant).
-
-> **Track A:** If the user only wants hosted Playroom, skip this file and go to `email-project.md` Track A.
+Complete `common.md` first. Then work through these email-only steps.
 
 ---
 
@@ -28,19 +26,7 @@ You should see a version number.
 
 ---
 
-## Step 2: Confirm access to the email repository
-
-```bash
-git ls-remote git@github.com:SEEK-Jobs/mjml-react-email-templates.git HEAD
-```
-
-If this fails, fix Terminal SSH (`ssh-keys-1password.md` / SEEK-Jobs access) before continuing.
-
----
-
-## Step 3: Install Yarn
-
-The email monorepo uses **Yarn 1.x** (not pnpm).
+## Step 2: Install Yarn
 
 ```bash
 brew install yarn
@@ -52,7 +38,39 @@ Verify:
 yarn --version
 ```
 
-You should see a version number (Yarn 1.x).
+You should see a version number (Yarn 1.x is fine).
+
+---
+
+## Step 3: Cloudsmith npm auth for `@seek` packages
+
+`@seek/braid-email-ui` is hosted on SEEK’s private Cloudsmith npm registry. Docs: [Accessing Cloudsmith with NPM](https://backstage.myseek.xyz/docs/default/component/artifact-management-docs/npm/access/).
+
+Guide the user:
+
+1. Get access to **Cloudsmith** via **Lumos / Okta** (request **Cloudsmith → Member** if needed)
+2. Sign in at [app.cloudsmith.com](https://app.cloudsmith.com) (not cloudsmith.io)
+3. Copy an **API key**: click your **initials** (top right) → **API key** / [API key settings](https://app.cloudsmith.com/user/settings/api-key/) — create or copy a key
+4. Note your Cloudsmith **username** (shown under your name when you click initials — **not** your email; no `@`)
+
+In **Terminal**, run:
+
+```bash
+npm config set '@seek:registry' https://npm.cloudsmith.io/seek/npm/
+npm login --auth-type=legacy --registry=https://npm.cloudsmith.io/seek/npm/
+```
+
+When prompted:
+
+| Prompt | Value |
+| --- | --- |
+| **Username** | Cloudsmith username (e.g. `cheryl-paulsen`) — **not** email |
+| **Password** | Cloudsmith **API key** — **not** Okta / laptop password (typing is hidden; that is normal) |
+| **Email** | SEEK work email is fine |
+
+Do **not** paste the API key into chat.
+
+**Verify:** `npm login` succeeds with no `E401`. If login fails, re-check username vs email and that the password was the API key. Still stuck? Ask in `#support-cloudsmith`.
 
 ---
 
@@ -74,4 +92,4 @@ cursor --install-extension dbaeumer.vscode-eslint
 
 ## Done
 
-Continue with `references/project-setup/email-project.md` (Track B).
+Continue with `references/project-setup/email-project.md`.
